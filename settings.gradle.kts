@@ -1,3 +1,6 @@
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+enableFeaturePreview("VERSION_CATALOGS")
+
 pluginManagement {
     repositories {
         gradlePluginPortal()
@@ -10,6 +13,17 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+    }
+    versionCatalogs {
+        create("devLibs") {
+            from(files("gradle/dev-libs.versions.toml"))
+        }
+        create("coreLibs") {
+            from(files("gradle/core-libs.versions.toml"))
+        }
+        create("uiLibs") {
+            from(files("gradle/ui-libs.versions.toml"))
+        }
     }
 }
 rootProject.name = "SampleMultimoduleArchitectureSplitFeature"
