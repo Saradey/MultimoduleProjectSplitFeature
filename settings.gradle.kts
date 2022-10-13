@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "SampleMultimoduleArchitectureSplitFeature"
-include ':app'
+include(":app")
