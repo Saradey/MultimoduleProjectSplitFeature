@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
-    compileSdk = 33
+    compileSdk = rootProject.ext["compileSdkVersionApp"] as Int
 
     defaultConfig {
         applicationId = "com.evgeny.goncharov.sample.multimodule"
-        minSdk = 23
-        targetSdk = 33
-        versionCode = 1
+        minSdk = rootProject.ext["minSdkVersionApp"] as Int
+        targetSdk = rootProject.ext["targetSdkVersionApp"] as Int
+        versionCode = rootProject.ext["versionCodeApp"] as Int
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
