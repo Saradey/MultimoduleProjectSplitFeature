@@ -2,3 +2,7 @@
 app-compat = "androidx.appcompat:appcompat:1.5.1"
 material = "com.google.android.material:material:1.6.1"
 constraint-layout = "androidx.constraintlayout:constraintlayout:2.1.4"
+recyclerView = "androidx.recyclerview:recyclerview:1.2.1"
+
+# ViewBindingPropertyDelegate https://github.com/kirich1409/ViewBindingPropertyDelegate/
+viewBindingPropertyDelegate = "com.github.kirich1409:viewbindingpropertydelegate-noreflection:1.5.6"

@@ -1,5 +1,11 @@
 [versions]
 coreKtx = "1.9.0"
+daggerVersion = "2.38.1"
 
 [libraries]
 core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
+#https://github.com/terrakok/Cicerone
+cicerone = "com.github.terrakok:cicerone:7.1"
+
+dagger = { module = "com.google.dagger:dagger", version.ref = "daggerVersion" }
+daggerCompiler = { module = "com.google.dagger:dagger-compiler", version.ref = "daggerVersion" }
