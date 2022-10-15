@@ -23,11 +23,6 @@ android {
 }
 
 dependencies {
-    implementation(coreLibs.core.ktx)
     implementation(uiLibs.app.compat)
     implementation(uiLibs.material)
-    implementation(uiLibs.constraint.layout)
-    testImplementation(devLibs.junit)
-    androidTestImplementation(devLibs.test.ext)
-    androidTestImplementation(devLibs.espresso)
 }

@@ -36,16 +36,7 @@ android {
 }
 
 dependencies {
-
     implementation(project(":sources:engine:main-activity"))
     implementation(project(":sources:resources:theme"))
     implementation(project(":sources:resources:ui-kit"))
-
-    implementation(coreLibs.core.ktx)
-    implementation(uiLibs.app.compat)
-    implementation(uiLibs.material)
-    implementation(uiLibs.constraint.layout)
-    testImplementation(devLibs.junit)
-    androidTestImplementation(devLibs.test.ext)
-    androidTestImplementation(devLibs.espresso)
 }
