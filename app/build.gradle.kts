@@ -39,6 +39,8 @@ android {
 
 dependencies {
 
+    implementation(project(":sources:engine:main-activity"))
+
     implementation(coreLibs.core.ktx)
     implementation(uiLibs.app.compat)
     implementation(uiLibs.material)
