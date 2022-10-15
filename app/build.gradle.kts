@@ -11,7 +11,6 @@ android {
         targetSdk = rootProject.ext["targetSdkVersionApp"] as Int
         versionCode = rootProject.ext["versionCodeApp"] as Int
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -40,6 +39,7 @@ dependencies {
 
     implementation(project(":sources:engine:main-activity"))
     implementation(project(":sources:resources:theme"))
+    implementation(project(":sources:resources:ui-kit"))
 
     implementation(coreLibs.core.ktx)
     implementation(uiLibs.app.compat)

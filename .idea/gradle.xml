@@ -16,6 +16,7 @@
             <option value="$PROJECT_DIR$/sources/engine/main-activity" />
             <option value="$PROJECT_DIR$/sources/resources" />
             <option value="$PROJECT_DIR$/sources/resources/theme" />
+            <option value="$PROJECT_DIR$/sources/resources/ui-kit" />
           </set>
         </option>
       </GradleProjectSettings>
