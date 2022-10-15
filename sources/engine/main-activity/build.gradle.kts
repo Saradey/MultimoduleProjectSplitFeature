@@ -4,10 +4,10 @@ plugins {
 }
 
 android {
-    compileSdk = 33
+    compileSdk = rootProject.ext["compileSdkVersionApp"] as Int
     defaultConfig {
-        minSdk = 23
-        targetSdk = 33
+        minSdk = rootProject.ext["minSdkVersionApp"] as Int
+        targetSdk = rootProject.ext["targetSdkVersionApp"] as Int
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -15,6 +15,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+    buildFeatures {
+        viewBinding = true
     }
 }
 

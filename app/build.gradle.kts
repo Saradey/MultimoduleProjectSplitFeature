@@ -5,7 +5,6 @@ plugins {
 
 android {
     compileSdk = rootProject.ext["compileSdkVersionApp"] as Int
-
     defaultConfig {
         applicationId = "com.evgeny.goncharov.sample.multimodule"
         minSdk = rootProject.ext["minSdkVersionApp"] as Int
