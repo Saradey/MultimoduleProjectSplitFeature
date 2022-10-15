@@ -29,3 +29,4 @@ dependencyResolutionManagement {
 rootProject.name = "SampleMultimoduleArchitectureSplitFeature"
 include(":app")
 include(":sources:engine:main-activity")
+include(":sources:resources:theme")

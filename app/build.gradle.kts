@@ -39,6 +39,7 @@ android {
 dependencies {
 
     implementation(project(":sources:engine:main-activity"))
+    implementation(project(":sources:resources:theme"))
 
     implementation(coreLibs.core.ktx)
     implementation(uiLibs.app.compat)
