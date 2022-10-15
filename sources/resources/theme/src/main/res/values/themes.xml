@@ -1,4 +1,10 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
 
-    <style name="Theme.SampleMultimoduleArchitectureSplitFeature" parent="Theme.Design.NoActionBar" />
+    <style name="AppTheme" parent="Theme.Design.NoActionBar" />
+
+    <style name="AppTheme.Night" />
+
+    <style name="AppTheme.Light" />
+
 </resources>
