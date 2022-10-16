@@ -18,6 +18,7 @@
             <option value="$PROJECT_DIR$/sources/resources" />
             <option value="$PROJECT_DIR$/sources/resources/theme" />
             <option value="$PROJECT_DIR$/sources/resources/ui-kit" />
+            <option value="$PROJECT_DIR$/ui-sandbox" />
           </set>
         </option>
       </GradleProjectSettings>
