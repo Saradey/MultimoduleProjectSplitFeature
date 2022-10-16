@@ -22,7 +22,7 @@ public class FeatureContainerImpl(
             ?: throw IllegalStateException(String.format(FAILED_GET_GLOBAL_HOLDER, key))
     }
 
-    override fun releaseFeature(key: Class<out ReleasableApi>) {
+    override fun releaseFeatureComponent(key: Class<out ReleasableApi>) {
         featureHolder[key]?.releaseFeature() ?: throw IllegalStateException(
             String.format(
                 FAILED_RELEASE_HOLDER,

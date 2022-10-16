@@ -6,7 +6,7 @@ internal object NotInitializedFeatureContainer : FeatureContainer {
     override fun getFeatureComponent(key: Class<out ReleasableApi>) =
         throw IllegalStateException(ERROR_MASSAGE)
 
-    override fun releaseFeature(key: Class<out ReleasableApi>) =
+    override fun releaseFeatureComponent(key: Class<out ReleasableApi>) =
         throw IllegalStateException(ERROR_MASSAGE)
 
     override fun <D> getGlobalComponent(key: Class<D>) = throw IllegalStateException(ERROR_MASSAGE)

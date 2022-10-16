@@ -16,8 +16,8 @@ public object DI {
         return featureContainer.getFeatureComponent(key)
     }
 
-    public fun releaseFeature(key: Class<out ReleasableApi>) {
-        featureContainer.releaseFeature(key)
+    public fun releaseFeatureApi(key: Class<out ReleasableApi>) {
+        featureContainer.releaseFeatureComponent(key)
     }
 
     public fun <D> getGlobalApi(key: Class<D>): D {
