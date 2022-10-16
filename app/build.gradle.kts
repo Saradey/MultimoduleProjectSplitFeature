@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
 }
 
 android {
@@ -40,4 +41,7 @@ dependencies {
     implementation(project(":sources:engine:di-core"))
     implementation(project(":sources:resources:theme"))
     implementation(project(":sources:resources:ui-kit"))
+
+    implementation(coreLibs.dagger)
+    kapt(coreLibs.daggerCompiler)
 }

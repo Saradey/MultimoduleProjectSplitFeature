@@ -3,8 +3,8 @@ package com.evgeny.goncharov.sample.multimodule
 import android.app.Application
 import com.evgeny.goncharov.sample.multimodule.di_core.container.FeatureContainerImpl
 import com.evgeny.goncharov.sample.multimodule.di_core.engine.DI
-import com.evgeny.goncharov.sample.multimodule.initializer.FeatureHolderInitializer
-import com.evgeny.goncharov.sample.multimodule.initializer.GlobalHolderInitializer
+import com.evgeny.goncharov.sample.multimodule.initializer.FeatureHolderInitializerImpl
+import com.evgeny.goncharov.sample.multimodule.initializer.GlobalHolderInitializerImpl
 import java.lang.Exception
 
 internal class App : Application() {
@@ -18,8 +18,8 @@ internal class App : Application() {
         try {
             val featureContainer = FeatureContainerImpl()
             featureContainer.init(
-                GlobalHolderInitializer,
-                FeatureHolderInitializer
+                GlobalHolderInitializerImpl(featureContainer, this),
+                FeatureHolderInitializerImpl(featureContainer)
             )
             DI.initialize(featureContainer)
         } catch (exp: Exception) {
