@@ -37,6 +37,7 @@ android {
 
 dependencies {
     implementation(project(":sources:engine:main-activity"))
+    implementation(project(":sources:engine:di-core"))
     implementation(project(":sources:resources:theme"))
     implementation(project(":sources:resources:ui-kit"))
 }

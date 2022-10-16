@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/sources" />
             <option value="$PROJECT_DIR$/sources/engine" />
+            <option value="$PROJECT_DIR$/sources/engine/di-core" />
             <option value="$PROJECT_DIR$/sources/engine/main-activity" />
             <option value="$PROJECT_DIR$/sources/resources" />
             <option value="$PROJECT_DIR$/sources/resources/theme" />
