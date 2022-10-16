@@ -3,13 +3,14 @@ package com.evgeny.goncharov.sample.multimodule.di_core.container
 import com.evgeny.goncharov.sample.multimodule.di_core.contracts.ReleasableApi
 import com.evgeny.goncharov.sample.multimodule.di_core.holder.BaseHolder
 import com.evgeny.goncharov.sample.multimodule.di_core.holder.FeatureHolder
+import com.evgeny.goncharov.sample.multimodule.di_core.initializer.HolderInitializer
 
 public class FeatureContainerImpl(
     private val globalHolder: MutableMap<Class<*>, BaseHolder<*>> = HashMap(),
     private val featureHolder: MutableMap<Class<ReleasableApi>, FeatureHolder<ReleasableApi>> = HashMap(),
 ) : FeatureContainerManager {
 
-    private var featureInitializer: ComponentHolderInitializer? = null
+    private var featureInitializer: HolderInitializer? = null
 
     override fun getFeatureComponent(key: Class<out ReleasableApi>): ReleasableApi {
         return getFeatureHolder(key).getComponent()
@@ -31,8 +32,8 @@ public class FeatureContainerImpl(
     }
 
     override fun init(
-        globalInitializer: ComponentHolderInitializer,
-        featureInitializer: ComponentHolderInitializer
+        globalInitializer: HolderInitializer,
+        featureInitializer: HolderInitializer
     ): FeatureContainerManager {
         globalHolder.putAll(globalInitializer.init())
         this.featureInitializer = featureInitializer

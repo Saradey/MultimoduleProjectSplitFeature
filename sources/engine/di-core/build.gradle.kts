@@ -21,4 +21,5 @@ android {
 
 dependencies {
     implementation(uiLibs.app.compat)
+    implementation(coreLibs.dagger)
 }
