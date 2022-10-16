@@ -25,6 +25,9 @@ android {
 }
 
 dependencies {
+    implementation(project(":sources:resources:theme"))
+    implementation(project(":sources:resources:ui-kit"))
+
     implementation(uiLibs.app.compat)
     implementation(uiLibs.material)
 }
