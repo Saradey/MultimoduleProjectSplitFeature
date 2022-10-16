@@ -10,4 +10,3 @@ timber = "com.jakewharton.timber:timber:5.0.1"
 chucker = "com.github.chuckerteam.chucker:library:3.5.2"
 #https://github.com/willowtreeapps/Hyperion-Android
 hyperion-core = { module = "com.willowtreeapps.hyperion:hyperion-core", version.ref = "hyperion" }
-hyperion-crash = { module = "com.willowtreeapps.hyperion:hyperion-crash", version.ref = "hyperion" }
