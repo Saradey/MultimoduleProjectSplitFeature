@@ -1,30 +1,19 @@
 package com.evgeny.goncharov.sample.multimodule.di_core
 
-import android.content.Context
-import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import com.evgeny.goncharov.sample.multimodule.di_core.contracts.ReleasableApi
 import com.evgeny.goncharov.sample.multimodule.di_core.engine.DI
 
-public abstract class CoreFragment : Fragment {
-    public constructor(@LayoutRes layoutId: Int) : super(layoutId)
-    public constructor() : super()
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        resolveDependencies()
-    }
+public abstract class ContainerFeatureFragment : Fragment(R.layout.fragment_feature_container) {
 
     override fun onStop() {
         super.onStop()
-        if (isRemoving && requireActivity().isFinishing) {
+        if (isRemoving) {
             releaseDependencies()
         }
     }
 
-    protected open fun resolveDependencies() {}
-
-    protected open fun releaseDependencies() {}
+    protected abstract fun releaseDependencies()
 
     protected fun releaseFeatureApi(key: Class<out ReleasableApi>) {
         DI.releaseFeature(key)
