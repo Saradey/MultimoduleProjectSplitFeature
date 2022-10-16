@@ -1,5 +1,7 @@
 package com.evgeny.goncharov.sample.multimodule.di_core.engine
 
+import com.evgeny.goncharov.sample.multimodule.di_core.container.FeatureContainer
+import com.evgeny.goncharov.sample.multimodule.di_core.container.NotInitializedFeatureContainer
 import com.evgeny.goncharov.sample.multimodule.di_core.contracts.ReleasableApi
 
 public object DI {
