@@ -1,7 +1,6 @@
 package com.evgeny.goncharov.sample.multimodule
 
 import android.app.Application
-import com.evgeny.goncharov.sample.multimodule.di_core.container.FeatureContainerImpl
 import com.evgeny.goncharov.sample.multimodule.di_core.engine.DI
 import com.evgeny.goncharov.sample.multimodule.initializer.FeatureHolderInitializerImpl
 import com.evgeny.goncharov.sample.multimodule.initializer.GlobalHolderInitializerImpl
@@ -16,12 +15,10 @@ internal class App : Application() {
 
     private fun initDi() {
         try {
-            val featureContainer = FeatureContainerImpl()
-            featureContainer.init(
-                GlobalHolderInitializerImpl(featureContainer, this),
-                FeatureHolderInitializerImpl(featureContainer)
+            DI.initialize(
+                GlobalHolderInitializerImpl(this),
+                FeatureHolderInitializerImpl()
             )
-            DI.initialize(featureContainer)
         } catch (exp: Exception) {
             throw RuntimeException("$FAILED_INIT_DI_MESSAGE $exp")
         }

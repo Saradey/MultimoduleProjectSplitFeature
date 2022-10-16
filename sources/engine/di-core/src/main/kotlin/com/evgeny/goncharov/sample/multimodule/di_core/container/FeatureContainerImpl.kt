@@ -36,7 +36,7 @@ public class FeatureContainerImpl(
         globalInitializer: GlobalHolderInitializer,
         featureInitializer: FeatureHolderInitializer
     ): FeatureContainerManager {
-        globalHolder.putAll(globalInitializer.init())
+        globalHolder.putAll(globalInitializer.init(this))
         this.featureInitializer = featureInitializer
         return this
     }
@@ -53,7 +53,7 @@ public class FeatureContainerImpl(
     private fun initAllFeatureHolder() {
         featureInitializer?.let { initializer ->
             featureHolder.putAll(
-                initializer.init() as Map<Class<ReleasableApi>, FeatureHolder<ReleasableApi>>
+                initializer.init(this) as Map<Class<ReleasableApi>, FeatureHolder<ReleasableApi>>
             )
         }
     }

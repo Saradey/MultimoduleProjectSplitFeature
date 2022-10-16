@@ -1,14 +1,25 @@
 package com.evgeny.goncharov.sample.multimodule.di_core.engine
 
 import com.evgeny.goncharov.sample.multimodule.di_core.container.FeatureContainer
+import com.evgeny.goncharov.sample.multimodule.di_core.container.FeatureContainerImpl
 import com.evgeny.goncharov.sample.multimodule.di_core.container.NotInitializedFeatureContainer
 import com.evgeny.goncharov.sample.multimodule.di_core.contracts.ReleasableApi
+import com.evgeny.goncharov.sample.multimodule.di_core.initializer.FeatureHolderInitializer
+import com.evgeny.goncharov.sample.multimodule.di_core.initializer.GlobalHolderInitializer
 
 public object DI {
 
     private var featureContainer: FeatureContainer = NotInitializedFeatureContainer
 
-    public fun initialize(featureContainer: FeatureContainer) {
+    public fun initialize(
+        globalHolderInitializer: GlobalHolderInitializer,
+        featureHolderInitializer: FeatureHolderInitializer
+    ) {
+        val featureContainer = FeatureContainerImpl()
+        featureContainer.init(
+            globalHolderInitializer,
+            featureHolderInitializer
+        )
         this.featureContainer = featureContainer
     }
 
