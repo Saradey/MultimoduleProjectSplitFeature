@@ -2,6 +2,7 @@ package com.evgeny.goncharov.sample.multimodule.di_core
 
 import androidx.appcompat.app.AppCompatActivity
 import com.evgeny.goncharov.sample.multimodule.di_core.contracts.ReleasableApi
+import com.evgeny.goncharov.sample.multimodule.di_core.engine.DI
 
 public abstract class CoreActivity : AppCompatActivity() {
 
@@ -12,13 +13,14 @@ public abstract class CoreActivity : AppCompatActivity() {
         }
     }
 
-    protected fun getFeatureApi(featureKey: Class<out ReleasableApi>) =
+    protected fun getFeatureApi(featureKey: Class<out ReleasableApi>): ReleasableApi =
         DI.getFeatureApi(featureKey)
 
-    protected fun releaseFeatureApi(featureKey: Class<out ReleasableApi>) =
+    protected fun releaseFeatureApi(featureKey: Class<out ReleasableApi>) {
         DI.releaseFeature(featureKey)
+    }
 
-    protected fun <D> getGlobalApi(key: Class<D>) =
+    protected fun <D> getGlobalApi(key: Class<D>): D =
         DI.getGlobalApi(key)
 
     protected abstract fun releaseDependency()
