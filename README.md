@@ -1,3 +1,7 @@
+## Architecture
+- Single activity
+- splitting features into modules
+
 ## Gradle Setup
 - Feature Version Catalog
 - Explicit API Mode
