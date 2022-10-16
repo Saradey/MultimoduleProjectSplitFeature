@@ -15,10 +15,7 @@ internal class App : Application() {
 
     private fun initDi() {
         try {
-            DI.initialize(
-                GlobalHolderInitializerImpl(this),
-                FeatureHolderInitializerImpl()
-            )
+            DI.initialize(GlobalHolderInitializerImpl(this), FeatureHolderInitializerImpl())
         } catch (exp: Exception) {
             throw RuntimeException("$FAILED_INIT_DI_MESSAGE $exp")
         }
