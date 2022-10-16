@@ -18,8 +18,8 @@ public class FeatureContainerImpl(
     }
 
     @Suppress("UNCHECKED_CAST")
-    override fun <D> getGlobalComponent(key: Class<D>): D {
-        return globalHolder[key]?.getComponent() as D
+    override fun <GC> getGlobalComponent(key: Class<GC>): GC {
+        return globalHolder[key]?.getComponent() as GC
             ?: throw IllegalStateException(String.format(FAILED_GET_GLOBAL_HOLDER, key))
     }
 
