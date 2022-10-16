@@ -4,6 +4,7 @@ import com.evgeny.goncharov.sample.multimodule.di_core.contracts.ReleasableApi
 import com.evgeny.goncharov.sample.multimodule.di_core.holder.BaseHolder
 import com.evgeny.goncharov.sample.multimodule.di_core.holder.FeatureHolder
 import com.evgeny.goncharov.sample.multimodule.di_core.initializer.FeatureHolderInitializer
+import com.evgeny.goncharov.sample.multimodule.di_core.initializer.GlobalHolderInitializer
 
 public class FeatureContainerImpl(
     private val globalHolder: MutableMap<Class<*>, BaseHolder<*>> = HashMap(),
@@ -32,7 +33,7 @@ public class FeatureContainerImpl(
     }
 
     override fun init(
-        globalInitializer: FeatureHolderInitializer,
+        globalInitializer: GlobalHolderInitializer,
         featureInitializer: FeatureHolderInitializer
     ): FeatureContainerManager {
         globalHolder.putAll(globalInitializer.init())

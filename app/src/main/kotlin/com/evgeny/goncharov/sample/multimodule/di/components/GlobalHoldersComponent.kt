@@ -1,6 +1,6 @@
 package com.evgeny.goncharov.sample.multimodule.di.components
 
-import com.evgeny.goncharov.sample.multimodule.App
+import android.app.Application
 import com.evgeny.goncharov.sample.multimodule.di.modules.GlobalHoldersModule
 import com.evgeny.goncharov.sample.multimodule.di_core.container.FeatureContainerManager
 import com.evgeny.goncharov.sample.multimodule.di_core.holder.BaseHolder
@@ -20,7 +20,7 @@ internal interface GlobalHoldersComponent {
     interface Factory {
 
         fun create(
-            @BindsInstance app: App,
+            @BindsInstance app: Application,
             @BindsInstance featureContainerManager: FeatureContainerManager
         ): GlobalHoldersComponent
     }
