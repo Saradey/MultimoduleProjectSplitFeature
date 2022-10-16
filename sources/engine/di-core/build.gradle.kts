@@ -20,4 +20,5 @@ android {
 }
 
 dependencies {
+    implementation(uiLibs.app.compat)
 }
