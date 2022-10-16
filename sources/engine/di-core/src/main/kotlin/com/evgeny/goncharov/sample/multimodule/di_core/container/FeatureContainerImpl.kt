@@ -6,7 +6,7 @@ import com.evgeny.goncharov.sample.multimodule.di_core.holder.FeatureHolder
 import com.evgeny.goncharov.sample.multimodule.di_core.initializer.FeatureHolderInitializer
 import com.evgeny.goncharov.sample.multimodule.di_core.initializer.GlobalHolderInitializer
 
-public class FeatureContainerImpl(
+internal class FeatureContainerImpl(
     private val globalHolder: MutableMap<Class<*>, BaseHolder<*>> = HashMap(),
     private val featureHolder: MutableMap<Class<ReleasableApi>, FeatureHolder<ReleasableApi>> = HashMap(),
 ) : FeatureContainerManager {
