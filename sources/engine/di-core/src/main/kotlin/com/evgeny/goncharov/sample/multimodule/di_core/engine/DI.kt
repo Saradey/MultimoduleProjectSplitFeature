@@ -13,7 +13,7 @@ public object DI {
     }
 
     public fun getFeatureApi(key: Class<out ReleasableApi>): ReleasableApi {
-        return featureContainer.getFeature(key)
+        return featureContainer.getFeatureComponent(key)
     }
 
     public fun releaseFeature(key: Class<out ReleasableApi>) {
@@ -21,6 +21,6 @@ public object DI {
     }
 
     public fun <D> getGlobalApi(key: Class<D>): D {
-        return featureContainer.getGlobal(key)
+        return featureContainer.getGlobalComponent(key)
     }
 }
