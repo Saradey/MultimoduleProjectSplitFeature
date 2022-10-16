@@ -1,6 +1,5 @@
 package com.evgeny.goncharov.sample.multimodule.di.modules
 
-import com.evgeny.goncharov.sample.multimodule.App
 import com.evgeny.goncharov.sample.multimodule.di_core.container.FeatureContainerManager
 import com.evgeny.goncharov.sample.multimodule.di_core.holder.BaseHolder
 import com.evgeny.goncharov.sample.multimodule.utils.StubGlobalHolder
