@@ -15,10 +15,7 @@ public abstract class ContainerFeatureFragment : Fragment(R.layout.fragment_feat
 
     protected abstract fun releaseDependencies()
 
-    protected fun releaseFeatureApi(key: Class<out ReleasableApi>) {
+    protected fun releaseFeatureComponent(key: Class<out ReleasableApi>) {
         DI.releaseFeature(key)
     }
-
-    protected fun getFeatureApi(key: Class<out ReleasableApi>): ReleasableApi =
-        DI.getFeatureApi(key)
 }
