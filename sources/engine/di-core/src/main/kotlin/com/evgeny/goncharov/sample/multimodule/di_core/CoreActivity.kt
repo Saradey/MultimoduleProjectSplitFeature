@@ -1,6 +1,7 @@
 package com.evgeny.goncharov.sample.multimodule.di_core
 
 import androidx.appcompat.app.AppCompatActivity
+import com.evgeny.goncharov.sample.multimodule.di_core.contracts.ReleasableApi
 
 public abstract class CoreActivity : AppCompatActivity() {
 

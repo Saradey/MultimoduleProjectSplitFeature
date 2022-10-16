@@ -3,6 +3,7 @@ package com.evgeny.goncharov.sample.multimodule.di_core
 import android.content.Context
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
+import com.evgeny.goncharov.sample.multimodule.di_core.contracts.ReleasableApi
 
 public abstract class CoreFragment : Fragment {
     public constructor(@LayoutRes layoutId: Int) : super(layoutId)
