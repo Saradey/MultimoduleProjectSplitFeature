@@ -1,10 +1,11 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
 }
 
 android {
-    compileSdk  = rootProject.ext["compileSdkVersionApp"] as Int
+    compileSdk = rootProject.ext["compileSdkVersionApp"] as Int
     defaultConfig {
         minSdk = rootProject.ext["minSdkVersionApp"] as Int
         targetSdk = rootProject.ext["targetSdkVersionApp"] as Int
@@ -20,4 +21,7 @@ android {
 }
 
 dependencies {
+    implementation(coreLibs.cicerone)
+    implementation(coreLibs.dagger)
+    kapt(coreLibs.daggerCompiler)
 }
