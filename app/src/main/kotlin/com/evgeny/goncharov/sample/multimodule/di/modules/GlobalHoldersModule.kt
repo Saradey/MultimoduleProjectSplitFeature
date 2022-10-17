@@ -2,6 +2,8 @@ package com.evgeny.goncharov.sample.multimodule.di.modules
 
 import com.evgeny.goncharov.sample.multimodule.di_core.container.FeatureContainerManager
 import com.evgeny.goncharov.sample.multimodule.di_core.holder.BaseHolder
+import com.evgeny.goncharov.sample.multimodule.navigation.api.CoreNavigationApi
+import com.evgeny.goncharov.sample.multimodule.navigation.holder.NavigationHolder
 import com.evgeny.goncharov.sample.multimodule.utils.StubGlobalHolder
 import dagger.Module
 import dagger.Provides
@@ -16,4 +18,9 @@ internal object GlobalHoldersModule {
     @[IntoMap ClassKey(String::class)]
     fun provideBaseCoreHolder(featureContainer: FeatureContainerManager)
             : BaseHolder<*> = StubGlobalHolder(featureContainer)
+
+    @[Provides Singleton]
+    @[IntoMap ClassKey(CoreNavigationApi::class)]
+    fun provideNavigationHolder(featureContainer: FeatureContainerManager): BaseHolder<*> =
+        NavigationHolder(featureContainer)
 }
