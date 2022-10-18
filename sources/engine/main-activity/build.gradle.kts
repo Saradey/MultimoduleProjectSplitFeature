@@ -23,6 +23,8 @@ android {
 }
 
 dependencies {
+    implementation(project(":sources:engine:di-core"))
+
     implementation(uiLibs.app.compat)
     implementation(uiLibs.material)
 }
