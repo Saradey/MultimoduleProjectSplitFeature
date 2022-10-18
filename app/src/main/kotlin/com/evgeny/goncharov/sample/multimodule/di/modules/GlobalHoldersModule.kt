@@ -4,7 +4,7 @@ import com.evgeny.goncharov.sample.multimodule.di.holder.LaunchersHolder
 import com.evgeny.goncharov.sample.multimodule.di_core.container.FeatureContainerManager
 import com.evgeny.goncharov.sample.multimodule.di_core.holder.BaseHolder
 import com.evgeny.goncharov.sample.multimodule.navigation.api.CoreNavigationApi
-import com.evgeny.goncharov.sample.multimodule.navigation.api.LaunchersApi
+import com.evgeny.goncharov.sample.multimodule.di_core.navigation.LaunchersApi
 import com.evgeny.goncharov.sample.multimodule.navigation.holder.NavigationHolder
 import dagger.Module
 import dagger.Provides

@@ -1,7 +1,7 @@
 package com.evgeny.goncharov.sample.multimodule.di.modules
 
 import com.evgeny.goncharov.sample.multimodule.navigation.GlobalRouter
-import com.evgeny.goncharov.sample.multimodule.navigation.contracts.BaseLauncher
+import com.evgeny.goncharov.sample.multimodule.di_core.navigation.BaseLauncher
 import com.evgeny.goncharov.sample.multimodule.splash_screen_api.SplashScreenLauncher
 import com.evgeny.goncharov.sample.multimodule.splash_screen_impl.navigation.SplashScreenLauncherImpl
 import dagger.Module

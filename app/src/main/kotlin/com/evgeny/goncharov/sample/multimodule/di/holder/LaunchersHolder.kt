@@ -4,7 +4,7 @@ import com.evgeny.goncharov.sample.multimodule.di.components.DaggerLaunchersComp
 import com.evgeny.goncharov.sample.multimodule.di_core.container.FeatureContainerManager
 import com.evgeny.goncharov.sample.multimodule.di_core.holder.BaseHolder
 import com.evgeny.goncharov.sample.multimodule.navigation.api.CoreNavigationApi
-import com.evgeny.goncharov.sample.multimodule.navigation.api.LaunchersApi
+import com.evgeny.goncharov.sample.multimodule.di_core.navigation.LaunchersApi
 
 internal class LaunchersHolder(
     container: FeatureContainerManager
