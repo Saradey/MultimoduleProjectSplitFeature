@@ -5,7 +5,7 @@ import com.github.terrakok.cicerone.NavigatorHolder
 
 public interface CoreNavigationApi {
 
-    public fun provideRouter(): GlobalRouter
+    public fun provideGlobalRouter(): GlobalRouter
 
-    public fun provideNavigatorHolder(): NavigatorHolder
+    public fun provideGlobalNavigatorHolder(): NavigatorHolder
 }
