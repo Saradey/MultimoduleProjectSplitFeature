@@ -6,6 +6,7 @@ import com.evgeny.goncharov.sample.multimodule.di_core.container.NotInitializedF
 import com.evgeny.goncharov.sample.multimodule.di_core.contracts.ReleasableApi
 import com.evgeny.goncharov.sample.multimodule.di_core.initializer.FeatureHolderInitializer
 import com.evgeny.goncharov.sample.multimodule.di_core.initializer.GlobalHolderInitializer
+import com.evgeny.goncharov.sample.multimodule.di_core.navigation.BaseLauncher
 
 public object DI {
 
@@ -33,5 +34,9 @@ public object DI {
 
     public fun <D> getGlobalApi(key: Class<D>): D {
         return featureContainer.getGlobalComponent(key)
+    }
+
+    public fun <L : BaseLauncher> getFeatureLauncher(key: Class<L>): BaseLauncher {
+        return featureContainer.getFeatureLauncher(key)
     }
 }
