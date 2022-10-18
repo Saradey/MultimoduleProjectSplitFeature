@@ -13,10 +13,12 @@ public class MainActivity : CoreActivity() {
     }
     private val navigator = AppNavigator(this, R.id.container)
     private val navigatorHolder = dependency.provideGlobalNavigatorHolder()
+    private val splashLauncher = dependency.provideSplashLauncher()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        savedInstanceState ?: splashLauncher.launch()
     }
 
     override fun onResumeFragments() {

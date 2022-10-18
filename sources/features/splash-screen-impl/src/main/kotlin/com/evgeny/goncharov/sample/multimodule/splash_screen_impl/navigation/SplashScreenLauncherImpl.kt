@@ -8,6 +8,5 @@ public class SplashScreenLauncherImpl(
 ) : SplashScreenLauncher {
 
     override fun launch() {
-
     }
 }
