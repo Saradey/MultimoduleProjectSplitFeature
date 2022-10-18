@@ -13,8 +13,7 @@ public class MainActivityHolder(container: FeatureContainerManager) :
     override fun buildComponent(): MainActivityApi {
         return DaggerMainActivityComponent.factory()
             .create(
-                getGlobalComponent(CoreNavigationApi::class.java),
-                getGlobalComponent(LaunchersApi::class.java)
+                getGlobalComponent(CoreNavigationApi::class.java)
             )
     }
 }

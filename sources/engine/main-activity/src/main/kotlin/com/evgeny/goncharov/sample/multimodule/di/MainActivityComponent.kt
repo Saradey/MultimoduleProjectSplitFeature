@@ -6,18 +6,14 @@ import com.evgeny.goncharov.sample.multimodule.di_core.navigation.LaunchersApi
 import dagger.Component
 
 @Component(
-    dependencies = [
-        CoreNavigationApi::class,
-        LaunchersApi::class
-    ]
+    dependencies = [CoreNavigationApi::class]
 )
 internal interface MainActivityComponent : MainActivityInternal {
 
     @Component.Factory
     interface Factory {
         fun create(
-            coreNavigationApi: CoreNavigationApi,
-            launchersApi: LaunchersApi
+            coreNavigationApi: CoreNavigationApi
         ): MainActivityComponent
     }
 }
