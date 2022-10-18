@@ -13,10 +13,10 @@ public abstract class CoreActivity : AppCompatActivity() {
         }
     }
 
-    protected fun getComponent(featureKey: Class<out ReleasableApi>): ReleasableApi =
+    protected fun getFeatureApi(featureKey: Class<out ReleasableApi>): ReleasableApi =
         DI.getFeatureApi(featureKey)
 
-    protected fun releaseComponent(featureKey: Class<out ReleasableApi>) {
+    protected fun releaseFeatureApi(featureKey: Class<out ReleasableApi>) {
         DI.releaseFeatureApi(featureKey)
     }
 
