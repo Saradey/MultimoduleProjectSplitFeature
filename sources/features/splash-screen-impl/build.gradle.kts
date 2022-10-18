@@ -24,4 +24,7 @@ android {
 
 dependencies {
     api(project(":sources:features:splash-screen-api"))
+
+    implementation(project(":sources:engine:navigation"))
+    implementation(project(":sources:engine:di-core"))
 }
