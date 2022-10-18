@@ -1,5 +1,6 @@
 package com.evgeny.goncharov.sample.multimodule.di
 
+import com.evgeny.goncharov.sample.multimodule.di.contracts.MainActivityInternal
 import com.evgeny.goncharov.sample.multimodule.navigation.api.CoreNavigationApi
 import com.evgeny.goncharov.sample.multimodule.navigation.api.LaunchersApi
 import dagger.Component
@@ -10,7 +11,7 @@ import dagger.Component
         LaunchersApi::class
     ]
 )
-private interface MainActivityComponent : MainActivityInternal {
+internal interface MainActivityComponent : MainActivityInternal {
 
     @Component.Factory
     interface Factory {

@@ -1,4 +1,4 @@
-package com.evgeny.goncharov.sample.multimodule.di
+package com.evgeny.goncharov.sample.multimodule.di.contracts
 
 import com.evgeny.goncharov.sample.multimodule.di_core.contracts.ReleasableApi
 
