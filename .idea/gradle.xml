@@ -16,6 +16,9 @@
             <option value="$PROJECT_DIR$/sources/engine/di-core" />
             <option value="$PROJECT_DIR$/sources/engine/main-activity" />
             <option value="$PROJECT_DIR$/sources/engine/navigation" />
+            <option value="$PROJECT_DIR$/sources/features" />
+            <option value="$PROJECT_DIR$/sources/features/splash-screen-api" />
+            <option value="$PROJECT_DIR$/sources/features/splash-screen-impl" />
             <option value="$PROJECT_DIR$/sources/resources" />
             <option value="$PROJECT_DIR$/sources/resources/theme" />
             <option value="$PROJECT_DIR$/sources/resources/ui-kit" />
