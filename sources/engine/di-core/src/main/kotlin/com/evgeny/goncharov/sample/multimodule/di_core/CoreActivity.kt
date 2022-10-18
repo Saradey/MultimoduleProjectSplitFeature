@@ -3,6 +3,7 @@ package com.evgeny.goncharov.sample.multimodule.di_core
 import androidx.appcompat.app.AppCompatActivity
 import com.evgeny.goncharov.sample.multimodule.di_core.contracts.ReleasableApi
 import com.evgeny.goncharov.sample.multimodule.di_core.engine.DI
+import com.evgeny.goncharov.sample.multimodule.di_core.navigation.BaseLauncher
 
 public abstract class CoreActivity : AppCompatActivity() {
 
@@ -18,6 +19,10 @@ public abstract class CoreActivity : AppCompatActivity() {
 
     protected fun releaseFeatureApi(featureKey: Class<out ReleasableApi>) {
         DI.releaseFeatureApi(featureKey)
+    }
+
+    protected fun <L : BaseLauncher> getFeatureLauncher(key: Class<L>): BaseLauncher {
+        return DI.getFeatureLauncher(key)
     }
 
     protected abstract fun releaseDependency()
