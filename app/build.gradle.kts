@@ -43,6 +43,8 @@ dependencies {
     implementation(project(":sources:resources:theme"))
     implementation(project(":sources:resources:ui-kit"))
 
+    implementation(project(":sources:features:splash-screen-impl"))
+
     implementation(coreLibs.cicerone)
     implementation(coreLibs.dagger)
     kapt(coreLibs.daggerCompiler)
