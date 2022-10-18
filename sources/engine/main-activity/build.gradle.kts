@@ -1,6 +1,7 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
 }
 
 android {
@@ -24,7 +25,11 @@ android {
 
 dependencies {
     implementation(project(":sources:engine:di-core"))
+    implementation(project(":sources:engine:navigation"))
 
     implementation(uiLibs.app.compat)
     implementation(uiLibs.material)
+    implementation(coreLibs.dagger)
+    implementation(coreLibs.cicerone)
+    kapt(coreLibs.daggerCompiler)
 }
