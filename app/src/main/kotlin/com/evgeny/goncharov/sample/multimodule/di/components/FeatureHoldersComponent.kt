@@ -1,7 +1,7 @@
 package com.evgeny.goncharov.sample.multimodule.di.components
 
 import com.evgeny.goncharov.sample.multimodule.di.modules.FeatureHoldersModule
-import com.evgeny.goncharov.sample.multimodule.di_core.container.FeatureContainerManager
+import com.evgeny.goncharov.sample.multimodule.di_core.container.FeatureContainer
 import com.evgeny.goncharov.sample.multimodule.di_core.holder.FeatureHolder
 import dagger.BindsInstance
 import dagger.Component
@@ -19,7 +19,7 @@ internal interface FeatureHoldersComponent {
     interface Factory {
 
         fun create(
-            @BindsInstance featureContainerManager: FeatureContainerManager
+            @BindsInstance featureContainerManager: FeatureContainer
         ): FeatureHoldersComponent
     }
 }

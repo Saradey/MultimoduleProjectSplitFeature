@@ -1,9 +1,9 @@
 package com.evgeny.goncharov.sample.multimodule.di_core.holder
 
-import com.evgeny.goncharov.sample.multimodule.di_core.container.FeatureContainerManager
+import com.evgeny.goncharov.sample.multimodule.di_core.container.FeatureContainer
 import com.evgeny.goncharov.sample.multimodule.di_core.contracts.ReleasableApi
 
-public abstract class BaseHolder<C>(protected val container: FeatureContainerManager) {
+public abstract class BaseHolder<C>(protected val container: FeatureContainer) {
 
     protected var componentApi: C? = null
 
