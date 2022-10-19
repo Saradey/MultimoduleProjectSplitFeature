@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <AppText />
+
+    <AppText.MainText>
+
+    </AppText.MainText>
+
+    <AppText.AccentText>
+
+    </AppText.AccentText>
+
+
 </resources>
