@@ -11,6 +11,7 @@ public abstract class FeatureHolder<C : ReleasableApi>(container: FeatureContain
         componentApi = null
     }
 
+    @Suppress("UNCHECKED_CAST")
     protected fun <L : BaseLauncher> getFeatureLauncher(key: Class<L>): L {
         return container.getFeatureLauncher(key) as L
     }

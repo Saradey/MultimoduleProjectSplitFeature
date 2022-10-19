@@ -2,7 +2,6 @@ package com.evgeny.goncharov.sample.multimodule.di
 
 import com.evgeny.goncharov.sample.multimodule.di.contracts.MainActivityInternal
 import com.evgeny.goncharov.sample.multimodule.navigation.api.CoreNavigationApi
-import com.evgeny.goncharov.sample.multimodule.di_core.navigation.LaunchersApi
 import com.evgeny.goncharov.sample.multimodule.splash_screen_api.SplashScreenLauncher
 import dagger.BindsInstance
 import dagger.Component
