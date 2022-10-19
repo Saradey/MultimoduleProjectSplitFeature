@@ -3,7 +3,6 @@ package com.evgeny.goncharov.sample.multimodule.di.modules
 import com.evgeny.goncharov.sample.multimodule.di.contracts.MainActivityApi
 import com.evgeny.goncharov.sample.multimodule.di.holder.MainActivityHolder
 import com.evgeny.goncharov.sample.multimodule.di_core.container.FeatureContainer
-import com.evgeny.goncharov.sample.multimodule.di_core.container.FeatureContainerManager
 import com.evgeny.goncharov.sample.multimodule.di_core.holder.FeatureHolder
 import dagger.Module
 import dagger.Provides
