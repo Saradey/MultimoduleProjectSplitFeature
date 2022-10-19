@@ -21,9 +21,5 @@ public abstract class CoreActivity : AppCompatActivity() {
         DI.releaseFeatureApi(featureKey)
     }
 
-//    protected fun <L : BaseLauncher> getFeatureLauncher(key: Class<L>): BaseLauncher {
-//        return DI.getFeatureLauncher(key)
-//    }
-
     protected abstract fun releaseDependency()
 }
