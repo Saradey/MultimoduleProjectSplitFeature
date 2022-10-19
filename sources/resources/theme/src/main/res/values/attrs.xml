@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <attr name="main_text_color" format="color" />
+    <attr name="accent_text_color" format="color" />
+    <attr name="main_background_color" format="color" />
+    <attr name="accent_background_color" format="color" />
 </resources>
