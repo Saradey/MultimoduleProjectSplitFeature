@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <AppText />
+    <style name="AppText" />
 
-    <AppText.MainText>
+    <style name="AppText.MainText">
+        <item name="android:textColor">?main_text_color</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+    </style>
 
-    </AppText.MainText>
-
-    <AppText.AccentText>
-
-    </AppText.AccentText>
+    <style name="AppText.AccentText">
+        <item name="android:textColor">?accent_text_color</item>
+        <item name="android:textSize">@dimen/sp_14</item>
+    </style>
 
 </resources>
