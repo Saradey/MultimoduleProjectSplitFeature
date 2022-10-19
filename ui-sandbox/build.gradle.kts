@@ -31,4 +31,7 @@ dependencies {
 
     implementation(uiLibs.app.compat)
     implementation(uiLibs.material)
+    implementation(uiLibs.viewBindingPropertyDelegate)
+    implementation(coreLibs.viewmodel)
+    implementation(coreLibs.viewmodel.ktx)
 }

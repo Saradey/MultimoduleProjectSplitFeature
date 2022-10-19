@@ -1,6 +1,7 @@
 [versions]
 coreKtx = "1.9.0"
 daggerVersion = "2.44"
+viewmodelVersion = "2.5.1"
 
 [libraries]
 core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
@@ -9,3 +10,6 @@ cicerone = "com.github.terrakok:cicerone:7.1"
 #https://github.com/google/dagger
 dagger = { module = "com.google.dagger:dagger", version.ref = "daggerVersion" }
 daggerCompiler = { module = "com.google.dagger:dagger-compiler", version.ref = "daggerVersion" }
+
+viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel", version.ref = "viewmodelVersion" }
+viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "viewmodelVersion" }
