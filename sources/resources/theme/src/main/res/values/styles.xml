@@ -13,4 +13,13 @@
         <item name="android:textSize">@dimen/sp_14</item>
     </style>
 
+    <style name="AppButton" />
+
+    <style name="AppButton.MainButton" parent="AppText.MainText">
+        <item name="background">?main_background_color</item>
+    </style>
+
+    <style name="AppButton.AccentButton" parent="AppText.AccentText">
+        <item name="background">?accent_background_color</item>
+    </style>
 </resources>
