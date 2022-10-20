@@ -20,4 +20,6 @@ android {
 }
 
 dependencies {
+    implementation(coreLibs.viewmodel)
+    implementation(coreLibs.dagger)
 }
