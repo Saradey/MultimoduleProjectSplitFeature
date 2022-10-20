@@ -23,6 +23,9 @@ dependencyResolutionManagement {
         create("uiLibs") {
             from(files("gradle/ui-libs.versions.toml"))
         }
+        create("androidLibs") {
+            from(files("gradle/android-libs.versions.toml"))
+        }
     }
 }
 rootProject.name = "SampleMultimoduleArchitectureSplitFeature"

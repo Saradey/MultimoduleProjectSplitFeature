@@ -34,4 +34,6 @@ dependencies {
     implementation(uiLibs.viewBindingPropertyDelegate)
     implementation(coreLibs.viewmodel)
     implementation(coreLibs.viewmodel.ktx)
+    implementation(androidLibs.activity)
+    implementation(androidLibs.activity.ktx)
 }

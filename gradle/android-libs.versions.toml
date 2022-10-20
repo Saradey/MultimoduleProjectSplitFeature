@@ -1,0 +1,6 @@
+[versions]
+activityVersion = "1.5.0"
+
+[libraries]
+activity = { module = "androidx.activity:activity", version.ref = "activityVersion" }
+activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activityVersion" }
