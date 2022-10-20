@@ -2,8 +2,8 @@ package com.evgeny.goncharov.sample.multimodule.di.modules
 
 import com.evgeny.goncharov.sample.multimodule.navigation.GlobalRouter
 import com.evgeny.goncharov.sample.multimodule.di_core.navigation.BaseLauncher
-import com.evgeny.goncharov.sample.multimodule.splash_screen_api.SplashScreenLauncher
-import com.evgeny.goncharov.sample.multimodule.splash_screen_impl.navigation.SplashScreenLauncherImpl
+import com.evgeny.goncharov.sample.multimodule.splash_screen_api.SplashLauncher
+import com.evgeny.goncharov.sample.multimodule.splash_screen_impl.navigation.SplashLauncherImpl
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.ClassKey
@@ -14,8 +14,8 @@ import javax.inject.Singleton
 internal object LauncherModule {
 
     @Provides
-    @[Singleton IntoMap ClassKey(SplashScreenLauncher::class)]
+    @[Singleton IntoMap ClassKey(SplashLauncher::class)]
     fun provideBalanceHistoryLauncher(globalRouter: GlobalRouter): BaseLauncher {
-        return SplashScreenLauncherImpl(globalRouter)
+        return SplashLauncherImpl(globalRouter)
     }
 }

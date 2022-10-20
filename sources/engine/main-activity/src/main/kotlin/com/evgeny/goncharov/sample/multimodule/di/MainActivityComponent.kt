@@ -2,7 +2,7 @@ package com.evgeny.goncharov.sample.multimodule.di
 
 import com.evgeny.goncharov.sample.multimodule.di.contracts.MainActivityInternal
 import com.evgeny.goncharov.sample.multimodule.navigation.api.CoreNavigationApi
-import com.evgeny.goncharov.sample.multimodule.splash_screen_api.SplashScreenLauncher
+import com.evgeny.goncharov.sample.multimodule.splash_screen_api.SplashLauncher
 import dagger.BindsInstance
 import dagger.Component
 
@@ -15,7 +15,7 @@ internal interface MainActivityComponent : MainActivityInternal {
     interface Factory {
         fun create(
             coreNavigationApi: CoreNavigationApi,
-            @BindsInstance splashScreenLauncher: SplashScreenLauncher
+            @BindsInstance splashScreenLauncher: SplashLauncher
         ): MainActivityComponent
     }
 }
