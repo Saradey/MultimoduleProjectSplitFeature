@@ -41,4 +41,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_on_dark_theme" />
 
+    <TextView
+        android:id="@+id/txv_accent_style"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_12"
+        android:text="AppText.AccentText"
+        android:textAppearance="@style/AppText.AccentText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txv_main_style" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
