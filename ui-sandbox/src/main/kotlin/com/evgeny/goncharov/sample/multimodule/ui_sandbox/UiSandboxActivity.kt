@@ -8,23 +8,27 @@ import com.evgeny.goncharov.sample.multimodule.ui_sandbox.databinding.ActivityUi
 
 internal class UiSandboxActivity : AppCompatActivity() {
 
-    @IdRes
-    private var themeNow: Int = -1
-
     private val binding: ActivityUiSandboxBinding by viewBinding(ActivityUiSandboxBinding::bind)
 
     override fun onCreate(savedInstanceState: Bundle?) {
+//        setTheme(themeNow)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ui_sandbox)
         binding.initUi()
     }
 
     private fun ActivityUiSandboxBinding.initUi() {
-
-    }
-
-    override fun setTheme(@IdRes resId: Int) {
-        super.setTheme(resId)
-        themeNow = resId
+//        btnOnLightTheme.setOnClickListener {
+//            if (themeNow != com.evgeny.goncharov.multimodule.R.style.AppTheme_Light) {
+//                themeNow = com.evgeny.goncharov.multimodule.R.style.AppTheme_Light
+//                recreate()
+//            }
+//        }
+//        btnOnDarkTheme.setOnClickListener {
+//            if (themeNow != com.evgeny.goncharov.multimodule.R.style.AppTheme_Night) {
+//                themeNow = com.evgeny.goncharov.multimodule.R.style.AppTheme_Night
+//                recreate()
+//            }
+//        }
     }
 }
