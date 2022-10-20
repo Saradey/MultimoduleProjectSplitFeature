@@ -30,4 +30,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_on_light_theme" />
 
+    <TextView
+        android:id="@+id/txv_main_style"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_12"
+        android:text="Style:AppText.MainText"
+        android:textAppearance="@style/AppText.MainText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_on_dark_theme" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
