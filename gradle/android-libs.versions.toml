@@ -1,6 +1,9 @@
 [versions]
 activityVersion = "1.5.0"
+fragmentVersion = "1.5.0"
 
 [libraries]
 activity = { module = "androidx.activity:activity", version.ref = "activityVersion" }
 activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activityVersion" }
+fragment = { module = "androidx.fragment:fragment", version.ref = "fragmentVersion" }
+fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragmentVersion" }
