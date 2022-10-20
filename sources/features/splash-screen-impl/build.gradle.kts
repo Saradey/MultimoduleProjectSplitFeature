@@ -29,6 +29,8 @@ dependencies {
     implementation(project(":sources:engine:di-core"))
     implementation(project(":sources:core:base-core"))
 
+    implementation(coreLibs.cicerone)
+    implementation(uiLibs.viewBindingPropertyDelegate)
     implementation(androidLibs.fragment)
     implementation(androidLibs.fragment.ktx)
 }

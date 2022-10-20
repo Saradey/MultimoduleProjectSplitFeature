@@ -7,10 +7,12 @@ import com.evgeny.goncharov.sample.multimodule.di_core.ContainerFeatureFragment
 internal class SplashContainerFragment : ContainerFeatureFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
     }
 
     override fun releaseDependencies() {
+    }
 
+    companion object {
+        fun newInstance() = SplashContainerFragment()
     }
 }
