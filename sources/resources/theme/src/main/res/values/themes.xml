@@ -7,7 +7,7 @@
         <item name="android:windowBackground">@color/dark_blue</item>
         <item name="main_text_color">@color/white</item>
         <item name="accent_text_color">@color/blueviolet</item>
-        <item name="main_background_color">@color/dark_blue</item>
+        <item name="main_background_color">@color/black</item>
         <item name="accent_background_color">@color/dark_blue</item>
     </style>
 
