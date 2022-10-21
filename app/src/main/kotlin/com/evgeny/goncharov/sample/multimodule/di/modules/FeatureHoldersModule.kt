@@ -4,6 +4,8 @@ import com.evgeny.goncharov.sample.multimodule.di.contracts.MainActivityApi
 import com.evgeny.goncharov.sample.multimodule.di.holder.MainActivityHolder
 import com.evgeny.goncharov.sample.multimodule.di_core.container.FeatureContainer
 import com.evgeny.goncharov.sample.multimodule.di_core.holder.FeatureHolder
+import com.evgeny.goncharov.sample.multimodule.splash_screen_api.SplashApi
+import com.evgeny.goncharov.sample.multimodule.splash_screen_impl.di.holder.SplashHolder
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.ClassKey
@@ -17,4 +19,9 @@ internal object FeatureHoldersModule {
     @[IntoMap ClassKey(MainActivityApi::class)]
     fun provideMainActivityHolder(featureContainer: FeatureContainer)
             : FeatureHolder<*> = MainActivityHolder(featureContainer)
+
+    @[Singleton Provides]
+    @[IntoMap ClassKey(SplashApi::class)]
+    fun provideSplashHolder(featureContainer: FeatureContainer)
+            : FeatureHolder<*> = SplashHolder(featureContainer)
 }
