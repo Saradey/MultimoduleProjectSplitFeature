@@ -2,9 +2,13 @@ package com.evgeny.goncharov.sample.multimodule.splash_screen_impl.di
 
 import com.evgeny.goncharov.sample.multimodule.navigation.api.CoreNavigationApi
 import com.evgeny.goncharov.sample.multimodule.splash_screen_impl.di.contracts.SplashInternal
+import com.evgeny.goncharov.sample.multimodule.navigation.base.FeatureNavigationModule
 import dagger.Component
 
 @Component(
+    modules = [
+        FeatureNavigationModule::class
+    ],
     dependencies = [
         CoreNavigationApi::class
     ]
