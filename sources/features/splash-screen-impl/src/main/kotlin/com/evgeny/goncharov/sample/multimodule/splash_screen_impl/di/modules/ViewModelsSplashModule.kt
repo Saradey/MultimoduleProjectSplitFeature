@@ -18,5 +18,5 @@ internal interface ViewModelsSplashModule {
 
     @[Binds FeatureScope]
     @[IntoMap ViewModelKey(SplashViewModel::class)]
-    fun SplashViewModel.provideMainViewModel(): ViewModel
+    fun SplashViewModel.provideSplashViewModel(): ViewModel
 }
