@@ -26,7 +26,6 @@ android {
 dependencies {
     implementation(project(":sources:engine:di-core"))
     implementation(project(":sources:engine:navigation"))
-
     implementation(project(":sources:features:splash-screen-api"))
 
     implementation(uiLibs.app.compat)
