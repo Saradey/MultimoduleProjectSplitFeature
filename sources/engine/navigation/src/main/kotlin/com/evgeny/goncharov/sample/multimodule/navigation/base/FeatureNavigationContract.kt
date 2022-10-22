@@ -7,6 +7,6 @@ public interface FeatureNavigationContract {
 
     public fun provideFeatureRouter(): FeatureRouter
 
-    @Named("GlobalNavigatorHolder")
+    @Named("FeatureNavigatorHolder")
     public fun provideFeatureNavigatorHolder(): NavigatorHolder
 }

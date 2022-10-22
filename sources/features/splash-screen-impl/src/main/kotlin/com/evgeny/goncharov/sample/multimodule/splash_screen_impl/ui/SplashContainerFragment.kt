@@ -26,7 +26,7 @@ internal class SplashContainerFragment : ContainerFeatureFragment() {
     }
 
     private fun startFeature() {
-        router.navigateTo(SplashScreens.goToTheSplashFragment())
+        router.navigateToFeatureScreen(SplashScreens.goToTheSplashFragment())
     }
 
     override fun onResume() {
