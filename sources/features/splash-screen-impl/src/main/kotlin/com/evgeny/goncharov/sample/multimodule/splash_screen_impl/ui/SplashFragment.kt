@@ -19,6 +19,7 @@ internal class SplashFragment : CoreFragment(R.layout.fragment_splash) {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        viewModel.startTime()
     }
 
     companion object {
