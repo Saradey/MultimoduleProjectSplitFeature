@@ -19,6 +19,8 @@
             <option value="$PROJECT_DIR$/sources/engine/main-activity" />
             <option value="$PROJECT_DIR$/sources/engine/navigation" />
             <option value="$PROJECT_DIR$/sources/features" />
+            <option value="$PROJECT_DIR$/sources/features/bottom-menu-api" />
+            <option value="$PROJECT_DIR$/sources/features/bottom-menu-impl" />
             <option value="$PROJECT_DIR$/sources/features/splash-screen-api" />
             <option value="$PROJECT_DIR$/sources/features/splash-screen-impl" />
             <option value="$PROJECT_DIR$/sources/resources" />
