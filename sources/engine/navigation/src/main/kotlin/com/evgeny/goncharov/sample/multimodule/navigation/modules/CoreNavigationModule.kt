@@ -6,6 +6,7 @@ import com.github.terrakok.cicerone.Cicerone
 import com.github.terrakok.cicerone.NavigatorHolder
 import dagger.Module
 import dagger.Provides
+import javax.inject.Named
 
 @Module
 internal object CoreNavigationModule {
@@ -17,6 +18,7 @@ internal object CoreNavigationModule {
     fun provideRouter(cicerone: Cicerone<GlobalRouter>): GlobalRouter = cicerone.router
 
     @[CoreScope Provides]
+    @Named("GlobalNavigatorHolder")
     fun provideHolder(cicerone: Cicerone<GlobalRouter>): NavigatorHolder =
         cicerone.getNavigatorHolder()
 }

@@ -5,6 +5,7 @@ import com.github.terrakok.cicerone.Cicerone
 import com.github.terrakok.cicerone.NavigatorHolder
 import dagger.Module
 import dagger.Provides
+import javax.inject.Named
 
 @Module
 public object FeatureNavigationModule {
@@ -23,6 +24,7 @@ public object FeatureNavigationModule {
 
     @Provides
     @FeatureScope
+    @Named("FeatureNavigatorHolder")
     public fun provideFeatureHolder(cicerone: Cicerone<out FeatureRouter>): NavigatorHolder {
         return cicerone.getNavigatorHolder()
     }
