@@ -4,12 +4,14 @@ import com.evgeny.goncharov.sample.multimodule.di_core.scopes.FeatureScope
 import com.evgeny.goncharov.sample.multimodule.navigation.api.CoreNavigationApi
 import com.evgeny.goncharov.sample.multimodule.splash_screen_impl.di.contracts.SplashInternal
 import com.evgeny.goncharov.sample.multimodule.navigation.base.FeatureNavigationModule
+import com.evgeny.goncharov.sample.multimodule.splash_screen_impl.di.modules.ViewModelsSplashModule
 import dagger.Component
 
 @FeatureScope
 @Component(
     modules = [
-        FeatureNavigationModule::class
+        FeatureNavigationModule::class,
+        ViewModelsSplashModule::class
     ],
     dependencies = [
         CoreNavigationApi::class
