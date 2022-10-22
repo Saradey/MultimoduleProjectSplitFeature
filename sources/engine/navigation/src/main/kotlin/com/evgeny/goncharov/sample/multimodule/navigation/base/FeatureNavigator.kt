@@ -5,9 +5,9 @@ import com.evgeny.goncharov.sample.multimodule.di_core.ContainerFeatureFragment
 import com.github.terrakok.cicerone.*
 import com.github.terrakok.cicerone.androidx.FragmentScreen
 
-public abstract class FeatureNavigator(
+public open class FeatureNavigator(
     protected val containerFragment: ContainerFeatureFragment,
-    protected val containerId: Int,
+    protected val containerId: Int = com.evgeny.goncharov.sample.multimodule.di_core.R.id.frm_feature_container,
     protected val fragmentManager: FragmentManager = containerFragment.parentFragmentManager,
     protected val fragmentFactory: FragmentFactory = fragmentManager.fragmentFactory
 ) : Navigator {
