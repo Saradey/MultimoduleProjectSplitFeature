@@ -7,6 +7,7 @@ import com.evgeny.goncharov.sample.multimodule.navigation.base.FeatureNavigator
 import com.evgeny.goncharov.sample.multimodule.navigation.base.FeatureRouter
 import com.evgeny.goncharov.sample.multimodule.splash_screen_api.SplashApi
 import com.evgeny.goncharov.sample.multimodule.splash_screen_impl.di.contracts.SplashInternal
+import com.evgeny.goncharov.sample.multimodule.splash_screen_impl.navigation.screens.SplashScreens
 import com.github.terrakok.cicerone.NavigatorHolder
 
 internal class SplashContainerFragment : ContainerFeatureFragment() {
@@ -25,7 +26,7 @@ internal class SplashContainerFragment : ContainerFeatureFragment() {
     }
 
     private fun startFeature() {
-
+        router.navigateTo(SplashScreens.goToTheSplashFragment())
     }
 
     override fun onResume() {

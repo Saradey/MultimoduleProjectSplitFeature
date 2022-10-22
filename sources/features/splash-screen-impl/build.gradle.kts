@@ -32,6 +32,7 @@ dependencies {
 
     implementation(coreLibs.cicerone)
     implementation(uiLibs.viewBindingPropertyDelegate)
+    implementation(uiLibs.constraint.layout)
     implementation(androidLibs.fragment)
     implementation(androidLibs.fragment.ktx)
     implementation(coreLibs.dagger)

@@ -5,4 +5,8 @@ import com.evgeny.goncharov.sample.multimodule.splash_screen_impl.R
 
 internal class SplashFragment : CoreFragment(R.layout.fragment_splash) {
 
+
+    companion object {
+        fun newInstance() = SplashFragment()
+    }
 }
