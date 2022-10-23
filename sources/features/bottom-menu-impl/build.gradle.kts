@@ -30,7 +30,9 @@ dependencies {
     implementation(project(":sources:engine:navigation"))
     implementation(project(":sources:engine:di-core"))
     implementation(project(":sources:resources:ui-kit"))
+    implementation(project(":sources:core:base-core"))
 
+    implementation(coreLibs.viewmodel)
     implementation(uiLibs.material)
     implementation(uiLibs.constraint.layout)
     implementation(uiLibs.app.compat)

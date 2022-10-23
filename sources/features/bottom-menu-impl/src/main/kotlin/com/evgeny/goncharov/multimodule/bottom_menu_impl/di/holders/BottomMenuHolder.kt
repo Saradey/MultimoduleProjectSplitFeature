@@ -9,6 +9,6 @@ public class BottomMenuHolder(container: FeatureContainer) :
     FeatureHolder<BottomMenuApi>(container) {
 
     override fun buildComponent(): BottomMenuApi {
-        return DaggerBottomMenuComponent.create()
+        TODO("Not yet implemented")
     }
 }
