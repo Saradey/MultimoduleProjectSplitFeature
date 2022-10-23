@@ -6,6 +6,7 @@ import com.evgeny.goncharov.sample.multimodule.catalog_api.CatalogLauncher
 import com.evgeny.goncharov.sample.multimodule.di_core.scopes.FeatureScope
 import com.evgeny.goncharov.sample.multimodule.home_api.HomeLauncher
 import com.evgeny.goncharov.sample.multimodule.navigation.api.CoreNavigationApi
+import com.evgeny.goncharov.sample.multimodule.registration_api.RegistrationLauncher
 import dagger.BindsInstance
 import dagger.Component
 
@@ -26,7 +27,8 @@ internal interface BottomMenuComponent : BottomMenuInternal {
         fun create(
             coreNavigationApi: CoreNavigationApi,
             @BindsInstance homeLauncher: HomeLauncher,
-            @BindsInstance catalogLauncher: CatalogLauncher
+            @BindsInstance catalogLauncher: CatalogLauncher,
+            @BindsInstance registrationLauncher: RegistrationLauncher
         ): BottomMenuComponent
     }
 }

@@ -35,6 +35,7 @@ dependencies {
 
     implementation(project(":sources:features:home-api"))
     implementation(project(":sources:features:catalog-api"))
+    implementation(project(":sources:features:registration-api"))
 
     implementation(coreLibs.viewmodel)
     implementation(uiLibs.material)

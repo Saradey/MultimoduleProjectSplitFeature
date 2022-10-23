@@ -3,11 +3,13 @@ package com.evgeny.goncharov.multimodule.bottom_menu_impl.view.models
 import androidx.lifecycle.ViewModel
 import com.evgeny.goncharov.sample.multimodule.catalog_api.CatalogLauncher
 import com.evgeny.goncharov.sample.multimodule.home_api.HomeLauncher
+import com.evgeny.goncharov.sample.multimodule.registration_api.RegistrationLauncher
 import javax.inject.Inject
 
 internal class BottomMenuContainerViewModel @Inject constructor(
     private val homeLauncher: HomeLauncher,
-    private val catalogLauncher: CatalogLauncher
+    private val catalogLauncher: CatalogLauncher,
+    private val registrationLauncher: RegistrationLauncher
 ) : ViewModel() {
 
     fun goToHome() {
@@ -18,7 +20,10 @@ internal class BottomMenuContainerViewModel @Inject constructor(
         catalogLauncher.launch()
     }
 
-    fun goToProfile() {}
+    fun goToProfile() {
+        //TODO логика с авторизацией
+        registrationLauncher.launch()
+    }
 
     fun goToLike() {}
 }
