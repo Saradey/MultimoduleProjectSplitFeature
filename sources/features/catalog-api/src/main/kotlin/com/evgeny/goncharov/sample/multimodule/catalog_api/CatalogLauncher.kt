@@ -4,5 +4,5 @@ import com.evgeny.goncharov.sample.multimodule.di_core.navigation.BaseLauncher
 
 public interface CatalogLauncher : BaseLauncher {
 
-    public fun launcher()
+    public fun launch()
 }

@@ -2,6 +2,7 @@ package com.evgeny.goncharov.multimodule.bottom_menu_impl.di
 
 import com.evgeny.goncharov.multimodule.bottom_menu_impl.di.contracts.BottomMenuInternal
 import com.evgeny.goncharov.multimodule.bottom_menu_impl.di.modules.ViewModelsBottomMenuModule
+import com.evgeny.goncharov.sample.multimodule.catalog_api.CatalogLauncher
 import com.evgeny.goncharov.sample.multimodule.di_core.scopes.FeatureScope
 import com.evgeny.goncharov.sample.multimodule.home_api.HomeLauncher
 import com.evgeny.goncharov.sample.multimodule.navigation.api.CoreNavigationApi
@@ -24,7 +25,8 @@ internal interface BottomMenuComponent : BottomMenuInternal {
 
         fun create(
             coreNavigationApi: CoreNavigationApi,
-            @BindsInstance homeLauncher: HomeLauncher
+            @BindsInstance homeLauncher: HomeLauncher,
+            @BindsInstance catalogLauncher: CatalogLauncher
         ): BottomMenuComponent
     }
 }

@@ -34,6 +34,7 @@ dependencies {
     implementation(project(":sources:core:base-core"))
 
     implementation(project(":sources:features:home-api"))
+    implementation(project(":sources:features:catalog-api"))
 
     implementation(coreLibs.viewmodel)
     implementation(uiLibs.material)

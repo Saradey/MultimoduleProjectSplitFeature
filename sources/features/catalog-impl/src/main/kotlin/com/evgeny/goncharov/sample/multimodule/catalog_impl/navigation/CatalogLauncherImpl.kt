@@ -7,7 +7,7 @@ public class CatalogLauncherImpl(
     private val globalRouter: GlobalRouter
 ) : CatalogLauncher {
 
-    override fun launcher() {
+    override fun launch() {
         globalRouter.navigateTo(CatalogScreens.startFeature())
     }
 }
