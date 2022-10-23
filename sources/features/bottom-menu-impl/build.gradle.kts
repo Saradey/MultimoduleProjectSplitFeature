@@ -33,6 +33,8 @@ dependencies {
     implementation(project(":sources:resources:theme"))
     implementation(project(":sources:core:base-core"))
 
+    implementation(project(":sources:features:home-api"))
+
     implementation(coreLibs.viewmodel)
     implementation(uiLibs.material)
     implementation(uiLibs.constraint.layout)
