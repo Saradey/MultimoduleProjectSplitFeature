@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bottom_nav_title_main">Home</string>
+    <string name="bottom_nav_title_catalog">Catalog</string>
+    <string name="bottom_nav_title_profile">Profile</string>
+    <string name="bottom_nav_title_like">Like</string>
+</resources>

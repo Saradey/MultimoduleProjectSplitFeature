@@ -28,7 +28,10 @@ dependencies {
 
     implementation(project(":sources:engine:navigation"))
     implementation(project(":sources:engine:di-core"))
+    implementation(project(":sources:resources:ui-kit"))
 
+    implementation(uiLibs.material)
+    implementation(uiLibs.constraint.layout)
     implementation(uiLibs.app.compat)
     implementation(coreLibs.dagger)
     implementation(coreLibs.cicerone)
