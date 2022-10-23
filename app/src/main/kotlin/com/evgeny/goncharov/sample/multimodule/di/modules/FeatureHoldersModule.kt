@@ -10,6 +10,8 @@ import com.evgeny.goncharov.sample.multimodule.di_core.container.FeatureContaine
 import com.evgeny.goncharov.sample.multimodule.di_core.holder.FeatureHolder
 import com.evgeny.goncharov.sample.multimodule.home_api.HomeApi
 import com.evgeny.goncharov.sample.multimodule.home_impl.di.holder.HomeHolder
+import com.evgeny.goncharov.sample.multimodule.like_api.LikeApi
+import com.evgeny.goncharov.sample.multimodule.like_impl.di.holder.LikeHolder
 import com.evgeny.goncharov.sample.multimodule.registration_api.RegistrationApi
 import com.evgeny.goncharov.sample.multimodule.registration_impl.di.holder.RegistrationHolder
 import com.evgeny.goncharov.sample.multimodule.splash_screen_api.SplashApi
@@ -25,31 +27,36 @@ internal object FeatureHoldersModule {
 
     @[Singleton Provides]
     @[IntoMap ClassKey(MainActivityApi::class)]
-    fun provideMainActivityHolder(featureContainer: FeatureContainer)
-            : FeatureHolder<*> = MainActivityHolder(featureContainer)
+    fun provideMainActivityHolder(featureContainer: FeatureContainer): FeatureHolder<*> =
+        MainActivityHolder(featureContainer)
 
     @[Singleton Provides]
     @[IntoMap ClassKey(SplashApi::class)]
-    fun provideSplashHolder(featureContainer: FeatureContainer)
-            : FeatureHolder<*> = SplashHolder(featureContainer)
+    fun provideSplashHolder(featureContainer: FeatureContainer): FeatureHolder<*> =
+        SplashHolder(featureContainer)
 
     @[Singleton Provides]
     @[IntoMap ClassKey(BottomMenuApi::class)]
-    fun provideBottomMenuHolder(featureContainer: FeatureContainer)
-            : FeatureHolder<*> = BottomMenuHolder(featureContainer)
+    fun provideBottomMenuHolder(featureContainer: FeatureContainer): FeatureHolder<*> =
+        BottomMenuHolder(featureContainer)
 
     @[Singleton Provides]
     @[IntoMap ClassKey(HomeApi::class)]
-    fun provideHomeHolder(featureContainer: FeatureContainer)
-            : FeatureHolder<*> = HomeHolder(featureContainer)
+    fun provideHomeHolder(featureContainer: FeatureContainer): FeatureHolder<*> =
+        HomeHolder(featureContainer)
 
     @[Singleton Provides]
     @[IntoMap ClassKey(CatalogApi::class)]
-    fun provideCatalogHolder(featureContainer: FeatureContainer)
-            : FeatureHolder<*> = CatalogHolder(featureContainer)
+    fun provideCatalogHolder(featureContainer: FeatureContainer): FeatureHolder<*> =
+        CatalogHolder(featureContainer)
 
     @[Singleton Provides]
     @[IntoMap ClassKey(RegistrationApi::class)]
-    fun provideRegistrationHolder(featureContainer: FeatureContainer)
-            : FeatureHolder<*> = RegistrationHolder(featureContainer)
+    fun provideRegistrationHolder(featureContainer: FeatureContainer): FeatureHolder<*> =
+        RegistrationHolder(featureContainer)
+
+    @[Singleton Provides]
+    @[IntoMap ClassKey(LikeApi::class)]
+    fun provideLikeHolder(featureContainer: FeatureContainer): FeatureHolder<*> =
+        LikeHolder(featureContainer)
 }
