@@ -5,6 +5,7 @@ import com.evgeny.goncharov.multimodule.bottom_menu_impl.di.modules.ViewModelsBo
 import com.evgeny.goncharov.sample.multimodule.catalog_api.CatalogLauncher
 import com.evgeny.goncharov.sample.multimodule.di_core.scopes.FeatureScope
 import com.evgeny.goncharov.sample.multimodule.home_api.HomeLauncher
+import com.evgeny.goncharov.sample.multimodule.like_api.LikeLauncher
 import com.evgeny.goncharov.sample.multimodule.navigation.api.CoreNavigationApi
 import com.evgeny.goncharov.sample.multimodule.registration_api.RegistrationLauncher
 import dagger.BindsInstance
@@ -28,7 +29,8 @@ internal interface BottomMenuComponent : BottomMenuInternal {
             coreNavigationApi: CoreNavigationApi,
             @BindsInstance homeLauncher: HomeLauncher,
             @BindsInstance catalogLauncher: CatalogLauncher,
-            @BindsInstance registrationLauncher: RegistrationLauncher
+            @BindsInstance registrationLauncher: RegistrationLauncher,
+            @BindsInstance likeLauncher: LikeLauncher
         ): BottomMenuComponent
     }
 }
