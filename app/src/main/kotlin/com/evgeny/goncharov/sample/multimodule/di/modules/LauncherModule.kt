@@ -2,6 +2,8 @@ package com.evgeny.goncharov.sample.multimodule.di.modules
 
 import com.evgeny.goncharov.multimodule.bottom_menu_impl.navigation.BottomMenuLauncherImpl
 import com.evgeny.goncharov.sample.multimodule.bottom_menu_api.BottomMenuLauncher
+import com.evgeny.goncharov.sample.multimodule.catalog_api.CatalogLauncher
+import com.evgeny.goncharov.sample.multimodule.catalog_impl.navigation.CatalogLauncherImpl
 import com.evgeny.goncharov.sample.multimodule.navigation.GlobalRouter
 import com.evgeny.goncharov.sample.multimodule.di_core.navigation.BaseLauncher
 import com.evgeny.goncharov.sample.multimodule.home_api.HomeLauncher
@@ -33,5 +35,11 @@ internal object LauncherModule {
     @[Singleton IntoMap ClassKey(HomeLauncher::class)]
     fun provideHomeLauncher(globalRouter: GlobalRouter): BaseLauncher {
         return HomeLauncherImpl(globalRouter)
+    }
+
+    @Provides
+    @[Singleton IntoMap ClassKey(CatalogLauncher::class)]
+    fun provideCatalogLauncher(globalRouter: GlobalRouter): BaseLauncher {
+        return CatalogLauncherImpl(globalRouter)
     }
 }
