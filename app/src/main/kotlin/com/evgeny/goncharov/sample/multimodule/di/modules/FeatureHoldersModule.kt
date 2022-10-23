@@ -9,6 +9,7 @@ import com.evgeny.goncharov.sample.multimodule.di.holder.MainActivityHolder
 import com.evgeny.goncharov.sample.multimodule.di_core.container.FeatureContainer
 import com.evgeny.goncharov.sample.multimodule.di_core.holder.FeatureHolder
 import com.evgeny.goncharov.sample.multimodule.home_api.HomeApi
+import com.evgeny.goncharov.sample.multimodule.registration_api.RegistrationApi
 import com.evgeny.goncharov.sample.multimodule.registration_impl.di.holder.RegistrationHolder
 import com.evgeny.goncharov.sample.multimodule.splash_screen_api.SplashApi
 import com.evgeny.goncharov.sample.multimodule.splash_screen_impl.di.holder.SplashHolder
@@ -45,4 +46,9 @@ internal object FeatureHoldersModule {
     @[IntoMap ClassKey(CatalogApi::class)]
     fun provideCatalogHolder(featureContainer: FeatureContainer)
             : FeatureHolder<*> = CatalogHolder(featureContainer)
+
+    @[Singleton Provides]
+    @[IntoMap ClassKey(RegistrationApi::class)]
+    fun provideRegistrationHolder(featureContainer: FeatureContainer)
+            : FeatureHolder<*> = RegistrationHolder(featureContainer)
 }
