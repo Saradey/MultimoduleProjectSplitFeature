@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import com.evgeny.goncharov.sample.multimodule.di_core.ContainerFeatureFragment
 import com.evgeny.goncharov.sample.multimodule.like_api.LikeApi
+import com.evgeny.goncharov.sample.multimodule.like_impl.di.contracts.LikeInternal
 import com.evgeny.goncharov.sample.multimodule.like_impl.navigation.LikeScreens
 import com.evgeny.goncharov.sample.multimodule.navigation.base.FeatureNavigator
 import com.evgeny.goncharov.sample.multimodule.navigation.base.FeatureRouter
