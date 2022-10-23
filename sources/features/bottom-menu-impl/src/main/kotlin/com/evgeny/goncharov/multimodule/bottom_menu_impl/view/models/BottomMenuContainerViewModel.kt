@@ -5,4 +5,11 @@ import javax.inject.Inject
 
 internal class BottomMenuContainerViewModel @Inject constructor() : ViewModel() {
 
+    fun goToHome() {}
+
+    fun goToCatalog() {}
+
+    fun goToProfile() {}
+
+    fun goToLike() {}
 }
