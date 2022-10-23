@@ -44,6 +44,7 @@ dependencies {
     implementation(project(":sources:resources:ui-kit"))
 
     implementation(project(":sources:features:splash-screen-impl"))
+    implementation(project(":sources:features:bottom-menu-impl"))
 
     implementation(coreLibs.cicerone)
     implementation(coreLibs.dagger)

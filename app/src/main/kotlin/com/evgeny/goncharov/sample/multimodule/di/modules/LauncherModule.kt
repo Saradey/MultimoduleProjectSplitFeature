@@ -1,5 +1,7 @@
 package com.evgeny.goncharov.sample.multimodule.di.modules
 
+import com.evgeny.goncharov.multimodule.bottom_menu_impl.navigation.BottomMenuLauncherImpl
+import com.evgeny.goncharov.sample.multimodule.bottom_menu_api.BottomMenuLauncher
 import com.evgeny.goncharov.sample.multimodule.navigation.GlobalRouter
 import com.evgeny.goncharov.sample.multimodule.di_core.navigation.BaseLauncher
 import com.evgeny.goncharov.sample.multimodule.splash_screen_api.SplashLauncher
@@ -17,5 +19,11 @@ internal object LauncherModule {
     @[Singleton IntoMap ClassKey(SplashLauncher::class)]
     fun provideBalanceHistoryLauncher(globalRouter: GlobalRouter): BaseLauncher {
         return SplashLauncherImpl(globalRouter)
+    }
+
+    @Provides
+    @[Singleton IntoMap ClassKey(BottomMenuLauncher::class)]
+    fun provideBottomMenuLauncher(globalRouter: GlobalRouter): BaseLauncher {
+        return BottomMenuLauncherImpl(globalRouter)
     }
 }
