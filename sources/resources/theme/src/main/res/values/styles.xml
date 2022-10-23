@@ -5,12 +5,12 @@
 
     <style name="AppText.MainText">
         <item name="android:textColor">?main_text_color</item>
-        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:textSize">@dimen/sp_24</item>
     </style>
 
     <style name="AppText.AccentText">
         <item name="android:textColor">?accent_text_color</item>
-        <item name="android:textSize">@dimen/sp_14</item>
+        <item name="android:textSize">@dimen/sp_20</item>
     </style>
 
     <style name="AppButton" />
