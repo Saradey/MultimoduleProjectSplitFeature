@@ -1,5 +1,6 @@
 package com.evgeny.goncharov.sample.multimodule.splash_screen_impl.di.holder
 
+import com.evgeny.goncharov.sample.multimodule.bottom_menu_api.BottomMenuLauncher
 import com.evgeny.goncharov.sample.multimodule.di_core.container.FeatureContainer
 import com.evgeny.goncharov.sample.multimodule.di_core.holder.FeatureHolder
 import com.evgeny.goncharov.sample.multimodule.navigation.api.CoreNavigationApi
@@ -10,7 +11,8 @@ public class SplashHolder(container: FeatureContainer) : FeatureHolder<SplashApi
 
     override fun buildComponent(): SplashApi {
         return DaggerSplashComponent.factory().create(
-            getGlobalComponent(CoreNavigationApi::class.java)
+            getGlobalComponent(CoreNavigationApi::class.java),
+            getFeatureLauncher(BottomMenuLauncher::class.java)
         )
     }
 }

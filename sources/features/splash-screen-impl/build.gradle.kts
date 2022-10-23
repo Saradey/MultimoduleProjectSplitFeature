@@ -31,6 +31,8 @@ dependencies {
     implementation(project(":sources:core:base-core"))
     implementation(project(":sources:resources:theme"))
 
+    implementation(project(":sources:features:bottom-menu-api"))
+
     implementation(coreLibs.cicerone)
     implementation(uiLibs.viewBindingPropertyDelegate)
     implementation(uiLibs.constraint.layout)
