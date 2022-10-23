@@ -7,4 +7,8 @@ internal class HomeContainerFragment : ContainerFeatureFragment() {
     override fun releaseDependencies() {
 
     }
+
+    companion object {
+        fun newInstance() = HomeContainerFragment()
+    }
 }
