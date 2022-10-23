@@ -1,9 +1,16 @@
 package com.evgeny.goncharov.sample.multimodule.catalog_impl.di
 
 import com.evgeny.goncharov.sample.multimodule.catalog_impl.di.contracts.CatalogInternal
+import com.evgeny.goncharov.sample.multimodule.di_core.scopes.FeatureScope
+import com.evgeny.goncharov.sample.multimodule.navigation.base.FeatureNavigationModule
 import dagger.Component
 
-@Component
+@FeatureScope
+@Component(
+    modules = [
+        FeatureNavigationModule::class
+    ]
+)
 internal interface CatalogComponent : CatalogInternal {
 
     @Component.Factory
