@@ -31,4 +31,5 @@ dependencies {
 
     implementation(uiLibs.app.compat)
     implementation(coreLibs.dagger)
+    implementation(coreLibs.cicerone)
 }

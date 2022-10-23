@@ -7,4 +7,8 @@ internal class BottomMenuContainerFragment : ContainerFeatureFragment() {
     override fun releaseDependencies() {
 
     }
+
+    companion object {
+        fun newInstance() = BottomMenuContainerFragment()
+    }
 }
