@@ -21,4 +21,5 @@ android {
 }
 
 dependencies {
+    api(project(":sources:features:like-api"))
 }
