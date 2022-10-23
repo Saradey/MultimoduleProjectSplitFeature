@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import com.evgeny.goncharov.sample.multimodule.di_core.ContainerFeatureFragment
 import com.evgeny.goncharov.sample.multimodule.like_api.LikeApi
+import com.evgeny.goncharov.sample.multimodule.like_impl.navigation.LikeScreens
 import com.evgeny.goncharov.sample.multimodule.navigation.base.FeatureNavigator
 import com.evgeny.goncharov.sample.multimodule.navigation.base.FeatureRouter
 import com.github.terrakok.cicerone.NavigatorHolder
@@ -24,7 +25,7 @@ internal class LikeContainerFragment : ContainerFeatureFragment() {
     }
 
     private fun startFeature() {
-        router.navigateToFeatureScreen()
+        router.navigateToFeatureScreen(LikeScreens.goToTheLike())
     }
 
     override fun onResume() {
