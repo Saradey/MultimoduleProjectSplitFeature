@@ -25,4 +25,10 @@ android {
 
 dependencies {
     api(project(":sources:features:bottom-menu-api"))
+
+    implementation(project(":sources:engine:navigation"))
+    implementation(project(":sources:engine:di-core"))
+
+    implementation(uiLibs.app.compat)
+    implementation(coreLibs.dagger)
 }
