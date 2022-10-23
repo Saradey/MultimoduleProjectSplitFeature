@@ -1,4 +1,4 @@
-package com.evgeny.goncharov.sample.multimodule.home_impl
+package com.evgeny.goncharov.sample.multimodule.home_impl.ui
 
 import com.evgeny.goncharov.sample.multimodule.di_core.ContainerFeatureFragment
 

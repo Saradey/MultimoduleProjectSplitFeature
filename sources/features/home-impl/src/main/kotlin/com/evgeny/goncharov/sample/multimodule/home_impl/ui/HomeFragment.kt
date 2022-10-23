@@ -1,4 +1,4 @@
-package com.evgeny.goncharov.sample.multimodule.home_impl
+package com.evgeny.goncharov.sample.multimodule.home_impl.ui
 
 import android.os.Bundle
 import android.view.View
