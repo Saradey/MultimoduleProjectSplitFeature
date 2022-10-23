@@ -1,5 +1,7 @@
 package com.evgeny.goncharov.sample.multimodule.di.modules
 
+import com.evgeny.goncharov.multimodule.bottom_menu_impl.di.holders.BottomMenuHolder
+import com.evgeny.goncharov.sample.multimodule.bottom_menu_api.BottomMenuApi
 import com.evgeny.goncharov.sample.multimodule.di.contracts.MainActivityApi
 import com.evgeny.goncharov.sample.multimodule.di.holder.MainActivityHolder
 import com.evgeny.goncharov.sample.multimodule.di_core.container.FeatureContainer
@@ -24,4 +26,9 @@ internal object FeatureHoldersModule {
     @[IntoMap ClassKey(SplashApi::class)]
     fun provideSplashHolder(featureContainer: FeatureContainer)
             : FeatureHolder<*> = SplashHolder(featureContainer)
+
+    @[Singleton Provides]
+    @[IntoMap ClassKey(BottomMenuApi::class)]
+    fun provideBottomMenuHolder(featureContainer: FeatureContainer)
+            : FeatureHolder<*> = BottomMenuHolder(featureContainer)
 }
