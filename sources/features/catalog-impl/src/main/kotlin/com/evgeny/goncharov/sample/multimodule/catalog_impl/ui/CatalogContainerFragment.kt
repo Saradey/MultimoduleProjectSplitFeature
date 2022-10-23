@@ -3,6 +3,7 @@ package com.evgeny.goncharov.sample.multimodule.catalog_impl.ui
 import android.os.Bundle
 import android.view.View
 import com.evgeny.goncharov.sample.multimodule.catalog_api.CatalogApi
+import com.evgeny.goncharov.sample.multimodule.catalog_impl.di.contracts.CatalogInternal
 import com.evgeny.goncharov.sample.multimodule.catalog_impl.navigation.CatalogScreens
 import com.evgeny.goncharov.sample.multimodule.di_core.ContainerFeatureFragment
 import com.evgeny.goncharov.sample.multimodule.navigation.base.FeatureNavigator
