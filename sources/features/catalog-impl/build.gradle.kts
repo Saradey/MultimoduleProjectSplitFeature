@@ -1,6 +1,7 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
 }
 
 android {
@@ -22,4 +23,17 @@ android {
 
 dependencies {
     api(project(":sources:features:catalog-api"))
+
+    implementation(project(":sources:engine:navigation"))
+    implementation(project(":sources:engine:di-core"))
+
+    implementation(project(":sources:resources:theme"))
+
+    implementation(uiLibs.constraint.layout)
+    implementation(coreLibs.cicerone)
+    implementation(coreLibs.dagger)
+    implementation(androidLibs.fragment)
+    implementation(androidLibs.fragment.ktx)
+
+    kapt(coreLibs.daggerCompiler)
 }
