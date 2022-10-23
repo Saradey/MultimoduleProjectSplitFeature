@@ -22,4 +22,8 @@
     <style name="AppButton.AccentButton" parent="AppText.AccentText">
         <item name="android:background">?accent_background_color</item>
     </style>
+
+    <style name="AppBottomNavigationStyle">
+        <item name="android:background">?accent_background_color</item>
+    </style>
 </resources>
