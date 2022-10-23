@@ -1,6 +1,7 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
 }
 
 android {
@@ -18,8 +19,21 @@ android {
         jvmTarget = "1.8"
         freeCompilerArgs = listOf("-Xexplicit-api=strict")
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
     api(project(":sources:features:home-api"))
+
+    implementation(project(":sources:engine:navigation"))
+    implementation(project(":sources:engine:di-core"))
+
+    implementation(coreLibs.cicerone)
+    implementation(coreLibs.dagger)
+    implementation(androidLibs.fragment)
+    implementation(androidLibs.fragment.ktx)
+
+    kapt(coreLibs.daggerCompiler)
 }
