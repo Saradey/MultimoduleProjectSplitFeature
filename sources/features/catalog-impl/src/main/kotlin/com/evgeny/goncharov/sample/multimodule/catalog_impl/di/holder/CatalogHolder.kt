@@ -1,4 +1,4 @@
-package com.evgeny.goncharov.sample.multimodule.catalog_impl.di.modules
+package com.evgeny.goncharov.sample.multimodule.catalog_impl.di.holder
 
 import com.evgeny.goncharov.sample.multimodule.catalog_api.CatalogApi
 import com.evgeny.goncharov.sample.multimodule.catalog_impl.di.DaggerCatalogComponent
