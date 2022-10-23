@@ -38,6 +38,8 @@ dependencies {
     implementation(uiLibs.app.compat)
     implementation(coreLibs.dagger)
     implementation(coreLibs.cicerone)
+    implementation(androidLibs.fragment)
+    implementation(androidLibs.fragment.ktx)
 
     kapt(coreLibs.daggerCompiler)
 }
