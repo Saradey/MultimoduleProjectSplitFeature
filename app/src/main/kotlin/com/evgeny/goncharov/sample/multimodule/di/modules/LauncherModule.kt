@@ -8,6 +8,8 @@ import com.evgeny.goncharov.sample.multimodule.navigation.GlobalRouter
 import com.evgeny.goncharov.sample.multimodule.di_core.navigation.BaseLauncher
 import com.evgeny.goncharov.sample.multimodule.home_api.HomeLauncher
 import com.evgeny.goncharov.sample.multimodule.home_impl.navigation.HomeLauncherImpl
+import com.evgeny.goncharov.sample.multimodule.registration_api.RegistrationLauncher
+import com.evgeny.goncharov.sample.multimodule.registration_impl.navigation.RegistrationLauncherImpl
 import com.evgeny.goncharov.sample.multimodule.splash_screen_api.SplashLauncher
 import com.evgeny.goncharov.sample.multimodule.splash_screen_impl.navigation.SplashLauncherImpl
 import dagger.Module
@@ -41,5 +43,11 @@ internal object LauncherModule {
     @[Singleton IntoMap ClassKey(CatalogLauncher::class)]
     fun provideCatalogLauncher(globalRouter: GlobalRouter): BaseLauncher {
         return CatalogLauncherImpl(globalRouter)
+    }
+
+    @Provides
+    @[Singleton IntoMap ClassKey(RegistrationLauncher::class)]
+    fun provideRegistrationLauncher(globalRouter: GlobalRouter): BaseLauncher {
+        return RegistrationLauncherImpl(globalRouter)
     }
 }
