@@ -45,6 +45,10 @@ dependencies {
 
     implementation(project(":sources:features:splash-screen-impl"))
     implementation(project(":sources:features:bottom-menu-impl"))
+    implementation(project(":sources:features:catalog-impl"))
+    implementation(project(":sources:features:home-impl"))
+    implementation(project(":sources:features:like-impl"))
+    implementation(project(":sources:features:registration-impl"))
 
     implementation(coreLibs.cicerone)
     implementation(coreLibs.dagger)
