@@ -2,6 +2,8 @@ package com.evgeny.goncharov.sample.multimodule.di.modules
 
 import com.evgeny.goncharov.multimodule.bottom_menu_impl.di.holders.BottomMenuHolder
 import com.evgeny.goncharov.sample.multimodule.bottom_menu_api.BottomMenuApi
+import com.evgeny.goncharov.sample.multimodule.catalog_api.CatalogApi
+import com.evgeny.goncharov.sample.multimodule.catalog_impl.di.holder.CatalogHolder
 import com.evgeny.goncharov.sample.multimodule.di.contracts.MainActivityApi
 import com.evgeny.goncharov.sample.multimodule.di.holder.MainActivityHolder
 import com.evgeny.goncharov.sample.multimodule.di_core.container.FeatureContainer
@@ -38,4 +40,9 @@ internal object FeatureHoldersModule {
     @[IntoMap ClassKey(HomeApi::class)]
     fun provideHomeHolder(featureContainer: FeatureContainer)
             : FeatureHolder<*> = HomeHolder(featureContainer)
+
+    @[Singleton Provides]
+    @[IntoMap ClassKey(CatalogApi::class)]
+    fun provideCatalogHolder(featureContainer: FeatureContainer)
+            : FeatureHolder<*> = CatalogHolder(featureContainer)
 }
