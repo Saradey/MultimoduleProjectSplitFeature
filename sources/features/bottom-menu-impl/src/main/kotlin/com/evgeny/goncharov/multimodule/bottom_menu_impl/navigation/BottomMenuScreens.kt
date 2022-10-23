@@ -1,6 +1,6 @@
 package com.evgeny.goncharov.multimodule.bottom_menu_impl.navigation
 
-import com.evgeny.goncharov.multimodule.bottom_menu_impl.BottomMenuContainerFragment
+import com.evgeny.goncharov.multimodule.bottom_menu_impl.ui.BottomMenuContainerFragment
 import com.github.terrakok.cicerone.androidx.FragmentScreen
 
 internal object BottomMenuScreens {
