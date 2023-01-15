@@ -1,13 +1,18 @@
 [versions]
+#https://developer.android.com/jetpack/androidx/releases/core
 coreKtx = "1.9.0"
+#https://github.com/google/dagger
 daggerVersion = "2.44.2"
+#https://developer.android.com/jetpack/androidx/releases/lifecycle
 viewmodelVersion = "2.5.1"
+#https://github.com/terrakok/Cicerone
+ciceroneVersion = "7.1"
 
 [libraries]
 core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
-#https://github.com/terrakok/Cicerone
-cicerone = "com.github.terrakok:cicerone:7.1"
-#https://github.com/google/dagger
+
+cicerone = { module = "com.github.terrakok:cicerone", version.ref = "ciceroneVersion" }
+
 dagger = { module = "com.google.dagger:dagger", version.ref = "daggerVersion" }
 daggerCompiler = { module = "com.google.dagger:dagger-compiler", version.ref = "daggerVersion" }
 
