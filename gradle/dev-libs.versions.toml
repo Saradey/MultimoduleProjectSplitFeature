@@ -1,12 +1,12 @@
 [versions]
-hyperion = "0.9.34"
+#https://square.github.io/leakcanary/getting_started/
+leakCanaryVersion = "2.10"
+#https://github.com/JakeWharton/timber
+timberVersion = "5.0.1"
+#https://github.com/ChuckerTeam/chucker
+chuckerVersion = "3.5.2"
 
 [libraries]
-#https://square.github.io/leakcanary/getting_started/
-leak-canary = "com.squareup.leakcanary:leakcanary-android:2.9.1"
-#https://github.com/JakeWharton/timber
-timber = "com.jakewharton.timber:timber:5.0.1"
-#https://github.com/ChuckerTeam/chucker
-chucker = "com.github.chuckerteam.chucker:library:3.5.2"
-#https://github.com/willowtreeapps/Hyperion-Android
-hyperion-core = { module = "com.willowtreeapps.hyperion:hyperion-core", version.ref = "hyperion" }
+leak-canary = { module = "com.squareup.leakcanary:leakcanary-android", version.ref = "leakCanaryVersion" }
+timber = { module = "com.jakewharton.timber:timber", version.ref = "timberVersion" }
+chucker = { module = "com.github.chuckerteam.chucker:library", version.ref = "chuckerVersion" }
