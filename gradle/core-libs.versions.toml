@@ -1,6 +1,6 @@
 [versions]
 coreKtx = "1.9.0"
-daggerVersion = "2.44"
+daggerVersion = "2.44.2"
 viewmodelVersion = "2.5.1"
 
 [libraries]
