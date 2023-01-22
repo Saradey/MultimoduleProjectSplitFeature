@@ -9,7 +9,6 @@ android {
     compileSdk = rootProject.ext["compileSdkVersionApp"] as Int
     defaultConfig {
         minSdk = rootProject.ext["minSdkVersionApp"] as Int
-        targetSdk = rootProject.ext["targetSdkVersionApp"] as Int
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
