@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import by.kirich1409.viewbindingdelegate.viewBinding
+import com.evgeny.goncharov.multimodule.ThemeResourceStyle
 import com.evgeny.goncharov.sample.multimodule.ui_sandbox.databinding.ActivityUiSandboxBinding
 
 internal class UiSandboxActivity : AppCompatActivity() {
@@ -20,14 +21,14 @@ internal class UiSandboxActivity : AppCompatActivity() {
 
     private fun ActivityUiSandboxBinding.initUi() {
         btnOnLightTheme.setOnClickListener {
-            if (viewModel.themeNow != com.evgeny.goncharov.multimodule.R.style.AppTheme_Light) {
-                viewModel.themeNow = com.evgeny.goncharov.multimodule.R.style.AppTheme_Light
+            if (viewModel.themeNow != ThemeResourceStyle.AppTheme_Light) {
+                viewModel.themeNow = ThemeResourceStyle.AppTheme_Light
                 recreate()
             }
         }
         btnOnDarkTheme.setOnClickListener {
-            if (viewModel.themeNow != com.evgeny.goncharov.multimodule.R.style.AppTheme_Night) {
-                viewModel.themeNow = com.evgeny.goncharov.multimodule.R.style.AppTheme_Night
+            if (viewModel.themeNow != ThemeResourceStyle.AppTheme_Night) {
+                viewModel.themeNow = ThemeResourceStyle.AppTheme_Night
                 recreate()
             }
         }

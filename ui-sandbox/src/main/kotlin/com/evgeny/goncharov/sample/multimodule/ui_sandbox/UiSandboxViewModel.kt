@@ -1,10 +1,11 @@
 package com.evgeny.goncharov.sample.multimodule.ui_sandbox
 
-import androidx.annotation.IdRes
+import androidx.annotation.StyleRes
 import androidx.lifecycle.ViewModel
+import com.evgeny.goncharov.multimodule.ThemeResourceStyle
 
 internal class UiSandboxViewModel : ViewModel() {
 
-    @IdRes
-    var themeNow: Int = com.evgeny.goncharov.multimodule.R.style.AppTheme_Light
+    @StyleRes
+    var themeNow: Int = ThemeResourceStyle.AppTheme_Light
 }
