@@ -10,6 +10,7 @@ import com.evgeny.goncharov.multimodule.bottom_menu_impl.di.contracts.BottomMenu
 import com.evgeny.goncharov.multimodule.bottom_menu_impl.view.models.BottomMenuContainerViewModel
 import com.evgeny.goncharov.sample.multimodule.bottom_menu_api.BottomMenuApi
 import com.evgeny.goncharov.sample.multimodule.di_core.ContainerFeatureFragment
+import com.github.terrakok.cicerone.NavigatorHolder
 
 internal class BottomMenuContainerFragment :
     ContainerFeatureFragment(R.layout.fragment_bottom_menu) {
@@ -17,10 +18,13 @@ internal class BottomMenuContainerFragment :
     private val dependency: BottomMenuInternal by lazy {
         getFeatureApi(BottomMenuApi::class.java) as BottomMenuInternal
     }
+
     private val viewModel: BottomMenuContainerViewModel by viewModels {
         dependency.provideViewModelFactory()
     }
+
     private val binding: FragmentBottomMenuBinding by viewBinding(FragmentBottomMenuBinding::bind)
+    private val globalNavigator: NavigatorHolder = dependency.provideGlobalNavigatorHolder()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.initUi()
