@@ -9,6 +9,6 @@ public class SplashLauncherImpl(
 ) : SplashLauncher {
 
     override fun launch() {
-        globalRouter.navigateTo(SplashScreens.startSplashFeature())
+        globalRouter.startNewFeatureOnTopCurrentFeature(SplashScreens.startSplashFeature())
     }
 }

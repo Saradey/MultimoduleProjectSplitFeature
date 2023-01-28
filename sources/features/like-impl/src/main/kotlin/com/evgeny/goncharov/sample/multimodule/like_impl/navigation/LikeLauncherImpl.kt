@@ -8,6 +8,6 @@ public class LikeLauncherImpl(
 ) : LikeLauncher {
 
     override fun launch() {
-        globalRouter.navigateTo(LikeScreens.startFeature())
+        globalRouter.startNewFeatureOnTopCurrentFeature(LikeScreens.startFeature())
     }
 }

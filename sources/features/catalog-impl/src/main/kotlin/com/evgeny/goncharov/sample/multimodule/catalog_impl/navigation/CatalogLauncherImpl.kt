@@ -8,6 +8,6 @@ public class CatalogLauncherImpl(
 ) : CatalogLauncher {
 
     override fun launch() {
-        globalRouter.navigateTo(CatalogScreens.startFeature())
+        globalRouter.startNewFeatureOnTopCurrentFeature(CatalogScreens.startFeature())
     }
 }
