@@ -5,7 +5,7 @@ import androidx.fragment.app.FragmentManager
 import com.github.terrakok.cicerone.Command
 import com.github.terrakok.cicerone.Navigator
 
-public class ActivityNavigator(
+public class MainActivityNavigator(
     mainActivity: FragmentActivity,
     private val containerId: Int
 ) : Navigator {
