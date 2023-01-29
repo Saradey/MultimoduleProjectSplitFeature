@@ -1,15 +1,15 @@
-package com.evgeny.goncharov.sample.multimodule.navigation.base
+package com.evgeny.goncharov.sample.multimodule.navigation
 
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentFactory
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.commit
+import com.evgeny.goncharov.sample.multimodule.navigation.base.FeatureForward
 import com.github.terrakok.cicerone.Command
 import com.github.terrakok.cicerone.Navigator
 
 public class MainActivityNavigator(
-    mainActivity: FragmentActivity,
-    private val containerId: Int
+    mainActivity: FragmentActivity
 ) : Navigator {
 
     private val fm: FragmentManager = mainActivity.supportFragmentManager
@@ -28,13 +28,13 @@ public class MainActivityNavigator(
 
     private fun applyCommand(command: Command) {
         when (command) {
-            is FeatureForward -> forward(command)
+            is FeatureForward -> forwardFeatureContainerFragment(command)
         }
     }
 
-    private fun forward(command: FeatureForward) {
+    private fun forwardFeatureContainerFragment(command: FeatureForward) {
         val fragmentScreen = command.screen
-        val fragment = fragmentScreen.createFragment(ff)
+        val featureContainerFragment = fragmentScreen.createFragment(ff)
         fm.commit {
             setReorderingAllowed(true)
         }

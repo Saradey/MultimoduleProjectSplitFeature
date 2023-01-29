@@ -31,5 +31,6 @@ dependencies {
     implementation(uiLibs.material)
     implementation(coreLibs.dagger)
     implementation(coreLibs.cicerone)
+    implementation(androidLibs.fragment.ktx)
     kapt(coreLibs.daggerCompiler)
 }
