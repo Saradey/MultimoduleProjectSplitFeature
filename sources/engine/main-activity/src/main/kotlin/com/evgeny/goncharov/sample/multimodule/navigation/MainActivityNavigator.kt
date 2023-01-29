@@ -7,6 +7,7 @@ import androidx.fragment.app.commit
 import com.evgeny.goncharov.sample.multimodule.navigation.base.FeatureForward
 import com.github.terrakok.cicerone.Command
 import com.github.terrakok.cicerone.Navigator
+import com.evgeny.goncharov.sample.multimodule.R
 
 public class MainActivityNavigator(
     mainActivity: FragmentActivity
@@ -37,6 +38,8 @@ public class MainActivityNavigator(
         val featureContainerFragment = fragmentScreen.createFragment(ff)
         fm.commit {
             setReorderingAllowed(true)
+            replace(R.id.container, featureContainerFragment, fragmentScreen.screenKey)
+            addToBackStack(fragmentScreen.screenKey)
         }
     }
 
