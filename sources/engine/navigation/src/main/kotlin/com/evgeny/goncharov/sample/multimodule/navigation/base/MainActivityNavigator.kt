@@ -1,9 +1,10 @@
 package com.evgeny.goncharov.sample.multimodule.navigation.base
 
 import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.FragmentFactory
 import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.commit
 import com.github.terrakok.cicerone.Command
-import com.github.terrakok.cicerone.Forward
 import com.github.terrakok.cicerone.Navigator
 
 public class MainActivityNavigator(
@@ -12,6 +13,7 @@ public class MainActivityNavigator(
 ) : Navigator {
 
     private val fm: FragmentManager = mainActivity.supportFragmentManager
+    private val ff: FragmentFactory = fm.fragmentFactory
 
     override fun applyCommands(commands: Array<out Command>) {
         fm.executePendingTransactions()
@@ -31,7 +33,11 @@ public class MainActivityNavigator(
     }
 
     private fun forward(command: FeatureForward) {
-
+        val fragmentScreen = command.screen
+        val fragment = fragmentScreen.createFragment(ff)
+        fm.commit {
+            setReorderingAllowed(true)
+        }
     }
 
     private fun errorOnApplyCommand(
