@@ -47,7 +47,7 @@ public class MainActivityNavigator(
         command: Command,
         error: RuntimeException
     ) {
-        throw error(
+        error(
             ERROR_MESSAGE.format(
                 mainActivity.javaClass.canonicalName,
                 TAG,
