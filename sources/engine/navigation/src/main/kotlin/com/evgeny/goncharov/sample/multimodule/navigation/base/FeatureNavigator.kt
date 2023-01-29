@@ -3,16 +3,23 @@ package com.evgeny.goncharov.sample.multimodule.navigation.base
 import androidx.fragment.app.*
 import com.evgeny.goncharov.sample.multimodule.di_core.ContainerFeatureFragment
 import com.github.terrakok.cicerone.*
-import com.github.terrakok.cicerone.androidx.FragmentScreen
 
 public class FeatureNavigator(
-    private val containerFragment: ContainerFeatureFragment,
+    containerFragment: ContainerFeatureFragment,
     private val containerId: Int = com.evgeny.goncharov.sample.multimodule.di_core.R.id.frm_feature_container,
-    private val fragmentManager: FragmentManager = containerFragment.childFragmentManager,
-    private val fragmentFactory: FragmentFactory = fragmentManager.fragmentFactory
 ) : Navigator {
 
+    private val fm: FragmentManager = containerFragment.childFragmentManager
+    private val ff: FragmentFactory = fm.fragmentFactory
+
+
     override fun applyCommands(commands: Array<out Command>) {
-        fragmentManager.executePendingTransactions()
+        fm.executePendingTransactions()
+    }
+
+    private companion object {
+
+        const val TAG = "FeatureNavigator"
+        const val ERROR_MESSAGE = "errorOnApplyCommand host: %s tag: %s command: %s error message: %s"
     }
 }

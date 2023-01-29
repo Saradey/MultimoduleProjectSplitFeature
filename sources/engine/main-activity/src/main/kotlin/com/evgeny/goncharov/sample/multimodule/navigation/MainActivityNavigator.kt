@@ -10,7 +10,7 @@ import com.github.terrakok.cicerone.Navigator
 import com.evgeny.goncharov.sample.multimodule.R
 
 public class MainActivityNavigator(
-    mainActivity: FragmentActivity
+    private val mainActivity: FragmentActivity
 ) : Navigator {
 
     private val fm: FragmentManager = mainActivity.supportFragmentManager
@@ -47,12 +47,20 @@ public class MainActivityNavigator(
         command: Command,
         error: RuntimeException
     ) {
-        throw error(ERROR_MESSAGE.format(TAG, command.toString(), error.message))
+        throw error(
+            ERROR_MESSAGE.format(
+                mainActivity.javaClass.canonicalName,
+                TAG,
+                command.toString(),
+                error.message
+            )
+        )
     }
 
     private companion object {
 
         const val TAG = "MainActivityNavigator"
-        const val ERROR_MESSAGE = "errorOnApplyCommand tag: %s command: %s error message: %s"
+        const val ERROR_MESSAGE =
+            "errorOnApplyCommand host: %s tag: %s command: %s error message: %s"
     }
 }
