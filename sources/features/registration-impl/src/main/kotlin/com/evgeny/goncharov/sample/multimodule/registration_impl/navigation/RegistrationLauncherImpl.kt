@@ -8,6 +8,6 @@ public class RegistrationLauncherImpl(
 ) : RegistrationLauncher {
 
     override fun launch() {
-        globalRouter.startNewFeatureOnTopCurrentFeature(RegistrationScreens.startFeature())
+        globalRouter.navigateToFeatureContainer(RegistrationScreens.startFeature())
     }
 }

@@ -8,6 +8,6 @@ public class HomeLauncherImpl(
 ) : HomeLauncher {
 
     override fun launch() {
-        globalRouter.startNewFeatureOnTopCurrentFeature(HomeScreens.startFeature())
+        globalRouter.navigateToFeatureContainer(HomeScreens.startFeature())
     }
 }

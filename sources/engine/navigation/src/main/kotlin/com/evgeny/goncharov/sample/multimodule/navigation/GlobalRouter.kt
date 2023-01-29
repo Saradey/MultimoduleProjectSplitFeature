@@ -8,11 +8,11 @@ import com.github.terrakok.cicerone.androidx.FragmentScreen
 
 public class GlobalRouter : BaseRouter() {
 
-    public fun startNewFeatureOnTopCurrentFeature(screen: FragmentScreen) {
+    public fun navigateToFeatureContainer(screen: FragmentScreen) {
         executeCommands(FeatureForward(screen))
     }
 
-    public fun startFeatureReplaceCurrentFeature(screen: FragmentScreen) {
+    public fun newRootScreenFeatureContainer(screen: FragmentScreen) {
         executeCommands(FeatureBackTo(null), FeatureReplace(screen))
     }
 }
