@@ -22,7 +22,7 @@ public class MainActivityNavigator(
             try {
                 applyCommand(command)
             } catch (e: RuntimeException) {
-                errorOnApplyCommand(command, e)
+                errorOnApplyCommand(e)
             }
         }
     }
@@ -40,18 +40,17 @@ public class MainActivityNavigator(
             setReorderingAllowed(true)
             replace(R.id.container, featureContainerFragment, fragmentScreen.screenKey)
             addToBackStack(fragmentScreen.screenKey)
+            throw RuntimeException()
         }
     }
 
     private fun errorOnApplyCommand(
-        command: Command,
         error: RuntimeException
     ) {
         error(
             ERROR_MESSAGE.format(
                 mainActivity.javaClass.canonicalName,
                 TAG,
-                command.toString(),
                 error.message
             )
         )
@@ -61,6 +60,6 @@ public class MainActivityNavigator(
 
         const val TAG = "MainActivityNavigator"
         const val ERROR_MESSAGE =
-            "errorOnApplyCommand host: %s tag: %s command: %s error message: %s"
+            "errorOnApplyCommand host: %s tag: %s error message: %s"
     }
 }
