@@ -40,7 +40,6 @@ public class MainActivityNavigator(
             setReorderingAllowed(true)
             replace(R.id.container, featureContainerFragment, fragmentScreen.screenKey)
             addToBackStack(fragmentScreen.screenKey)
-            throw RuntimeException()
         }
     }
 
