@@ -17,7 +17,6 @@ public class FeatureNavigator(
         fm.executePendingTransactions()
     }
 
-
     private fun errorOnApplyCommand(
         error: RuntimeException
     ) {
