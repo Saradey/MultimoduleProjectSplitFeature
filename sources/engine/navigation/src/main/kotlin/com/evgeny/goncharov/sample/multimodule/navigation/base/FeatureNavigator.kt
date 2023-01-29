@@ -36,25 +36,25 @@ public class FeatureNavigator(
         commitNewFragmentScreen(command.screen, true)
     }
 
-    protected open fun replace(command: FeatureReplace) {
+    private fun replace(command: FeatureReplace) {
         fragmentManager.popBackStack()
         commitNewFragmentScreen(command.screen, true)
     }
 
-    protected open fun back() {
+    private fun back() {
         fragmentManager.popBackStack()
     }
 
-    protected open fun backTo(command: FeatureBackTo) {
+    private fun backTo(command: FeatureBackTo) {
         val screenKey = command.screen?.screenKey
         fragmentManager.popBackStack(screenKey, 0)
     }
 
-    protected open fun activityBack() {
+    private fun activityBack() {
         containerFragment.activity?.finish()
     }
 
-    protected open fun commitNewFragmentScreen(
+    private fun commitNewFragmentScreen(
         screen: FragmentScreen, addToBackStack: Boolean
     ) {
         val fragment = screen.createFragment(fragmentFactory)
@@ -77,7 +77,7 @@ public class FeatureNavigator(
         }
     }
 
-    protected open fun setupFragmentTransaction(
+    private fun setupFragmentTransaction(
         screen: FragmentScreen,
         fragmentTransaction: FragmentTransaction,
         currentFragment: Fragment?,
@@ -86,7 +86,7 @@ public class FeatureNavigator(
         // Do nothing by default
     }
 
-    protected open fun errorOnApplyCommand(
+    private fun errorOnApplyCommand(
         command: Command, error: RuntimeException
     ) {
         throw error
