@@ -12,9 +12,24 @@ public class FeatureNavigator(
     private val fm: FragmentManager = containerFragment.childFragmentManager
     private val ff: FragmentFactory = fm.fragmentFactory
 
-
     override fun applyCommands(commands: Array<out Command>) {
         fm.executePendingTransactions()
+        for (command in commands) {
+            try {
+                applyCommand(command)
+            } catch (e: RuntimeException) {
+                errorOnApplyCommand(e)
+            }
+        }
+    }
+
+    private fun applyCommand(command: Command) {
+        when (command) {
+            is FeatureForward -> forward(command)
+        }
+    }
+
+    private fun forward(command: Command) {
     }
 
     private fun errorOnApplyCommand(
