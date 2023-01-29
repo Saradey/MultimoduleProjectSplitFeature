@@ -6,6 +6,6 @@ import com.github.terrakok.cicerone.androidx.FragmentScreen
 public open class FeatureRouter : BaseRouter() {
 
     public fun navigateToFeatureScreen(screen: FragmentScreen) {
-        executeCommands(FeatureForward(screen))
+        executeCommands(InternalForward(screen))
     }
 }

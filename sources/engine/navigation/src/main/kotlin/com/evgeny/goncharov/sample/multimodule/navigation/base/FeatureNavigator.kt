@@ -25,7 +25,7 @@ public class FeatureNavigator(
 
     private fun applyCommand(command: Command) {
         when (command) {
-            is FeatureForward -> forward(command)
+            is InternalForward -> forward(command)
         }
     }
 

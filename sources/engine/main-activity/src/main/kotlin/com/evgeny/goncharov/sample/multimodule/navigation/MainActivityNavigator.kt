@@ -4,7 +4,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentFactory
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.commit
-import com.evgeny.goncharov.sample.multimodule.navigation.base.FeatureForward
+import com.evgeny.goncharov.sample.multimodule.navigation.base.InternalForward
 import com.github.terrakok.cicerone.Command
 import com.github.terrakok.cicerone.Navigator
 import com.evgeny.goncharov.sample.multimodule.R
@@ -29,11 +29,11 @@ public class MainActivityNavigator(
 
     private fun applyCommand(command: Command) {
         when (command) {
-            is FeatureForward -> forwardFeatureContainerFragment(command)
+            is InternalForward -> forwardFeatureContainerFragment(command)
         }
     }
 
-    private fun forwardFeatureContainerFragment(command: FeatureForward) {
+    private fun forwardFeatureContainerFragment(command: InternalForward) {
         val fragmentScreen = command.screen
         val featureContainerFragment = fragmentScreen.createFragment(ff)
         fm.commit {
