@@ -3,6 +3,7 @@ package com.evgeny.goncharov.sample.multimodule.navigation.base
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import com.github.terrakok.cicerone.Command
+import com.github.terrakok.cicerone.Forward
 import com.github.terrakok.cicerone.Navigator
 
 public class MainActivityNavigator(
@@ -24,6 +25,12 @@ public class MainActivityNavigator(
     }
 
     private fun applyCommand(command: Command) {
+        when (command) {
+            is FeatureForward -> forward(command)
+        }
+    }
+
+    private fun forward(command: FeatureForward) {
 
     }
 
