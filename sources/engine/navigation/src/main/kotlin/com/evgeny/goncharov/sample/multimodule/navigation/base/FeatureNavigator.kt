@@ -19,14 +19,12 @@ public class FeatureNavigator(
 
 
     private fun errorOnApplyCommand(
-        command: Command,
         error: RuntimeException
     ) {
         error(
             ERROR_MESSAGE.format(
                 containerFragment.javaClass.canonicalName,
                 TAG,
-                command.toString(),
                 error.message
             )
         )
@@ -36,6 +34,6 @@ public class FeatureNavigator(
 
         const val TAG = "FeatureNavigator"
         const val ERROR_MESSAGE =
-            "errorOnApplyCommand host: %s tag: %s command: %s error message: %s"
+            "errorOnApplyCommand host: %s tag: %s error message: %s"
     }
 }
