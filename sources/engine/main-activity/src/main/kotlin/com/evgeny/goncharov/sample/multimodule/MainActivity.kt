@@ -4,14 +4,14 @@ import android.os.Bundle
 import com.evgeny.goncharov.sample.multimodule.di.contracts.MainActivityApi
 import com.evgeny.goncharov.sample.multimodule.di.contracts.MainActivityInternal
 import com.evgeny.goncharov.sample.multimodule.di_core.CoreActivity
-import com.github.terrakok.cicerone.androidx.AppNavigator
+import com.evgeny.goncharov.sample.multimodule.navigation.base.ActivityNavigator
 
 public class MainActivity : CoreActivity() {
 
     private val dependency: MainActivityInternal by lazy {
         getFeatureApi(MainActivityApi::class.java) as MainActivityInternal
     }
-    private val navigator = AppNavigator(this, R.id.container)
+    private val navigator = ActivityNavigator(this, R.id.container)
     private val navigatorHolder = dependency.provideGlobalNavigatorHolder()
     private val splashLauncher = dependency.provideSplashLauncher()
 

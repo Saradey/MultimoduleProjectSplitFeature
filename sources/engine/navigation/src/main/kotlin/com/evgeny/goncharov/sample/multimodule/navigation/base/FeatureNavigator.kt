@@ -5,11 +5,11 @@ import com.evgeny.goncharov.sample.multimodule.di_core.ContainerFeatureFragment
 import com.github.terrakok.cicerone.*
 import com.github.terrakok.cicerone.androidx.FragmentScreen
 
-public open class FeatureNavigator(
-    protected val containerFragment: ContainerFeatureFragment,
-    protected val containerId: Int = com.evgeny.goncharov.sample.multimodule.di_core.R.id.frm_feature_container,
-    protected val fragmentManager: FragmentManager = containerFragment.childFragmentManager,
-    protected val fragmentFactory: FragmentFactory = fragmentManager.fragmentFactory
+public class FeatureNavigator(
+    private val containerFragment: ContainerFeatureFragment,
+    private val containerId: Int = com.evgeny.goncharov.sample.multimodule.di_core.R.id.frm_feature_container,
+    private val fragmentManager: FragmentManager = containerFragment.childFragmentManager,
+    private val fragmentFactory: FragmentFactory = fragmentManager.fragmentFactory
 ) : Navigator {
 
     override fun applyCommands(commands: Array<out Command>) {
@@ -23,7 +23,7 @@ public open class FeatureNavigator(
         }
     }
 
-    protected open fun applyCommand(command: Command) {
+   private fun applyCommand(command: Command) {
         when (command) {
             is FeatureForward -> forward(command)
             is FeatureReplace -> replace(command)
@@ -32,7 +32,7 @@ public open class FeatureNavigator(
         }
     }
 
-    protected open fun forward(command: FeatureForward) {
+    private fun forward(command: FeatureForward) {
         commitNewFragmentScreen(command.screen, true)
     }
 
