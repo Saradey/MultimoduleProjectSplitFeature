@@ -3,7 +3,7 @@ package com.evgeny.goncharov.sample.multimodule.navigation.base
 import com.github.terrakok.cicerone.Command
 import com.github.terrakok.cicerone.androidx.FragmentScreen
 
-public interface FeatureCommands : Command
+private interface FeatureCommands : Command
 
 public data class FeatureForward(val screen: FragmentScreen) : FeatureCommands
 
