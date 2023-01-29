@@ -12,7 +12,7 @@ public class MainActivity : CoreActivity() {
         getFeatureApi(MainActivityApi::class.java) as MainActivityInternal
     }
     private val navigator = MainActivityNavigator(this)
-    private val navigatorHolder = dependency.provideGlobalNavigatorHolder()
+    private val globalNavigatorHolder = dependency.provideGlobalNavigatorHolder()
     private val splashLauncher = dependency.provideSplashLauncher()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,11 +23,11 @@ public class MainActivity : CoreActivity() {
 
     override fun onResumeFragments() {
         super.onResumeFragments()
-        navigatorHolder.setNavigator(navigator)
+        globalNavigatorHolder.setNavigator(navigator)
     }
 
     override fun onPause() {
-        navigatorHolder.removeNavigator()
+        globalNavigatorHolder.removeNavigator()
         super.onPause()
     }
 
