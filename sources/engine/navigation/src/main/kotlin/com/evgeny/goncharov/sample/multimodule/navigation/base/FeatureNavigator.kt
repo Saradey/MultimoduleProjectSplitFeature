@@ -2,11 +2,12 @@ package com.evgeny.goncharov.sample.multimodule.navigation.base
 
 import androidx.fragment.app.*
 import com.evgeny.goncharov.sample.multimodule.di_core.ContainerFeatureFragment
+import com.evgeny.goncharov.sample.multimodule.di_core.utils.DiCoreViewId
 import com.github.terrakok.cicerone.*
 
 public class FeatureNavigator(
     private val containerFragment: ContainerFeatureFragment,
-    private val containerId: Int = com.evgeny.goncharov.sample.multimodule.di_core.R.id.frm_feature_container,
+    private val containerId: Int = DiCoreViewId.frm_feature_container,
 ) : Navigator {
 
     private val fm: FragmentManager = containerFragment.childFragmentManager
