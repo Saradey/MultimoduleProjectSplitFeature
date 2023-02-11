@@ -15,11 +15,12 @@ internal class RegistrationContainerFragment : ContainerFeatureFragment() {
     private val dependency: RegistrationInternal by lazy {
         getFeatureApi(RegistrationApi::class.java) as RegistrationInternal
     }
-    private val navigatorHolder: NavigatorHolder = dependency.provideFeatureNavigatorHolder()
     private val navigator: FeatureNavigator by lazy {
         FeatureNavigator(this)
     }
+    private val navigatorHolder: NavigatorHolder = dependency.provideFeatureNavigatorHolder()
     private val router: FeatureRouter = dependency.provideFeatureRouter()
+    override val backStackName: String = "RegistrationContainer"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         startFeature()

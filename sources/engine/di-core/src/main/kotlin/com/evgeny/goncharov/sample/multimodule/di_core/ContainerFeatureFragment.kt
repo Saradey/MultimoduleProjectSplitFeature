@@ -10,6 +10,8 @@ public abstract class ContainerFeatureFragment : Fragment {
     public constructor(@LayoutRes layoutId: Int) : super(layoutId)
     public constructor() : super(R.layout.fragment_feature_container)
 
+    public abstract val backStackName: String
+
     override fun onStop() {
         super.onStop()
         if (isRemoving) {

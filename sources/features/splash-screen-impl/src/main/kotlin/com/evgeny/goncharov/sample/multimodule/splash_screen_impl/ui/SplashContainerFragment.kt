@@ -16,8 +16,6 @@ internal class SplashContainerFragment : ContainerFeatureFragment() {
     private val dependency: SplashInternal by lazy {
         getFeatureApi(SplashApi::class.java) as SplashInternal
     }
-    private val navigatorHolder: NavigatorHolder = dependency.provideFeatureNavigatorHolder()
-    private val router: FeatureRouter = dependency.provideFeatureRouter()
     private val navigator: FeatureNavigator by lazy {
         FeatureNavigator(this)
     }
@@ -26,6 +24,9 @@ internal class SplashContainerFragment : ContainerFeatureFragment() {
             router.finishChainFeature()
         }
     }
+    private val navigatorHolder: NavigatorHolder = dependency.provideFeatureNavigatorHolder()
+    private val router: FeatureRouter = dependency.provideFeatureRouter()
+    override val backStackName: String = "SplashContainer"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         savedInstanceState ?: startFeature()

@@ -15,11 +15,12 @@ internal class LikeContainerFragment : ContainerFeatureFragment() {
     private val dependency: LikeInternal by lazy {
         getFeatureApi(LikeApi::class.java) as LikeInternal
     }
-    private val navigatorHolder: NavigatorHolder = dependency.provideFeatureNavigatorHolder()
     private val navigator: FeatureNavigator by lazy {
         FeatureNavigator(this)
     }
+    private val navigatorHolder: NavigatorHolder = dependency.provideFeatureNavigatorHolder()
     private val router: FeatureRouter = dependency.provideFeatureRouter()
+    override val backStackName: String = "LikeContainer"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         startFeature()

@@ -19,20 +19,18 @@ internal class BottomMenuContainerFragment :
     private val dependency: BottomMenuInternal by lazy {
         getFeatureApi(BottomMenuApi::class.java) as BottomMenuInternal
     }
-
     private val viewModel: BottomMenuContainerViewModel by viewModels {
         dependency.provideViewModelFactory()
     }
-
     private val navigator: FeatureNavigator by lazy {
         FeatureNavigator(
             containerId = R.id.frm_bottom_menu_feature_container,
             containerFragment = this
         )
     }
-
     private val binding: FragmentBottomMenuBinding by viewBinding(FragmentBottomMenuBinding::bind)
     private val globalNavigator: NavigatorHolder = dependency.provideGlobalNavigatorHolder()
+    override val backStackName: String = "BottomMenuContainer"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.initUi()
