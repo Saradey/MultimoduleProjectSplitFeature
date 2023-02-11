@@ -7,6 +7,7 @@ import androidx.fragment.app.commit
 import com.github.terrakok.cicerone.Command
 import com.github.terrakok.cicerone.Navigator
 import com.evgeny.goncharov.sample.multimodule.R
+import com.evgeny.goncharov.sample.multimodule.di_core.ContainerFeatureFragment
 import com.evgeny.goncharov.sample.multimodule.navigation.base.GlobalForward
 
 public class MainActivityNavigator(
@@ -35,11 +36,11 @@ public class MainActivityNavigator(
 
     private fun forwardFeatureContainerFragment(command: GlobalForward) {
         val fragmentScreen = command.screen
-        val featureContainerFragment = fragmentScreen.createFragment(ff)
+        val featureContainerFragment = fragmentScreen.createFragment(ff) as ContainerFeatureFragment
         fm.commit {
             setReorderingAllowed(true)
             replace(R.id.container, featureContainerFragment, fragmentScreen.screenKey)
-            addToBackStack(fragmentScreen.screenKey)
+            addToBackStack(featureContainerFragment.backStackName)
         }
     }
 

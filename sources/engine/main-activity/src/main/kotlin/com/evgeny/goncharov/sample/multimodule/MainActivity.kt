@@ -1,6 +1,7 @@
 package com.evgeny.goncharov.sample.multimodule
 
 import android.os.Bundle
+import androidx.activity.OnBackPressedCallback
 import com.evgeny.goncharov.sample.multimodule.di.contracts.MainActivityApi
 import com.evgeny.goncharov.sample.multimodule.di.contracts.MainActivityInternal
 import com.evgeny.goncharov.sample.multimodule.di_core.CoreActivity
@@ -11,6 +12,11 @@ public class MainActivity : CoreActivity() {
     private val dependency: MainActivityInternal by lazy {
         getFeatureApi(MainActivityApi::class.java) as MainActivityInternal
     }
+    private val onBackPressed = object : OnBackPressedCallback(true) {
+        override fun handleOnBackPressed() {
+
+        }
+    }
     private val navigator = MainActivityNavigator(this)
     private val globalNavigatorHolder = dependency.provideGlobalNavigatorHolder()
     private val splashLauncher = dependency.provideSplashLauncher()
@@ -19,6 +25,7 @@ public class MainActivity : CoreActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         savedInstanceState ?: splashLauncher.launch()
+        onBackPressedDispatcher.addCallback(this, onBackPressed)
     }
 
     override fun onResumeFragments() {
