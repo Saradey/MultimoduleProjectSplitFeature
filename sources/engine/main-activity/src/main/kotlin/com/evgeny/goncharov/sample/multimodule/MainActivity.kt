@@ -14,12 +14,13 @@ public class MainActivity : CoreActivity() {
     }
     private val onBackPressed = object : OnBackPressedCallback(true) {
         override fun handleOnBackPressed() {
-
+            globalRouter.finishChainFeature()
         }
     }
     private val navigator = MainActivityNavigator(this)
     private val globalNavigatorHolder = dependency.provideGlobalNavigatorHolder()
     private val splashLauncher = dependency.provideSplashLauncher()
+    private val globalRouter = dependency.provideGlobalRouter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
