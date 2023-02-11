@@ -9,7 +9,7 @@ public open class FeatureRouter : BaseRouter() {
         executeCommands(InternalForward(screen))
     }
 
-    public fun exitFeature() {
+    public fun finishChainFeature() {
         executeCommands(InternalExit())
     }
 }
