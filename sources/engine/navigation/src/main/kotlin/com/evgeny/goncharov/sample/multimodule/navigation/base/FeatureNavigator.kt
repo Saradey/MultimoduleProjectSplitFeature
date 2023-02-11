@@ -27,6 +27,7 @@ public class FeatureNavigator(
     private fun applyCommand(command: Command) {
         when (command) {
             is InternalForward -> forward(command)
+            is InternalExit -> exit()
         }
     }
 
@@ -38,6 +39,9 @@ public class FeatureNavigator(
             replace(containerId, fragment)
             addToBackStack(screen.screenKey)
         }
+    }
+
+    private fun exit() {
     }
 
     private fun errorOnApplyCommand(
