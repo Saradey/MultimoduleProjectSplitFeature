@@ -30,7 +30,14 @@ public class FeatureNavigator(
         }
     }
 
-    private fun forward(command: Command) {
+    private fun forward(command: InternalForward) {
+        val screen = command.screen
+        val fragment = screen.createFragment(ff)
+        fm.commit {
+            setReorderingAllowed(true)
+            replace(containerId, fragment)
+            addToBackStack(screen.screenKey)
+        }
     }
 
     private fun errorOnApplyCommand(
