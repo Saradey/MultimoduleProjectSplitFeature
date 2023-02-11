@@ -10,6 +10,6 @@ public open class FeatureRouter : BaseRouter() {
     }
 
     public fun exitFeature() {
-
+        executeCommands(InternalExit())
     }
 }
