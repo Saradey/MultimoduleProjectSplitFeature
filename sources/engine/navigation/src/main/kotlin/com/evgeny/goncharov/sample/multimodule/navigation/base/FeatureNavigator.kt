@@ -29,7 +29,6 @@ public class FeatureNavigator(
     private fun applyCommand(command: Command) {
         when (command) {
             is InternalForward -> forward(command)
-            is InternalExitFeature -> exit()
         }
     }
 
@@ -45,7 +44,7 @@ public class FeatureNavigator(
 
     private fun exit() {
         fm.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
-        activity.onBackPressedDispatcher.onBackPressed()
+        activity.supportFragmentManager.popBackStack()
     }
 
     private fun errorOnApplyCommand(

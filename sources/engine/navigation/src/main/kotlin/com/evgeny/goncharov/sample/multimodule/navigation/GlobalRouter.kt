@@ -15,8 +15,4 @@ public class GlobalRouter : BaseRouter() {
     public fun newRootScreenFeatureContainer(screen: FragmentScreen) {
         executeCommands(GlobalBackTo(null), GlobalReplace(screen))
     }
-
-    public fun finishChainFeature() {
-
-    }
 }

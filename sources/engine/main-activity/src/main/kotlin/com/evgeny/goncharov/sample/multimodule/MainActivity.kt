@@ -12,11 +12,6 @@ public class MainActivity : CoreActivity() {
     private val dependency: MainActivityInternal by lazy {
         getFeatureApi(MainActivityApi::class.java) as MainActivityInternal
     }
-    private val onBackPressed = object : OnBackPressedCallback(true) {
-        override fun handleOnBackPressed() {
-            globalRouter.finishChainFeature()
-        }
-    }
     private val navigator = MainActivityNavigator(this)
     private val globalNavigatorHolder = dependency.provideGlobalNavigatorHolder()
     private val splashLauncher = dependency.provideSplashLauncher()
@@ -26,7 +21,6 @@ public class MainActivity : CoreActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         savedInstanceState ?: splashLauncher.launch()
-        onBackPressedDispatcher.addCallback(this, onBackPressed)
     }
 
     override fun onResumeFragments() {

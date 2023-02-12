@@ -21,7 +21,6 @@ internal class SplashContainerFragment : ContainerFeatureFragment() {
     }
     private val onBackPressed = object : OnBackPressedCallback(true) {
         override fun handleOnBackPressed() {
-            router.finishChainFeature()
         }
     }
     private val navigatorHolder: NavigatorHolder = dependency.provideFeatureNavigatorHolder()

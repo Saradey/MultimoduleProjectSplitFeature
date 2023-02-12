@@ -8,8 +8,4 @@ public open class FeatureRouter : BaseRouter() {
     public fun navigateToFeatureScreen(screen: FragmentScreen) {
         executeCommands(InternalForward(screen))
     }
-
-    public fun finishChainFeature() {
-        executeCommands(InternalExitFeature())
-    }
 }

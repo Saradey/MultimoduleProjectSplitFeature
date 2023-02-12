@@ -11,6 +11,4 @@ public data class InternalReplace(val screen: FragmentScreen) : InternalFeatureC
 
 public class InternalBack : InternalFeatureCommands
 
-public class InternalExitFeature : InternalFeatureCommands
-
 public data class InternalBackTo(val screen: FragmentScreen?) : InternalFeatureCommands
