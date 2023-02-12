@@ -13,7 +13,6 @@ public class FeatureNavigator(
     private val fm: FragmentManager = containerFragment.childFragmentManager
     private val ff: FragmentFactory = fm.fragmentFactory
     private val backStackName: String = containerFragment.backStackName
-    private val activity: FragmentActivity = containerFragment.requireActivity()
 
     override fun applyCommands(commands: Array<out Command>) {
         fm.executePendingTransactions()
@@ -40,11 +39,6 @@ public class FeatureNavigator(
             replace(containerId, fragment, screen.screenKey)
             addToBackStack(backStackName)
         }
-    }
-
-    private fun exit() {
-        fm.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
-        activity.supportFragmentManager.popBackStack()
     }
 
     private fun errorOnApplyCommand(
