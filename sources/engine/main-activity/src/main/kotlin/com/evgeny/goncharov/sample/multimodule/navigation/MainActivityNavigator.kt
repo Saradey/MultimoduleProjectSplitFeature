@@ -8,6 +8,7 @@ import com.github.terrakok.cicerone.Command
 import com.github.terrakok.cicerone.Navigator
 import com.evgeny.goncharov.sample.multimodule.R
 import com.evgeny.goncharov.sample.multimodule.di_core.ContainerFeatureFragment
+import com.evgeny.goncharov.sample.multimodule.navigation.base.GlobalBackTo
 import com.evgeny.goncharov.sample.multimodule.navigation.base.GlobalFinish
 import com.evgeny.goncharov.sample.multimodule.navigation.base.GlobalForward
 
@@ -32,6 +33,7 @@ public class MainActivityNavigator(
     private fun applyCommand(command: Command) {
         when (command) {
             is GlobalForward -> forwardFeatureContainerFragment(command)
+            is GlobalBackTo -> backTo(command)
             is GlobalFinish -> finish()
         }
     }
@@ -48,6 +50,12 @@ public class MainActivityNavigator(
 
     private fun finish() {
         mainActivity.finish()
+    }
+
+    private fun backTo(command: GlobalBackTo) {
+        if(command.screen == null) {
+            fm.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+        }
     }
 
     private fun errorOnApplyCommand(
