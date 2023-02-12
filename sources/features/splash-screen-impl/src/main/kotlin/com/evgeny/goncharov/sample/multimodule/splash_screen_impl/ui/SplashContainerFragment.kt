@@ -22,7 +22,7 @@ internal class SplashContainerFragment : ContainerFeatureFragment() {
     }
     private val onBackPressed = object : OnBackPressedCallback(true) {
         override fun handleOnBackPressed() {
-            globalRouter
+            globalRouter.finish()
         }
     }
     private val navigatorHolder: NavigatorHolder = dependency.provideFeatureNavigatorHolder()
