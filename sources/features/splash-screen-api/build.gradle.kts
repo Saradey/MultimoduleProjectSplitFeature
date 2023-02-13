@@ -4,6 +4,7 @@ plugins {
 }
 
 android {
+    namespace = "com.evgeny.goncharov.sample.multimodule.splash_screen_api"
     compileSdk = rootProject.ext["compileSdkVersionApp"] as Int
     defaultConfig {
         minSdk = rootProject.ext["minSdkVersionApp"] as Int
