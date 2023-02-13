@@ -10,5 +10,3 @@ public data class GlobalForward(val screen: FragmentScreen) : GlobalCommands
 public data class GlobalBackTo(val screen: FragmentScreen?) : GlobalCommands
 
 public data class GlobalReplace(val screen: FragmentScreen) : GlobalCommands
-
-public class GlobalFinish : GlobalCommands

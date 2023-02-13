@@ -12,11 +12,9 @@ public abstract class ContainerFeatureFragment : Fragment {
 
     public abstract val backStackName: String
 
-    override fun onStop() {
-        super.onStop()
-        if (isRemoving) {
-            releaseDependencies()
-        }
+    override fun onDestroy() {
+        super.onDestroy()
+        releaseDependencies()
     }
 
     protected abstract fun releaseDependencies()

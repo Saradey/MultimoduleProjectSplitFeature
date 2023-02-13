@@ -2,9 +2,7 @@ package com.evgeny.goncharov.sample.multimodule.splash_screen_impl.ui
 
 import android.os.Bundle
 import android.view.View
-import androidx.activity.OnBackPressedCallback
 import com.evgeny.goncharov.sample.multimodule.di_core.ContainerFeatureFragment
-import com.evgeny.goncharov.sample.multimodule.navigation.GlobalRouter
 import com.evgeny.goncharov.sample.multimodule.navigation.base.FeatureNavigator
 import com.evgeny.goncharov.sample.multimodule.navigation.base.FeatureRouter
 import com.evgeny.goncharov.sample.multimodule.splash_screen_api.SplashApi
@@ -20,19 +18,12 @@ internal class SplashContainerFragment : ContainerFeatureFragment() {
     private val navigator: FeatureNavigator by lazy {
         FeatureNavigator(this)
     }
-    private val onBackPressed = object : OnBackPressedCallback(true) {
-        override fun handleOnBackPressed() {
-            globalRouter.finish()
-        }
-    }
     private val navigatorHolder: NavigatorHolder = dependency.provideFeatureNavigatorHolder()
     private val router: FeatureRouter = dependency.provideFeatureRouter()
     override val backStackName: String = "SplashContainer"
-    private val globalRouter: GlobalRouter = dependency.provideGlobalRouter()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         savedInstanceState ?: startFeature()
-        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, onBackPressed)
     }
 
     private fun startFeature() {

@@ -1,7 +1,6 @@
 package com.evgeny.goncharov.sample.multimodule.navigation
 
 import com.evgeny.goncharov.sample.multimodule.navigation.base.GlobalBackTo
-import com.evgeny.goncharov.sample.multimodule.navigation.base.GlobalFinish
 import com.evgeny.goncharov.sample.multimodule.navigation.base.GlobalForward
 import com.evgeny.goncharov.sample.multimodule.navigation.base.GlobalReplace
 import com.github.terrakok.cicerone.BaseRouter
@@ -13,11 +12,11 @@ public class GlobalRouter : BaseRouter() {
         executeCommands(GlobalForward(screen))
     }
 
-    public fun newRootScreenFeatureContainer(screen: FragmentScreen) {
-        executeCommands(GlobalBackTo(null), GlobalReplace(screen))
+    public fun replaceFeatureContainerScreen(screen: FragmentScreen) {
+        executeCommands(GlobalReplace(screen))
     }
 
-    public fun finish() {
-        executeCommands(GlobalFinish())
+    public fun newRootScreenFeatureContainer(screen: FragmentScreen) {
+        executeCommands(GlobalBackTo(null), GlobalReplace(screen))
     }
 }

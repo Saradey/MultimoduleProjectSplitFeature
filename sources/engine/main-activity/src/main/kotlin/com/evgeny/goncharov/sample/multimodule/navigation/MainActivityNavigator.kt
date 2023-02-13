@@ -9,8 +9,9 @@ import com.github.terrakok.cicerone.Navigator
 import com.evgeny.goncharov.sample.multimodule.R
 import com.evgeny.goncharov.sample.multimodule.di_core.ContainerFeatureFragment
 import com.evgeny.goncharov.sample.multimodule.navigation.base.GlobalBackTo
-import com.evgeny.goncharov.sample.multimodule.navigation.base.GlobalFinish
 import com.evgeny.goncharov.sample.multimodule.navigation.base.GlobalForward
+import com.evgeny.goncharov.sample.multimodule.navigation.base.GlobalReplace
+import com.github.terrakok.cicerone.androidx.FragmentScreen
 
 public class MainActivityNavigator(
     private val mainActivity: FragmentActivity
@@ -32,29 +33,41 @@ public class MainActivityNavigator(
 
     private fun applyCommand(command: Command) {
         when (command) {
-            is GlobalForward -> forwardFeatureContainerFragment(command)
+            is GlobalForward -> forward(command)
             is GlobalBackTo -> backTo(command)
-            is GlobalFinish -> finish()
+            is GlobalReplace -> replace(command)
         }
     }
 
-    private fun forwardFeatureContainerFragment(command: GlobalForward) {
+    private fun forward(command: GlobalForward) {
         val fragmentScreen = command.screen
         val featureContainerFragment = fragmentScreen.createFragment(ff) as ContainerFeatureFragment
-        fm.commit {
-            setReorderingAllowed(true)
-            replace(R.id.container, featureContainerFragment, fragmentScreen.screenKey)
-            addToBackStack(featureContainerFragment.backStackName)
-        }
-    }
-
-    private fun finish() {
-        mainActivity.finish()
+        commitFragmentTransaction(featureContainerFragment, fragmentScreen, true)
     }
 
     private fun backTo(command: GlobalBackTo) {
-        if(command.screen == null) {
+        if (command.screen == null) {
             fm.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+        }
+    }
+
+    private fun replace(command: GlobalReplace) {
+        val fragmentScreen = command.screen
+        val featureContainerFragment = fragmentScreen.createFragment(ff) as ContainerFeatureFragment
+        commitFragmentTransaction(featureContainerFragment, fragmentScreen, false)
+    }
+
+    private fun commitFragmentTransaction(
+        featureContainerFragment: ContainerFeatureFragment,
+        fragmentScreen: FragmentScreen,
+        addToBackStack: Boolean
+    ) {
+        fm.commit {
+            setReorderingAllowed(true)
+            replace(R.id.container, featureContainerFragment, fragmentScreen.screenKey)
+            if (addToBackStack) {
+                addToBackStack(featureContainerFragment.backStackName)
+            }
         }
     }
 
