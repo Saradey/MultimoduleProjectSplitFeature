@@ -5,6 +5,7 @@ plugins {
 }
 
 android {
+    namespace = "com.evgeny.goncharov.sample.multimodule.base_core"
     compileSdk = rootProject.ext["compileSdkVersionApp"] as Int
     defaultConfig {
         minSdk = rootProject.ext["minSdkVersionApp"] as Int
