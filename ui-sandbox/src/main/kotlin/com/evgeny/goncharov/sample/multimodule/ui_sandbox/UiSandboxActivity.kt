@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.evgeny.goncharov.multimodule.ThemeResourceStyle
+import com.evgeny.goncharov.multimodule.theme.ThemeResourceStyle
 import com.evgeny.goncharov.sample.multimodule.ui_sandbox.databinding.ActivityUiSandboxBinding
 
 internal class UiSandboxActivity : AppCompatActivity() {

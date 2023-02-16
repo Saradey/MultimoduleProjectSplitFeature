@@ -2,7 +2,7 @@ package com.evgeny.goncharov.sample.multimodule.ui_sandbox
 
 import androidx.annotation.StyleRes
 import androidx.lifecycle.ViewModel
-import com.evgeny.goncharov.multimodule.ThemeResourceStyle
+import com.evgeny.goncharov.multimodule.theme.ThemeResourceStyle
 
 internal class UiSandboxViewModel : ViewModel() {
 
