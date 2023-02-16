@@ -4,6 +4,7 @@ plugins {
 }
 
 android {
+    namespace = "com.evgeny.goncharov.sample.multimodule.ui_sandbox"
     compileSdk = rootProject.ext["compileSdkVersionApp"] as Int
     defaultConfig {
         applicationId = "com.evgeny.goncharov.sample.multimodule.ui_sandbox"
