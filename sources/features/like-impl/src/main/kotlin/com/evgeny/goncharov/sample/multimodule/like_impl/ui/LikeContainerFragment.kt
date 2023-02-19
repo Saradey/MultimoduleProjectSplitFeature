@@ -10,9 +10,9 @@ import com.evgeny.goncharov.sample.multimodule.navigation.base.FeatureNavigator
 import com.evgeny.goncharov.sample.multimodule.navigation.base.FeatureRouter
 import com.github.terrakok.cicerone.NavigatorHolder
 
-internal class LikeContainerFragment : ContainerFeatureFragment<LikeApi>() {
+internal class LikeContainerFragment : ContainerFeatureFragment() {
 
-    override val dependency: LikeInternal by lazy {
+    private val dependency: LikeInternal by lazy {
         getFeatureApi(LikeApi::class.java) as LikeInternal
     }
     private val navigator: FeatureNavigator by lazy {
@@ -38,6 +38,10 @@ internal class LikeContainerFragment : ContainerFeatureFragment<LikeApi>() {
     override fun onPause() {
         navigatorHolder.removeNavigator()
         super.onPause()
+    }
+
+    override fun releaseDependencies() {
+        releaseFeatureApi(LikeApi::class.java)
     }
 
     companion object {
