@@ -7,6 +7,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.evgeny.goncharov.multimodule.bottom_menu_impl.R
 import com.evgeny.goncharov.multimodule.bottom_menu_impl.databinding.FragmentBottomMenuBinding
 import com.evgeny.goncharov.multimodule.bottom_menu_impl.di.contracts.BottomMenuInternal
+import com.evgeny.goncharov.multimodule.bottom_menu_impl.navigation.BottomMenuNavigator
 import com.evgeny.goncharov.multimodule.bottom_menu_impl.view.models.BottomMenuContainerViewModel
 import com.evgeny.goncharov.sample.multimodule.bottom_menu_api.BottomMenuApi
 import com.evgeny.goncharov.sample.multimodule.di_core.ContainerFeatureFragment
@@ -22,11 +23,8 @@ internal class BottomMenuContainerFragment :
     private val viewModel: BottomMenuContainerViewModel by viewModels {
         dependency.provideViewModelFactory()
     }
-    override val navigator: FeatureNavigator by lazy {
-        FeatureNavigator(
-            containerId = R.id.frm_bottom_menu_feature_container,
-            containerFragment = this
-        )
+    override val navigator: BottomMenuNavigator by lazy {
+        BottomMenuNavigator()
     }
     private val binding: FragmentBottomMenuBinding by viewBinding(FragmentBottomMenuBinding::bind)
     override val backStackName: String = "BottomMenuContainer"

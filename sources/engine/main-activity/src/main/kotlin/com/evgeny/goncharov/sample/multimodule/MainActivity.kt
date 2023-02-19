@@ -22,8 +22,8 @@ public class MainActivity : CoreActivity() {
         savedInstanceState ?: splashLauncher.launch()
     }
 
-    override fun onResumeFragments() {
-        super.onResumeFragments()
+    override fun onResume() {
+        super.onResume()
         globalNavigatorHolder.setNavigator(navigator)
     }
 
