@@ -57,20 +57,6 @@ public class MainActivityNavigator(
         commitFragmentTransaction(featureContainerFragment, fragmentScreen, false)
     }
 
-    private fun commitFragmentTransaction(
-        featureContainerFragment: ContainerFeatureFragment,
-        fragmentScreen: FragmentScreen,
-        addToBackStack: Boolean
-    ) {
-        fm.commit {
-            setReorderingAllowed(true)
-            replace(R.id.container, featureContainerFragment, fragmentScreen.screenKey)
-            if (addToBackStack) {
-                addToBackStack(featureContainerFragment.backStackName)
-            }
-        }
-    }
-
     private fun errorOnApplyCommand(
         error: RuntimeException
     ) {

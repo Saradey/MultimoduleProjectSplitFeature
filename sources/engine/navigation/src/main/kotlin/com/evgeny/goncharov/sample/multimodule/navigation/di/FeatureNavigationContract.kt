@@ -1,4 +1,4 @@
-package com.evgeny.goncharov.sample.multimodule.navigation.base
+package com.evgeny.goncharov.sample.multimodule.navigation.di
 
 import com.evgeny.goncharov.sample.multimodule.navigation.routers.FeatureRouter
 import com.github.terrakok.cicerone.NavigatorHolder
