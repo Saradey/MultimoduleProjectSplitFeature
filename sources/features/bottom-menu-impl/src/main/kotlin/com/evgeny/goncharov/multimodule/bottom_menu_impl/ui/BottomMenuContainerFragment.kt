@@ -22,28 +22,20 @@ internal class BottomMenuContainerFragment :
     private val viewModel: BottomMenuContainerViewModel by viewModels {
         dependency.provideViewModelFactory()
     }
-    private val navigator: FeatureNavigator by lazy {
+    override val navigator: FeatureNavigator by lazy {
         FeatureNavigator(
             containerId = R.id.frm_bottom_menu_feature_container,
             containerFragment = this
         )
     }
     private val binding: FragmentBottomMenuBinding by viewBinding(FragmentBottomMenuBinding::bind)
-    private val globalNavigator: NavigatorHolder = dependency.provideGlobalNavigatorHolder()
     override val backStackName: String = "BottomMenuContainer"
+    override val navigatorHolder: NavigatorHolder = dependency.provideGlobalNavigatorHolder()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.initUi()
-    }
-
-    override fun onResume() {
-        super.onResume()
-        globalNavigator.setNavigator(navigator)
-    }
-
-    override fun onPause() {
-        globalNavigator.removeNavigator()
-        super.onPause()
+        savedInstanceState ?: {
+            binding.initUi()
+        }
     }
 
     private fun FragmentBottomMenuBinding.initUi() {
