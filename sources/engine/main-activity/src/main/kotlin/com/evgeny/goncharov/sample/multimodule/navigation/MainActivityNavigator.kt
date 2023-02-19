@@ -8,6 +8,7 @@ import com.github.terrakok.cicerone.Command
 import com.github.terrakok.cicerone.Navigator
 import com.evgeny.goncharov.sample.multimodule.R
 import com.evgeny.goncharov.sample.multimodule.di_core.ContainerFeatureFragment
+import com.evgeny.goncharov.sample.multimodule.navigation.base.BaseNavigator
 import com.evgeny.goncharov.sample.multimodule.navigation.commands.GlobalBackTo
 import com.evgeny.goncharov.sample.multimodule.navigation.commands.GlobalForward
 import com.evgeny.goncharov.sample.multimodule.navigation.commands.GlobalReplace
@@ -15,23 +16,13 @@ import com.github.terrakok.cicerone.androidx.FragmentScreen
 
 public class MainActivityNavigator(
     private val mainActivity: FragmentActivity
-) : Navigator {
+) : BaseNavigator() {
 
-    private val fm: FragmentManager = mainActivity.supportFragmentManager
-    private val ff: FragmentFactory = fm.fragmentFactory
+    override val fm: FragmentManager = mainActivity.supportFragmentManager
+    override val ff: FragmentFactory = fm.fragmentFactory
+    override val containerId: Int = R.id.container
 
-    override fun applyCommands(commands: Array<out Command>) {
-        fm.executePendingTransactions()
-        for (command in commands) {
-            try {
-                applyCommand(command)
-            } catch (e: RuntimeException) {
-                errorOnApplyCommand(e)
-            }
-        }
-    }
-
-    private fun applyCommand(command: Command) {
+    override fun applyCommand(command: Command) {
         when (command) {
             is GlobalForward -> forward(command)
             is GlobalBackTo -> backTo(command)
@@ -55,24 +46,5 @@ public class MainActivityNavigator(
         val fragmentScreen = command.screen
         val featureContainerFragment = fragmentScreen.createFragment(ff) as ContainerFeatureFragment
         commitFragmentTransaction(featureContainerFragment, fragmentScreen, false)
-    }
-
-    private fun errorOnApplyCommand(
-        error: RuntimeException
-    ) {
-        error(
-            ERROR_MESSAGE.format(
-                mainActivity.javaClass.canonicalName,
-                TAG,
-                error.message
-            )
-        )
-    }
-
-    private companion object {
-
-        const val TAG = "MainActivityNavigator"
-        const val ERROR_MESSAGE =
-            "errorOnApplyCommand host: %s tag: %s error message: %s"
     }
 }
