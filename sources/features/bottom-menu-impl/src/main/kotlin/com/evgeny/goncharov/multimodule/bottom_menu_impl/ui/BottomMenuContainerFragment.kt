@@ -33,9 +33,8 @@ internal class BottomMenuContainerFragment :
     override val navigatorHolder: NavigatorHolder = dependency.provideGlobalNavigatorHolder()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        savedInstanceState ?: {
-            binding.initUi()
-        }
+        binding.initUi()
+        savedInstanceState ?: viewModel.goToHome()
     }
 
     private fun FragmentBottomMenuBinding.initUi() {
