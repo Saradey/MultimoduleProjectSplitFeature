@@ -6,7 +6,7 @@ import com.evgeny.goncharov.sample.multimodule.di_core.ContainerFeatureFragment
 import com.evgeny.goncharov.sample.multimodule.registration_impl.di.contracts.RegistrationInternal
 import com.evgeny.goncharov.sample.multimodule.registration_impl.navigation.RegistrationScreens
 import com.evgeny.goncharov.sample.multimodule.navigation.base.FeatureNavigator
-import com.evgeny.goncharov.sample.multimodule.navigation.base.FeatureRouter
+import com.evgeny.goncharov.sample.multimodule.navigation.routers.FeatureRouter
 import com.evgeny.goncharov.sample.multimodule.registration_api.RegistrationApi
 import com.github.terrakok.cicerone.NavigatorHolder
 

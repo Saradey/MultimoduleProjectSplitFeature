@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.View
 import com.evgeny.goncharov.sample.multimodule.di_core.ContainerFeatureFragment
 import com.evgeny.goncharov.sample.multimodule.navigation.base.FeatureNavigator
-import com.evgeny.goncharov.sample.multimodule.navigation.base.FeatureRouter
+import com.evgeny.goncharov.sample.multimodule.navigation.routers.FeatureRouter
 import com.evgeny.goncharov.sample.multimodule.splash_screen_api.SplashApi
 import com.evgeny.goncharov.sample.multimodule.splash_screen_impl.di.contracts.SplashInternal
 import com.evgeny.goncharov.sample.multimodule.splash_screen_impl.navigation.screens.SplashScreens

@@ -1,7 +1,7 @@
 package com.evgeny.goncharov.sample.multimodule.navigation.modules
 
 import com.evgeny.goncharov.sample.multimodule.di_core.scopes.CoreScope
-import com.evgeny.goncharov.sample.multimodule.navigation.GlobalRouter
+import com.evgeny.goncharov.sample.multimodule.navigation.routers.GlobalRouter
 import com.github.terrakok.cicerone.Cicerone
 import com.github.terrakok.cicerone.NavigatorHolder
 import dagger.Module

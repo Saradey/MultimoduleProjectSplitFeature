@@ -1,4 +1,4 @@
-package com.evgeny.goncharov.sample.multimodule.navigation
+package com.evgeny.goncharov.sample.multimodule.navigation.routers
 
 import com.evgeny.goncharov.sample.multimodule.navigation.commands.GlobalBackTo
 import com.evgeny.goncharov.sample.multimodule.navigation.commands.GlobalForward

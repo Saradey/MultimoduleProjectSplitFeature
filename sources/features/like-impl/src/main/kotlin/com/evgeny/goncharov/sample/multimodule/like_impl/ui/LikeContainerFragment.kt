@@ -7,7 +7,7 @@ import com.evgeny.goncharov.sample.multimodule.like_api.LikeApi
 import com.evgeny.goncharov.sample.multimodule.like_impl.di.contracts.LikeInternal
 import com.evgeny.goncharov.sample.multimodule.like_impl.navigation.LikeScreens
 import com.evgeny.goncharov.sample.multimodule.navigation.base.FeatureNavigator
-import com.evgeny.goncharov.sample.multimodule.navigation.base.FeatureRouter
+import com.evgeny.goncharov.sample.multimodule.navigation.routers.FeatureRouter
 import com.github.terrakok.cicerone.NavigatorHolder
 
 internal class LikeContainerFragment : ContainerFeatureFragment() {

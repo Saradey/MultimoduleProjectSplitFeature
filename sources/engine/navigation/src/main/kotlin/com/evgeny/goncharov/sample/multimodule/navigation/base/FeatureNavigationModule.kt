@@ -1,6 +1,7 @@
 package com.evgeny.goncharov.sample.multimodule.navigation.base
 
 import com.evgeny.goncharov.sample.multimodule.di_core.scopes.FeatureScope
+import com.evgeny.goncharov.sample.multimodule.navigation.routers.FeatureRouter
 import com.github.terrakok.cicerone.Cicerone
 import com.github.terrakok.cicerone.NavigatorHolder
 import dagger.Module

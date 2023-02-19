@@ -1,6 +1,6 @@
 package com.evgeny.goncharov.sample.multimodule.registration_impl.navigation
 
-import com.evgeny.goncharov.sample.multimodule.navigation.GlobalRouter
+import com.evgeny.goncharov.sample.multimodule.navigation.routers.GlobalRouter
 import com.evgeny.goncharov.sample.multimodule.registration_api.RegistrationLauncher
 
 public class RegistrationLauncherImpl(

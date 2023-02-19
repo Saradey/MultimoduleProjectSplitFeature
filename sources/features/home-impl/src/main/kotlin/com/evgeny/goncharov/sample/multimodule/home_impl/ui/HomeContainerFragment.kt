@@ -7,7 +7,7 @@ import com.evgeny.goncharov.sample.multimodule.home_api.HomeApi
 import com.evgeny.goncharov.sample.multimodule.home_impl.di.contracts.HomeInternal
 import com.evgeny.goncharov.sample.multimodule.home_impl.navigation.HomeScreens
 import com.evgeny.goncharov.sample.multimodule.navigation.base.FeatureNavigator
-import com.evgeny.goncharov.sample.multimodule.navigation.base.FeatureRouter
+import com.evgeny.goncharov.sample.multimodule.navigation.routers.FeatureRouter
 import com.github.terrakok.cicerone.NavigatorHolder
 
 internal class HomeContainerFragment : ContainerFeatureFragment() {

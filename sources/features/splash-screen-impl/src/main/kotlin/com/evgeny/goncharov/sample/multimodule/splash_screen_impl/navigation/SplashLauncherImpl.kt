@@ -1,6 +1,6 @@
 package com.evgeny.goncharov.sample.multimodule.splash_screen_impl.navigation
 
-import com.evgeny.goncharov.sample.multimodule.navigation.GlobalRouter
+import com.evgeny.goncharov.sample.multimodule.navigation.routers.GlobalRouter
 import com.evgeny.goncharov.sample.multimodule.splash_screen_api.SplashLauncher
 import com.evgeny.goncharov.sample.multimodule.splash_screen_impl.navigation.screens.SplashScreens
 

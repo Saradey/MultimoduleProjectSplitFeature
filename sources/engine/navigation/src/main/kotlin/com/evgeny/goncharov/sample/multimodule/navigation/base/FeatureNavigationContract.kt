@@ -1,5 +1,6 @@
 package com.evgeny.goncharov.sample.multimodule.navigation.base
 
+import com.evgeny.goncharov.sample.multimodule.navigation.routers.FeatureRouter
 import com.github.terrakok.cicerone.NavigatorHolder
 import javax.inject.Named
 

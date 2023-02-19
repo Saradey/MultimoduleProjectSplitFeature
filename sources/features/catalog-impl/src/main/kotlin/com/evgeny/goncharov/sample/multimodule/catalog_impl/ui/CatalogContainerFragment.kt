@@ -7,7 +7,7 @@ import com.evgeny.goncharov.sample.multimodule.catalog_impl.di.contracts.Catalog
 import com.evgeny.goncharov.sample.multimodule.catalog_impl.navigation.CatalogScreens
 import com.evgeny.goncharov.sample.multimodule.di_core.ContainerFeatureFragment
 import com.evgeny.goncharov.sample.multimodule.navigation.base.FeatureNavigator
-import com.evgeny.goncharov.sample.multimodule.navigation.base.FeatureRouter
+import com.evgeny.goncharov.sample.multimodule.navigation.routers.FeatureRouter
 import com.github.terrakok.cicerone.NavigatorHolder
 
 internal class CatalogContainerFragment : ContainerFeatureFragment() {
