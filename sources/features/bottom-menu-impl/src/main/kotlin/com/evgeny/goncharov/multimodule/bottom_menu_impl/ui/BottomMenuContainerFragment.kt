@@ -24,7 +24,7 @@ internal class BottomMenuContainerFragment :
         dependency.provideViewModelFactory()
     }
     override val navigator: BottomMenuNavigator by lazy {
-        BottomMenuNavigator()
+        BottomMenuNavigator(this)
     }
     private val binding: FragmentBottomMenuBinding by viewBinding(FragmentBottomMenuBinding::bind)
     override val backStackName: String = "BottomMenuContainer"
