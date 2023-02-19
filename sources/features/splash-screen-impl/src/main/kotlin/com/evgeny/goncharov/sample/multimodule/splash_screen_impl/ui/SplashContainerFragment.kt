@@ -10,9 +10,9 @@ import com.evgeny.goncharov.sample.multimodule.splash_screen_impl.di.contracts.S
 import com.evgeny.goncharov.sample.multimodule.splash_screen_impl.navigation.screens.SplashScreens
 import com.github.terrakok.cicerone.NavigatorHolder
 
-internal class SplashContainerFragment : ContainerFeatureFragment<SplashApi>() {
+internal class SplashContainerFragment : ContainerFeatureFragment() {
 
-    override val dependency: SplashInternal by lazy {
+    private val dependency: SplashInternal by lazy {
         getFeatureApi(SplashApi::class.java) as SplashInternal
     }
     private val navigator: FeatureNavigator by lazy {
@@ -38,6 +38,10 @@ internal class SplashContainerFragment : ContainerFeatureFragment<SplashApi>() {
     override fun onPause() {
         navigatorHolder.removeNavigator()
         super.onPause()
+    }
+
+    override fun releaseDependencies() {
+        releaseFeatureApi(SplashApi::class.java)
     }
 
     companion object {
