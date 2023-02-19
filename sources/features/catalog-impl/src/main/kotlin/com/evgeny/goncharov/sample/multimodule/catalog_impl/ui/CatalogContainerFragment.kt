@@ -15,10 +15,10 @@ internal class CatalogContainerFragment : ContainerFeatureFragment() {
     private val dependency: CatalogInternal by lazy {
         getFeatureApi(CatalogApi::class.java) as CatalogInternal
     }
-    private val navigator: FeatureNavigator by lazy {
+    override val navigator: FeatureNavigator by lazy {
         FeatureNavigator(this)
     }
-    private val navigatorHolder: NavigatorHolder = dependency.provideFeatureNavigatorHolder()
+    override val navigatorHolder: NavigatorHolder = dependency.provideFeatureNavigatorHolder()
     private val router: FeatureRouter = dependency.provideFeatureRouter()
     override val backStackName: String = "CatalogContainer"
 
@@ -28,16 +28,6 @@ internal class CatalogContainerFragment : ContainerFeatureFragment() {
 
     private fun startFeature() {
         router.navigateToFeatureScreen(CatalogScreens.goToTheCatalog())
-    }
-
-    override fun onResume() {
-        super.onResume()
-        navigatorHolder.setNavigator(navigator)
-    }
-
-    override fun onPause() {
-        navigatorHolder.removeNavigator()
-        super.onPause()
     }
 
     override fun releaseDependencies() {
