@@ -15,10 +15,10 @@ internal class RegistrationContainerFragment : ContainerFeatureFragment() {
     private val dependency: RegistrationInternal by lazy {
         getFeatureApi(RegistrationApi::class.java) as RegistrationInternal
     }
-    private val navigator: FeatureNavigator by lazy {
+    override val navigator: FeatureNavigator by lazy {
         FeatureNavigator(this)
     }
-    private val navigatorHolder: NavigatorHolder = dependency.provideFeatureNavigatorHolder()
+    override val navigatorHolder: NavigatorHolder = dependency.provideFeatureNavigatorHolder()
     private val router: FeatureRouter = dependency.provideFeatureRouter()
     override val backStackName: String = "RegistrationContainer"
 
@@ -28,16 +28,6 @@ internal class RegistrationContainerFragment : ContainerFeatureFragment() {
 
     private fun startFeature() {
         router.navigateToFeatureScreen(RegistrationScreens.goToTheRegistration())
-    }
-
-    override fun onResume() {
-        super.onResume()
-        navigatorHolder.setNavigator(navigator)
-    }
-
-    override fun onPause() {
-        navigatorHolder.removeNavigator()
-        super.onPause()
     }
 
     override fun releaseDependencies() {
