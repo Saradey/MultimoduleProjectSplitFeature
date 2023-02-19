@@ -8,9 +8,9 @@ import com.github.terrakok.cicerone.Command
 import com.github.terrakok.cicerone.Navigator
 import com.evgeny.goncharov.sample.multimodule.R
 import com.evgeny.goncharov.sample.multimodule.di_core.ContainerFeatureFragment
-import com.evgeny.goncharov.sample.multimodule.navigation.base.GlobalBackTo
-import com.evgeny.goncharov.sample.multimodule.navigation.base.GlobalForward
-import com.evgeny.goncharov.sample.multimodule.navigation.base.GlobalReplace
+import com.evgeny.goncharov.sample.multimodule.navigation.commands.GlobalBackTo
+import com.evgeny.goncharov.sample.multimodule.navigation.commands.GlobalForward
+import com.evgeny.goncharov.sample.multimodule.navigation.commands.GlobalReplace
 import com.github.terrakok.cicerone.androidx.FragmentScreen
 
 public class MainActivityNavigator(

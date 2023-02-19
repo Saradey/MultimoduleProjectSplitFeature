@@ -6,7 +6,7 @@ import androidx.fragment.app.commit
 import com.evgeny.goncharov.multimodule.bottom_menu_impl.R
 import com.evgeny.goncharov.multimodule.bottom_menu_impl.ui.BottomMenuContainerFragment
 import com.evgeny.goncharov.sample.multimodule.di_core.ContainerFeatureFragment
-import com.evgeny.goncharov.sample.multimodule.navigation.base.GlobalForward
+import com.evgeny.goncharov.sample.multimodule.navigation.commands.GlobalForward
 import com.github.terrakok.cicerone.Command
 import com.github.terrakok.cicerone.Navigator
 import com.github.terrakok.cicerone.androidx.FragmentScreen

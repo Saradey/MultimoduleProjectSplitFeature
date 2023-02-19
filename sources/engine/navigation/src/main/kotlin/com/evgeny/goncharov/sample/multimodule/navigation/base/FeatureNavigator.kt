@@ -3,6 +3,7 @@ package com.evgeny.goncharov.sample.multimodule.navigation.base
 import androidx.fragment.app.*
 import com.evgeny.goncharov.sample.multimodule.di_core.ContainerFeatureFragment
 import com.evgeny.goncharov.sample.multimodule.di_core.utils.DiCoreViewId
+import com.evgeny.goncharov.sample.multimodule.navigation.commands.InternalForward
 import com.github.terrakok.cicerone.*
 
 public class FeatureNavigator(

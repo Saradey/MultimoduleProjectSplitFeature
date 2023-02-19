@@ -1,8 +1,8 @@
 package com.evgeny.goncharov.sample.multimodule.navigation
 
-import com.evgeny.goncharov.sample.multimodule.navigation.base.GlobalBackTo
-import com.evgeny.goncharov.sample.multimodule.navigation.base.GlobalForward
-import com.evgeny.goncharov.sample.multimodule.navigation.base.GlobalReplace
+import com.evgeny.goncharov.sample.multimodule.navigation.commands.GlobalBackTo
+import com.evgeny.goncharov.sample.multimodule.navigation.commands.GlobalForward
+import com.evgeny.goncharov.sample.multimodule.navigation.commands.GlobalReplace
 import com.github.terrakok.cicerone.BaseRouter
 import com.github.terrakok.cicerone.androidx.FragmentScreen
 
