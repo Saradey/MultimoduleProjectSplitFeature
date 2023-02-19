@@ -10,9 +10,9 @@ import com.evgeny.goncharov.sample.multimodule.navigation.base.FeatureRouter
 import com.evgeny.goncharov.sample.multimodule.registration_api.RegistrationApi
 import com.github.terrakok.cicerone.NavigatorHolder
 
-internal class RegistrationContainerFragment : ContainerFeatureFragment() {
+internal class RegistrationContainerFragment : ContainerFeatureFragment<RegistrationApi>() {
 
-    private val dependency: RegistrationInternal by lazy {
+    override val dependency: RegistrationInternal by lazy {
         getFeatureApi(RegistrationApi::class.java) as RegistrationInternal
     }
     private val navigator: FeatureNavigator by lazy {
@@ -38,10 +38,6 @@ internal class RegistrationContainerFragment : ContainerFeatureFragment() {
     override fun onPause() {
         navigatorHolder.removeNavigator()
         super.onPause()
-    }
-
-    override fun releaseDependencies() {
-        releaseFeatureApi(RegistrationApi::class.java)
     }
 
     companion object {
