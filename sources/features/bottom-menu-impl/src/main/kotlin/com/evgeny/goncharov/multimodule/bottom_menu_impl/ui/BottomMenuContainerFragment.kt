@@ -14,9 +14,9 @@ import com.evgeny.goncharov.sample.multimodule.navigation.base.FeatureNavigator
 import com.github.terrakok.cicerone.NavigatorHolder
 
 internal class BottomMenuContainerFragment :
-    ContainerFeatureFragment(R.layout.fragment_bottom_menu) {
+    ContainerFeatureFragment<BottomMenuApi>(R.layout.fragment_bottom_menu) {
 
-    private val dependency: BottomMenuInternal by lazy {
+     override val dependency: BottomMenuInternal by lazy {
         getFeatureApi(BottomMenuApi::class.java) as BottomMenuInternal
     }
     private val viewModel: BottomMenuContainerViewModel by viewModels {
@@ -56,10 +56,6 @@ internal class BottomMenuContainerFragment :
             }
             true
         }
-    }
-
-    override fun releaseDependencies() {
-        releaseFeatureApi(BottomMenuApi::class.java)
     }
 
     companion object {
