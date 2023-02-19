@@ -10,9 +10,9 @@ import com.evgeny.goncharov.sample.multimodule.navigation.base.FeatureNavigator
 import com.evgeny.goncharov.sample.multimodule.navigation.base.FeatureRouter
 import com.github.terrakok.cicerone.NavigatorHolder
 
-internal class HomeContainerFragment : ContainerFeatureFragment() {
+internal class HomeContainerFragment : ContainerFeatureFragment<HomeApi>() {
 
-    private val dependency: HomeInternal by lazy {
+    override val dependency: HomeInternal by lazy {
         getFeatureApi(HomeApi::class.java) as HomeInternal
     }
     private val navigator: FeatureNavigator by lazy {
@@ -38,10 +38,6 @@ internal class HomeContainerFragment : ContainerFeatureFragment() {
     override fun onPause() {
         navigatorHolder.removeNavigator()
         super.onPause()
-    }
-
-    override fun releaseDependencies() {
-        releaseFeatureApi(HomeApi::class.java)
     }
 
     companion object {
