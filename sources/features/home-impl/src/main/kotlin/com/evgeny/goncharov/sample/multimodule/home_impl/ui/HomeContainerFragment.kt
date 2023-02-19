@@ -15,10 +15,10 @@ internal class HomeContainerFragment : ContainerFeatureFragment() {
     private val dependency: HomeInternal by lazy {
         getFeatureApi(HomeApi::class.java) as HomeInternal
     }
-    private val navigator: FeatureNavigator by lazy {
+    override val navigator: FeatureNavigator by lazy {
         FeatureNavigator(this)
     }
-    private val navigatorHolder: NavigatorHolder = dependency.provideFeatureNavigatorHolder()
+    override val navigatorHolder: NavigatorHolder = dependency.provideFeatureNavigatorHolder()
     private val router: FeatureRouter = dependency.provideFeatureRouter()
     override val backStackName: String = "HomeContainer"
 
@@ -28,16 +28,6 @@ internal class HomeContainerFragment : ContainerFeatureFragment() {
 
     private fun startFeature() {
         router.navigateToFeatureScreen(HomeScreens.goToTheHomeFragment())
-    }
-
-    override fun onResume() {
-        super.onResume()
-        navigatorHolder.setNavigator(navigator)
-    }
-
-    override fun onPause() {
-        navigatorHolder.removeNavigator()
-        super.onPause()
     }
 
     override fun releaseDependencies() {
