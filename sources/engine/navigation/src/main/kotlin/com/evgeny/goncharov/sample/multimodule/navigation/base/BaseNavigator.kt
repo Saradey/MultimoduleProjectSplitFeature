@@ -30,7 +30,7 @@ public abstract class BaseNavigator : Navigator {
     protected fun commitFragmentTransaction(
         featureContainerFragment: ContainerFeatureFragment,
         fragmentScreen: FragmentScreen,
-        addToBackStack: Boolean,
+        addToBackStack: Boolean = true,
     ) {
         fm.commit {
             setReorderingAllowed(true)
