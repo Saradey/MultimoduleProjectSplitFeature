@@ -1,5 +1,6 @@
 package com.evgeny.goncharov.sample.multimodule.navigation.routers
 
+import com.evgeny.goncharov.sample.multimodule.navigation.commands.GlobalBack
 import com.evgeny.goncharov.sample.multimodule.navigation.commands.GlobalBackTo
 import com.evgeny.goncharov.sample.multimodule.navigation.commands.GlobalForward
 import com.evgeny.goncharov.sample.multimodule.navigation.commands.GlobalReplace
@@ -18,5 +19,9 @@ public class GlobalRouter : BaseRouter() {
 
     public fun newRootScreenFeatureContainer(screen: FragmentScreen) {
         executeCommands(GlobalBackTo(null), GlobalReplace(screen))
+    }
+
+    public fun back() {
+        executeCommands(GlobalBack)
     }
 }

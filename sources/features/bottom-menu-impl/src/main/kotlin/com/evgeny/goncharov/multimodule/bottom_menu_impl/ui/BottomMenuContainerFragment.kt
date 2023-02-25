@@ -2,6 +2,7 @@ package com.evgeny.goncharov.multimodule.bottom_menu_impl.ui
 
 import android.os.Bundle
 import android.view.View
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.viewModels
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.evgeny.goncharov.multimodule.bottom_menu_impl.R
@@ -11,7 +12,6 @@ import com.evgeny.goncharov.multimodule.bottom_menu_impl.navigation.BottomMenuNa
 import com.evgeny.goncharov.multimodule.bottom_menu_impl.view.models.BottomMenuContainerViewModel
 import com.evgeny.goncharov.sample.multimodule.bottom_menu_api.BottomMenuApi
 import com.evgeny.goncharov.sample.multimodule.di_core.ContainerFeatureFragment
-import com.evgeny.goncharov.sample.multimodule.navigation.base.FeatureNavigator
 import com.github.terrakok.cicerone.NavigatorHolder
 
 internal class BottomMenuContainerFragment :
@@ -26,6 +26,11 @@ internal class BottomMenuContainerFragment :
     override val navigator: BottomMenuNavigator by lazy {
         BottomMenuNavigator(this)
     }
+    private val onBackPressed = object : OnBackPressedCallback(true) {
+        override fun handleOnBackPressed() {
+            viewModel.onBackPressed()
+        }
+    }
     private val binding: FragmentBottomMenuBinding by viewBinding(FragmentBottomMenuBinding::bind)
     override val backStackName: String = "BottomMenuContainer"
     override val navigatorHolder: NavigatorHolder = dependency.provideGlobalNavigatorHolder()
@@ -33,6 +38,7 @@ internal class BottomMenuContainerFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.initUi()
         savedInstanceState ?: viewModel.goToHome()
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, onBackPressed)
     }
 
     private fun FragmentBottomMenuBinding.initUi() {

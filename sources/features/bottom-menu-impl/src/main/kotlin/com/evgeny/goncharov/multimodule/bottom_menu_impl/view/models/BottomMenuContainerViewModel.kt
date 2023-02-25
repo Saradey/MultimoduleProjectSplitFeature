@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import com.evgeny.goncharov.sample.multimodule.catalog_api.CatalogLauncher
 import com.evgeny.goncharov.sample.multimodule.home_api.HomeLauncher
 import com.evgeny.goncharov.sample.multimodule.like_api.LikeLauncher
+import com.evgeny.goncharov.sample.multimodule.navigation.routers.GlobalRouter
 import com.evgeny.goncharov.sample.multimodule.registration_api.RegistrationLauncher
 import javax.inject.Inject
 
@@ -11,7 +12,8 @@ internal class BottomMenuContainerViewModel @Inject constructor(
     private val homeLauncher: HomeLauncher,
     private val catalogLauncher: CatalogLauncher,
     private val registrationLauncher: RegistrationLauncher,
-    private val likeLauncher: LikeLauncher
+    private val likeLauncher: LikeLauncher,
+    private val globalRouter: GlobalRouter
 ) : ViewModel() {
 
     fun goToHome() {
@@ -29,5 +31,9 @@ internal class BottomMenuContainerViewModel @Inject constructor(
 
     fun goToLike() {
         likeLauncher.launch()
+    }
+
+    fun onBackPressed() {
+        globalRouter.back()
     }
 }
