@@ -18,6 +18,7 @@ internal class BottomMenuNavigator(
     private val fm: FragmentManager = fragmentBottomContainer.childFragmentManager
     private val ff: FragmentFactory = fm.fragmentFactory
     private val idContainer: Int = R.id.frm_bottom_menu_feature_container
+    private var selectedBackstackMenu = ""
 
     override fun applyCommands(commands: Array<out Command>) {
         fm.executePendingTransactions()
@@ -39,20 +40,20 @@ internal class BottomMenuNavigator(
     private fun forward(command: GlobalForward) {
         val fragmentScreen = command.screen
         val featureContainerFragment = fragmentScreen.createFragment(ff) as ContainerFeatureFragment
-        commitFragmentTransaction(featureContainerFragment, fragmentScreen, true)
+        if (selectedBackstackMenu != featureContainerFragment.backStackName) {
+            commitFragmentTransaction(featureContainerFragment, fragmentScreen)
+        }
     }
 
     private fun commitFragmentTransaction(
         featureContainerFragment: ContainerFeatureFragment,
         fragmentScreen: FragmentScreen,
-        addToBackStack: Boolean
     ) {
         fm.commit {
             setReorderingAllowed(true)
             replace(idContainer, featureContainerFragment, fragmentScreen.screenKey)
-            if (addToBackStack) {
-                addToBackStack(featureContainerFragment.backStackName)
-            }
+            addToBackStack(featureContainerFragment.backStackName)
+            selectedBackstackMenu = featureContainerFragment.backStackName
         }
     }
 
