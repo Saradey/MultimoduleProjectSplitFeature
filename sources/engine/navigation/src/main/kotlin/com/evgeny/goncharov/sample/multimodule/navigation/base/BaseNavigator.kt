@@ -1,5 +1,6 @@
 package com.evgeny.goncharov.sample.multimodule.navigation.base
 
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentFactory
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.commit
@@ -28,15 +29,16 @@ public abstract class BaseNavigator : Navigator {
     }
 
     protected fun commitFragmentTransaction(
-        featureContainerFragment: ContainerFeatureFragment,
+        fragment: Fragment,
         fragmentScreen: FragmentScreen,
         addToBackStack: Boolean = true,
+        backStackName: String
     ) {
         fm.commit {
             setReorderingAllowed(true)
-            replace(containerId, featureContainerFragment, fragmentScreen.screenKey)
+            replace(containerId, fragment, fragmentScreen.screenKey)
             if (addToBackStack) {
-                addToBackStack(featureContainerFragment.backStackName)
+                addToBackStack(backStackName)
             }
         }
     }

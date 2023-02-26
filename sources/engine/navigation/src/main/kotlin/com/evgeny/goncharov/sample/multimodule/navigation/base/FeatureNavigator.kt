@@ -8,25 +8,13 @@ import com.github.terrakok.cicerone.*
 
 public class FeatureNavigator(
     private val containerFragment: ContainerFeatureFragment,
-    private val containerId: Int = DiCoreViewId.frm_feature_container,
-) : Navigator {
+) : BaseNavigator() {
 
-    private val fm: FragmentManager = containerFragment.childFragmentManager
-    private val ff: FragmentFactory = fm.fragmentFactory
-    private val backStackName: String = containerFragment.backStackName
+    override val fm: FragmentManager = containerFragment.childFragmentManager
+    override val ff: FragmentFactory = fm.fragmentFactory
+    override val containerId: Int = DiCoreViewId.frm_feature_container
 
-    override fun applyCommands(commands: Array<out Command>) {
-        fm.executePendingTransactions()
-        for (command in commands) {
-            try {
-                applyCommand(command)
-            } catch (e: RuntimeException) {
-                errorOnApplyCommand(e)
-            }
-        }
-    }
-
-    private fun applyCommand(command: Command) {
+    override fun applyCommand(command: Command) {
         when (command) {
             is InternalForward -> forward(command)
         }
@@ -35,29 +23,6 @@ public class FeatureNavigator(
     private fun forward(command: InternalForward) {
         val screen = command.screen
         val fragment = screen.createFragment(ff)
-        fm.commit {
-            setReorderingAllowed(true)
-            replace(containerId, fragment, screen.screenKey)
-            addToBackStack(backStackName)
-        }
-    }
-
-    private fun errorOnApplyCommand(
-        error: RuntimeException
-    ) {
-        error(
-            ERROR_MESSAGE.format(
-                containerFragment.javaClass.canonicalName,
-                TAG,
-                error.message
-            )
-        )
-    }
-
-    private companion object {
-
-        const val TAG = "FeatureNavigator"
-        const val ERROR_MESSAGE =
-            "errorOnApplyCommand host: %s tag: %s error message: %s"
+        commitFragmentTransaction(fragment, screen, true, screen.screenKey)
     }
 }
