@@ -4,7 +4,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentFactory
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.commit
-import com.evgeny.goncharov.sample.multimodule.di_core.ContainerFeatureFragment
 import com.github.terrakok.cicerone.Command
 import com.github.terrakok.cicerone.Navigator
 import com.github.terrakok.cicerone.androidx.FragmentScreen
@@ -31,7 +30,7 @@ public abstract class BaseNavigator : Navigator {
     protected fun commitFragmentTransaction(
         fragment: Fragment,
         fragmentScreen: FragmentScreen,
-        addToBackStack: Boolean = true,
+        addToBackStack: Boolean,
         backStackName: String
     ) {
         fm.commit {

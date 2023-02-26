@@ -2,15 +2,12 @@ package com.evgeny.goncharov.multimodule.bottom_menu_impl.navigation
 
 import androidx.fragment.app.FragmentFactory
 import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.commit
 import com.evgeny.goncharov.multimodule.bottom_menu_impl.R
 import com.evgeny.goncharov.multimodule.bottom_menu_impl.ui.BottomMenuContainerFragment
 import com.evgeny.goncharov.sample.multimodule.di_core.ContainerFeatureFragment
 import com.evgeny.goncharov.sample.multimodule.navigation.base.BaseNavigator
 import com.evgeny.goncharov.sample.multimodule.navigation.commands.GlobalForward
 import com.github.terrakok.cicerone.Command
-import com.github.terrakok.cicerone.Navigator
-import com.github.terrakok.cicerone.androidx.FragmentScreen
 
 internal class BottomMenuNavigator(
     private val fragmentBottomContainer: BottomMenuContainerFragment
@@ -31,7 +28,12 @@ internal class BottomMenuNavigator(
         val fragmentScreen = command.screen
         val featureContainerFragment = fragmentScreen.createFragment(ff) as ContainerFeatureFragment
         if (selectedBackstackMenu != featureContainerFragment.backStackName) {
-            commitFragmentTransaction(featureContainerFragment, fragmentScreen)
+            commitFragmentTransaction(
+                fragment = featureContainerFragment,
+                fragmentScreen = fragmentScreen,
+                addToBackStack = true,
+                backStackName = featureContainerFragment.backStackName
+            )
             selectedBackstackMenu = featureContainerFragment.backStackName
         }
     }
