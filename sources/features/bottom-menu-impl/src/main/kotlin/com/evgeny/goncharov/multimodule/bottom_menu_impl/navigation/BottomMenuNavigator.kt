@@ -6,6 +6,7 @@ import com.evgeny.goncharov.multimodule.bottom_menu_impl.R
 import com.evgeny.goncharov.multimodule.bottom_menu_impl.ui.BottomMenuContainerFragment
 import com.evgeny.goncharov.sample.multimodule.di_core.ContainerFeatureFragment
 import com.evgeny.goncharov.sample.multimodule.navigation.base.BaseNavigator
+import com.evgeny.goncharov.sample.multimodule.navigation.commands.GlobalBack
 import com.evgeny.goncharov.sample.multimodule.navigation.commands.GlobalForward
 import com.github.terrakok.cicerone.Command
 
@@ -21,6 +22,7 @@ internal class BottomMenuNavigator(
     override fun applyCommand(command: Command) {
         when (command) {
             is GlobalForward -> forward(command)
+            is GlobalBack -> back()
         }
     }
 
@@ -36,5 +38,9 @@ internal class BottomMenuNavigator(
             )
             selectedBackstackMenu = featureContainerFragment.backStackName
         }
+    }
+
+    private fun back() {
+
     }
 }

@@ -1,6 +1,7 @@
 package com.evgeny.goncharov.multimodule.bottom_menu_impl.ui
 
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.viewModels
@@ -42,15 +43,17 @@ internal class BottomMenuContainerFragment :
     }
 
     private fun FragmentBottomMenuBinding.initUi() {
-        btvMainMenu.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.home -> viewModel.goToHome()
-                R.id.catalog -> viewModel.goToCatalog()
-                R.id.profile -> viewModel.goToProfile()
-                R.id.like -> viewModel.goToLike()
-            }
-            true
+        btvMainMenu.setOnItemSelectedListener(::itemBottomMenuClickListener)
+    }
+
+    private fun itemBottomMenuClickListener(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.home -> viewModel.goToHome()
+            R.id.catalog -> viewModel.goToCatalog()
+            R.id.profile -> viewModel.goToProfile()
+            R.id.like -> viewModel.goToLike()
         }
+        return true
     }
 
     override fun releaseDependencies() {
