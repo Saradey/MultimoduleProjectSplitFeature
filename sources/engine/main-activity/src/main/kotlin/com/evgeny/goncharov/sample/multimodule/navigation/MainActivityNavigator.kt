@@ -3,16 +3,13 @@ package com.evgeny.goncharov.sample.multimodule.navigation
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentFactory
 import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.commit
 import com.github.terrakok.cicerone.Command
-import com.github.terrakok.cicerone.Navigator
 import com.evgeny.goncharov.sample.multimodule.R
 import com.evgeny.goncharov.sample.multimodule.di_core.ContainerFeatureFragment
 import com.evgeny.goncharov.sample.multimodule.navigation.base.BaseNavigator
 import com.evgeny.goncharov.sample.multimodule.navigation.commands.GlobalBackTo
 import com.evgeny.goncharov.sample.multimodule.navigation.commands.GlobalForward
 import com.evgeny.goncharov.sample.multimodule.navigation.commands.GlobalReplace
-import com.github.terrakok.cicerone.androidx.FragmentScreen
 
 public class MainActivityNavigator(
     private val mainActivity: FragmentActivity
@@ -33,7 +30,12 @@ public class MainActivityNavigator(
     private fun forward(command: GlobalForward) {
         val fragmentScreen = command.screen
         val featureContainerFragment = fragmentScreen.createFragment(ff) as ContainerFeatureFragment
-        commitFragmentTransaction(featureContainerFragment, fragmentScreen, true)
+        commitFragmentTransaction(
+            fragment = featureContainerFragment,
+            fragmentScreen = fragmentScreen,
+            addToBackStack = true,
+            backStackName = featureContainerFragment.backStackName
+        )
     }
 
     private fun backTo(command: GlobalBackTo) {
@@ -45,6 +47,11 @@ public class MainActivityNavigator(
     private fun replace(command: GlobalReplace) {
         val fragmentScreen = command.screen
         val featureContainerFragment = fragmentScreen.createFragment(ff) as ContainerFeatureFragment
-        commitFragmentTransaction(featureContainerFragment, fragmentScreen, false)
+        commitFragmentTransaction(
+            fragment = featureContainerFragment,
+            fragmentScreen = fragmentScreen,
+            addToBackStack = false,
+            backStackName = featureContainerFragment.backStackName
+        )
     }
 }
