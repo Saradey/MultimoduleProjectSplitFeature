@@ -2,7 +2,7 @@
 #https://developer.android.com/jetpack/androidx/releases/core
 coreKtx = "1.9.0"
 #https://github.com/google/dagger
-daggerVersion = "2.44.2"
+daggerVersion = "2.45"
 #https://developer.android.com/jetpack/androidx/releases/lifecycle
 viewmodelVersion = "2.5.1"
 #https://github.com/terrakok/Cicerone
