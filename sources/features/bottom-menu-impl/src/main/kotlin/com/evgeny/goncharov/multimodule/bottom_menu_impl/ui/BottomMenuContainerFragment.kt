@@ -60,7 +60,21 @@ internal class BottomMenuContainerFragment :
         releaseFeatureApi(BottomMenuApi::class.java)
     }
 
+    fun selectTabBottomMenu(selectedBackstackMenu: String) {
+        when (selectedBackstackMenu) {
+            TAG_HOME -> binding.btvMainMenu.selectedItemId = R.id.home
+            TAG_CATALOG -> binding.btvMainMenu.selectedItemId = R.id.catalog
+            TAG_REG -> binding.btvMainMenu.selectedItemId = R.id.profile
+            TAG_LIKE -> binding.btvMainMenu.selectedItemId = R.id.like
+        }
+    }
+
     companion object {
         fun newInstance() = BottomMenuContainerFragment()
+
+        private const val TAG_HOME = "HomeContainer"
+        private const val TAG_CATALOG = "CatalogContainer"
+        private const val TAG_REG = "RegistrationContainer"
+        private const val TAG_LIKE = "LikeContainer"
     }
 }

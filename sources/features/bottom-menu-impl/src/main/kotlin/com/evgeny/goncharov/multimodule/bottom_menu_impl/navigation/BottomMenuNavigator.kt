@@ -48,6 +48,7 @@ internal class BottomMenuNavigator(
             fm.popBackStack()
             localBackStack.pop()
             selectedBackstackMenu = localBackStack.peek()
+            fragmentBottomContainer.selectTabBottomMenu(selectedBackstackMenu)
         } else {
             fragmentBottomContainer.requireActivity().finish()
         }
