@@ -34,7 +34,7 @@ public class MainActivityNavigator(
             fragment = featureContainerFragment,
             fragmentScreen = fragmentScreen,
             addToBackStack = true,
-            backStackName = featureContainerFragment.backStackName
+            backStackName = fragmentScreen.screenKey
         )
     }
 
@@ -51,7 +51,7 @@ public class MainActivityNavigator(
             fragment = featureContainerFragment,
             fragmentScreen = fragmentScreen,
             addToBackStack = false,
-            backStackName = featureContainerFragment.backStackName
+            backStackName = fragmentScreen.screenKey
         )
     }
 }

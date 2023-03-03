@@ -1,12 +1,10 @@
 package com.evgeny.goncharov.multimodule.bottom_menu_impl.navigation
 
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentFactory
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.commit
 import com.evgeny.goncharov.multimodule.bottom_menu_impl.R
 import com.evgeny.goncharov.multimodule.bottom_menu_impl.ui.BottomMenuContainerFragment
-import com.evgeny.goncharov.sample.multimodule.di_core.ContainerFeatureFragment
 import com.evgeny.goncharov.sample.multimodule.navigation.base.BaseNavigator
 import com.evgeny.goncharov.sample.multimodule.navigation.commands.GlobalBack
 import com.evgeny.goncharov.sample.multimodule.navigation.commands.GlobalForward
@@ -33,36 +31,32 @@ internal class BottomMenuNavigator(
 
     private fun forward(command: GlobalForward) {
         val fragmentScreen = command.screen
-        val featureContainerFragment = fragmentScreen.createFragment(ff) as ContainerFeatureFragment
-        val backStackName = featureContainerFragment.backStackName
+        val backStackName = fragmentScreen.screenKey
         if (selectedBackstackMenu != backStackName) {
             commitFragmentTransaction(
-                fragment = featureContainerFragment,
                 fragmentScreen = fragmentScreen,
-                addToBackStack = true,
                 backStackName = backStackName
             )
             selectedBackstackMenu = backStackName
-            if(localBackStack.contains(selectedBackstackMenu)) {
+            if (localBackStack.contains(selectedBackstackMenu)) {
                 localBackStack.remove(selectedBackstackMenu)
             }
             localBackStack.push(selectedBackstackMenu)
         }
     }
 
-    override fun commitFragmentTransaction(
-        fragment: Fragment,
+    private fun commitFragmentTransaction(
         fragmentScreen: FragmentScreen,
-        addToBackStack: Boolean,
         backStackName: String
     ) {
         if (selectedBackstackMenu.isNotEmpty()) {
             fm.saveBackStack(selectedBackstackMenu)
         }
-        if(!localBackStack.contains(backStackName)) {
+        if (!localBackStack.contains(backStackName)) {
+            val featureContainerFragment = fragmentScreen.createFragment(ff)
             fm.commit {
                 setReorderingAllowed(true)
-                replace(containerId, fragment, fragmentScreen.screenKey)
+                replace(containerId, featureContainerFragment, fragmentScreen.screenKey)
                 addToBackStack(backStackName)
             }
         } else {
