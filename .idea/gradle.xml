@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/sources" />
             <option value="$PROJECT_DIR$/sources/core" />
+            <option value="$PROJECT_DIR$/sources/core/analytics" />
             <option value="$PROJECT_DIR$/sources/core/base-core" />
             <option value="$PROJECT_DIR$/sources/engine" />
             <option value="$PROJECT_DIR$/sources/engine/di-core" />
