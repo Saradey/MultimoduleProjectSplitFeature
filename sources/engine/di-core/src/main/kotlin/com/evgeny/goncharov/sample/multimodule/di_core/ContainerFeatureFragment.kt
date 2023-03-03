@@ -12,7 +12,6 @@ public abstract class ContainerFeatureFragment : Fragment {
     public constructor(@LayoutRes layoutId: Int) : super(layoutId)
     public constructor() : super(R.layout.fragment_feature_container)
 
-    public abstract val backStackName: String
     protected abstract val navigatorHolder: NavigatorHolder
     protected abstract val navigator: Navigator
 

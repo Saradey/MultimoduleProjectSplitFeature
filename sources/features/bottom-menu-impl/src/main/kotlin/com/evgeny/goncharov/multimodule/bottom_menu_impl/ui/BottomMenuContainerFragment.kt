@@ -33,7 +33,6 @@ internal class BottomMenuContainerFragment :
         }
     }
     private val binding: FragmentBottomMenuBinding by viewBinding(FragmentBottomMenuBinding::bind)
-    override val backStackName: String = "BottomMenuContainer"
     override val navigatorHolder: NavigatorHolder = dependency.provideGlobalNavigatorHolder()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
