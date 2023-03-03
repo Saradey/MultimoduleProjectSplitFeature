@@ -27,7 +27,7 @@ public abstract class BaseNavigator : Navigator {
         }
     }
 
-    protected fun commitFragmentTransaction(
+    protected open fun commitFragmentTransaction(
         fragment: Fragment,
         fragmentScreen: FragmentScreen,
         addToBackStack: Boolean,
