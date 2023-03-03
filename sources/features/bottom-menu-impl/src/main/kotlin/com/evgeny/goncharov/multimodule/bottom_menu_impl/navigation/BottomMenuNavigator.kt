@@ -43,6 +43,9 @@ internal class BottomMenuNavigator(
                 backStackName = backStackName
             )
             selectedBackstackMenu = backStackName
+            if(localBackStack.contains(selectedBackstackMenu)) {
+                localBackStack.remove(selectedBackstackMenu)
+            }
             localBackStack.push(selectedBackstackMenu)
         }
     }
