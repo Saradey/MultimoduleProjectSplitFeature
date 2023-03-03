@@ -20,7 +20,6 @@ internal class RegistrationContainerFragment : ContainerFeatureFragment() {
     }
     override val navigatorHolder: NavigatorHolder = dependency.provideFeatureNavigatorHolder()
     private val router: FeatureRouter = dependency.provideFeatureRouter()
-    override val backStackName: String = "RegistrationContainer"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         startFeature()
