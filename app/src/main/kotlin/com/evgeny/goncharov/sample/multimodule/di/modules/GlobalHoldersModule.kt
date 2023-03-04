@@ -1,5 +1,7 @@
 package com.evgeny.goncharov.sample.multimodule.di.modules
 
+import com.evgeny.goncharov.sample.multimodule.analytics.api.AnalyticsDependencyApi
+import com.evgeny.goncharov.sample.multimodule.analytics.holder.AnalyticsHolder
 import com.evgeny.goncharov.sample.multimodule.di.holder.LaunchersHolder
 import com.evgeny.goncharov.sample.multimodule.di_core.container.FeatureContainerManager
 import com.evgeny.goncharov.sample.multimodule.di_core.holder.BaseHolder
@@ -24,4 +26,9 @@ internal object GlobalHoldersModule {
     @[IntoMap ClassKey(LaunchersApi::class)]
     fun provideLaunchersHolder(featureContainer: FeatureContainerManager): BaseHolder<*> =
         LaunchersHolder(featureContainer)
+
+    @[Provides Singleton]
+    @[IntoMap ClassKey(AnalyticsDependencyApi::class)]
+    fun provideAnalytics(featureContainer: FeatureContainerManager): BaseHolder<*> =
+        AnalyticsHolder(featureContainer)
 }
