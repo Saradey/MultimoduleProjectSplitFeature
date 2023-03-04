@@ -25,4 +25,6 @@ dependencies {
 
     implementation(coreLibs.dagger)
     kapt(coreLibs.daggerCompiler)
+
+    debugImplementation(devLibs.timber)
 }

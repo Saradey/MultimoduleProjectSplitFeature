@@ -6,7 +6,7 @@ import android.os.Bundle
 internal class FirebaseAnalytics private constructor() {
 
     fun logEvent(key: String, eventBundle: Bundle) {
-        //do something
+        Timber
     }
 
     companion object {
