@@ -4,6 +4,7 @@ import android.app.Application
 import com.evgeny.goncharov.sample.multimodule.di_core.engine.DI
 import com.evgeny.goncharov.sample.multimodule.initializer.FeatureHolderInitializerImpl
 import com.evgeny.goncharov.sample.multimodule.initializer.GlobalHolderInitializerImpl
+import timber.log.Timber
 import java.lang.Exception
 
 internal class App : Application() {
@@ -11,6 +12,7 @@ internal class App : Application() {
     override fun onCreate() {
         super.onCreate()
         initDi()
+        initTimber()
     }
 
     private fun initDi() {
@@ -18,6 +20,12 @@ internal class App : Application() {
             DI.initialize(GlobalHolderInitializerImpl(this), FeatureHolderInitializerImpl())
         } catch (exp: Exception) {
             throw RuntimeException("$FAILED_INIT_DI_MESSAGE $exp")
+        }
+    }
+
+    private fun initTimber() {
+        if(BuildConfig.DEBUG) {
+            Timber.plant(Timber.DebugTree())
         }
     }
 
