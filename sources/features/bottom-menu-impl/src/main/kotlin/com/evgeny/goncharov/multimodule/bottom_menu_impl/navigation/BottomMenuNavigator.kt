@@ -33,7 +33,7 @@ internal class BottomMenuNavigator(
         val fragmentScreen = command.screen
         val backStackName = fragmentScreen.screenKey
         if (selectedBackstackMenu != backStackName) {
-            commitFragmentTransaction(
+            commit(
                 fragmentScreen = fragmentScreen,
                 backStackName = backStackName
             )
@@ -45,7 +45,7 @@ internal class BottomMenuNavigator(
         }
     }
 
-    private fun commitFragmentTransaction(
+    private fun commit(
         fragmentScreen: FragmentScreen,
         backStackName: String
     ) {
