@@ -1,5 +1,6 @@
 package com.evgeny.goncharov.sample.multimodule.splash_screen_impl.di
 
+import com.evgeny.goncharov.sample.multimodule.analytics.api.AnalyticsDependencyApi
 import com.evgeny.goncharov.sample.multimodule.bottom_menu_api.BottomMenuLauncher
 import com.evgeny.goncharov.sample.multimodule.di_core.scopes.FeatureScope
 import com.evgeny.goncharov.sample.multimodule.navigation.api.CoreNavigationApi
@@ -16,7 +17,8 @@ import dagger.Component
         ViewModelsSplashModule::class
     ],
     dependencies = [
-        CoreNavigationApi::class
+        CoreNavigationApi::class,
+        AnalyticsDependencyApi::class
     ]
 )
 internal interface SplashComponent : SplashInternal {
@@ -26,6 +28,7 @@ internal interface SplashComponent : SplashInternal {
 
         fun create(
             coreNavigationApi: CoreNavigationApi,
+            analytics: AnalyticsDependencyApi,
             @BindsInstance bottomMenuLauncher: BottomMenuLauncher
         ): SplashComponent
     }
