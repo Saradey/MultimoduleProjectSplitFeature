@@ -6,8 +6,18 @@ import timber.log.Timber
 
 internal class FirebaseAnalytics private constructor() {
 
+    private val logBuilder = java.lang.StringBuilder()
+
     fun logEvent(key: String, eventBundle: Bundle) {
-        Timber.tag(TAG).d("$key ${eventBundle.toString()}")
+        logBuilder.clear()
+        Timber.tag(TAG).d(buildEvent(key, eventBundle))
+    }
+
+    private fun buildEvent(key: String, eventBundle: Bundle): String {
+        return logBuilder.append(key)
+            .append(" ")
+            .append(eventBundle.toString())
+            .toString()
     }
 
     companion object {
