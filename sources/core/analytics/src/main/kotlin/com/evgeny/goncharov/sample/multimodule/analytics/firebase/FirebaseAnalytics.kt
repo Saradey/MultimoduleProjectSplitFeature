@@ -7,7 +7,7 @@ import timber.log.Timber
 internal class FirebaseAnalytics private constructor() {
 
     fun logEvent(key: String, eventBundle: Bundle) {
-        Timber.tag(TAG).d(eventBundle.toString())
+        Timber.tag(TAG).d("$key ${eventBundle.toString()}")
     }
 
     companion object {
