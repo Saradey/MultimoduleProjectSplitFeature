@@ -8,7 +8,7 @@ internal class AnalyticsFirebaseManagerImpl @Inject constructor(
     private val firebaseAnalytics: FirebaseAnalytics
 ) : AnalyticsManager {
 
-    fun logEvent(key: String, eventBundle: Bundle) {
+    override fun logEvent(key: String, eventBundle: Bundle) {
         firebaseAnalytics.logEvent(key, eventBundle)
     }
 }
