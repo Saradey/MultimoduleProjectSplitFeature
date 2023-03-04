@@ -1,4 +1,4 @@
-package com.evgeny.goncharov.sample.multimodule.base_core
+package com.evgeny.goncharov.sample.multimodule.reusable_sources
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

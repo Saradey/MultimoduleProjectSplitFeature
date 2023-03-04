@@ -28,7 +28,7 @@ dependencies {
 
     implementation(project(":sources:engine:navigation"))
     implementation(project(":sources:engine:di-core"))
-    implementation(project(":sources:core:base-core"))
+    implementation(project(":sources:core:reusable-sources"))
     implementation(project(":sources:resources:theme"))
 
     implementation(project(":sources:features:bottom-menu-api"))
