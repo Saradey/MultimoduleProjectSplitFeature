@@ -21,7 +21,7 @@ internal class SplashFragment : CoreFragment(R.layout.fragment_splash) {
 //    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        lifecycleScope.launchWhenResumed {
+        savedInstanceState ?: lifecycleScope.launchWhenResumed {
             delay(DELAY_START_NEXT_FEATURE)
             mainLauncher.launch()
         }
