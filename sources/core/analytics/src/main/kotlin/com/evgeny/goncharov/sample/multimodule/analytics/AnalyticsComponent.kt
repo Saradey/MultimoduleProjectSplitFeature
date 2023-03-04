@@ -5,4 +5,4 @@ import dagger.Component
 
 @CoreScope
 @Component(modules = [])
-internal interface CoreAnalyticsComponent
+internal interface AnalyticsComponent
