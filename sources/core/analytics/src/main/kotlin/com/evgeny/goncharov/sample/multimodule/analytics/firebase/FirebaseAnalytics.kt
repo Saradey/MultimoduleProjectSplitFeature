@@ -1,4 +1,4 @@
-package com.evgeny.goncharov.sample.multimodule.navigation.firebase
+package com.evgeny.goncharov.sample.multimodule.analytics.firebase
 
 import android.content.Context
 import android.os.Bundle
