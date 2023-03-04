@@ -55,6 +55,7 @@ dependencies {
     implementation(coreLibs.cicerone)
     implementation(coreLibs.dagger)
     kapt(coreLibs.daggerCompiler)
+    implementation(devLibs.timber)
 
     debugImplementation(devLibs.leak.canary)
 }
