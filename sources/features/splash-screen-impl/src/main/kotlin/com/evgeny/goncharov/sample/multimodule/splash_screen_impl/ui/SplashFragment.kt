@@ -2,12 +2,14 @@ package com.evgeny.goncharov.sample.multimodule.splash_screen_impl.ui
 
 import android.os.Bundle
 import android.view.View
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.evgeny.goncharov.sample.multimodule.bottom_menu_api.BottomMenuLauncher
 import com.evgeny.goncharov.sample.multimodule.di_core.CoreFragment
 import com.evgeny.goncharov.sample.multimodule.splash_screen_api.SplashApi
 import com.evgeny.goncharov.sample.multimodule.splash_screen_impl.R
 import com.evgeny.goncharov.sample.multimodule.splash_screen_impl.di.contracts.SplashInternal
+import com.evgeny.goncharov.sample.multimodule.splash_screen_impl.view.models.SplashViewModel
 import kotlinx.coroutines.delay
 
 internal class SplashFragment : CoreFragment(R.layout.fragment_splash) {
@@ -16,9 +18,9 @@ internal class SplashFragment : CoreFragment(R.layout.fragment_splash) {
         getFeatureApi(SplashApi::class.java) as SplashInternal
     }
     private val mainLauncher: BottomMenuLauncher = dependency.provideMainLauncher()
-//    private val viewModel: SplashViewModel by viewModels {
-//        dependency.provideViewModelFactory()
-//    }
+    private val viewModel: SplashViewModel by viewModels {
+        dependency.provideViewModelFactory()
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         savedInstanceState ?: lifecycleScope.launchWhenResumed {

@@ -8,15 +8,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 internal class SplashViewModel @Inject constructor(
-    private val mainLauncher: BottomMenuLauncher
 ) : ViewModel() {
-
-    fun startTime() {
-        viewModelScope.launch {
-            delay(DELAY)
-            mainLauncher.launch()
-        }
-    }
 
     companion object {
 
