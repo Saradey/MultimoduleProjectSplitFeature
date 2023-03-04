@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.evgeny.goncharov.sample.multimodule.bottom_menu_api.BottomMenuLauncher
 import com.evgeny.goncharov.sample.multimodule.di_core.CoreFragment
 import com.evgeny.goncharov.sample.multimodule.splash_screen_api.SplashApi
 import com.evgeny.goncharov.sample.multimodule.splash_screen_impl.R
