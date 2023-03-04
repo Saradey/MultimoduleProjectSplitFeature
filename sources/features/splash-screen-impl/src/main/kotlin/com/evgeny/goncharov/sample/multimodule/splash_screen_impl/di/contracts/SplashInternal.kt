@@ -12,6 +12,4 @@ internal interface SplashInternal : SplashApi,
     CoreNavigationApi {
 
     fun provideViewModelFactory(): ViewModelProvider.Factory
-
-    fun provideMainLauncher(): BottomMenuLauncher
 }

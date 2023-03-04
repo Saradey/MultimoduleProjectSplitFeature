@@ -17,7 +17,6 @@ internal class SplashFragment : CoreFragment(R.layout.fragment_splash) {
     private val dependency: SplashInternal by lazy {
         getFeatureApi(SplashApi::class.java) as SplashInternal
     }
-    private val mainLauncher: BottomMenuLauncher = dependency.provideMainLauncher()
     private val viewModel: SplashViewModel by viewModels {
         dependency.provideViewModelFactory()
     }
@@ -25,7 +24,7 @@ internal class SplashFragment : CoreFragment(R.layout.fragment_splash) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         savedInstanceState ?: lifecycleScope.launchWhenResumed {
             delay(DELAY_START_NEXT_FEATURE)
-            mainLauncher.launch()
+            viewModel.launchToBottomMenu()
         }
     }
 
