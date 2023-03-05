@@ -2,6 +2,7 @@ package com.evgeny.goncharov.sample.multimodule.analytics.huawei
 
 import android.content.Context
 import android.os.Bundle
+import com.evgeny.goncharov.sample.multimodule.analytics.utils.TAG_ANALYTICS_LOG
 import timber.log.Timber
 
 internal class HiAnalytics private constructor() {
