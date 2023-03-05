@@ -4,7 +4,7 @@ import android.os.Bundle
 import com.evgeny.goncharov.sample.multimodule.analytics.huawei.HiAnalytics
 import javax.inject.Inject
 
-internal class HuaweiAnalyticsManager @Inject constructor(
+internal class HuaweiAnalyticsManagerImpl @Inject constructor(
     private val hiAnalytics: HiAnalytics
 ) : AnalyticsManager {
 
