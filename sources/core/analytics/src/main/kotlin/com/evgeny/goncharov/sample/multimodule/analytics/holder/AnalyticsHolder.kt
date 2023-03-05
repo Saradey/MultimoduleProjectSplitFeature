@@ -8,10 +8,13 @@ import com.evgeny.goncharov.sample.multimodule.di_core.holder.BaseHolder
 
 public class AnalyticsHolder(
     featureContainer: FeatureContainerManager,
-    private val appContext: Context
+    private val appContext: Context,
+    private val isHuaweiAnalytics: Boolean
 ) : BaseHolder<AnalyticsDependencyApi>(featureContainer) {
 
     override fun buildComponent(): AnalyticsDependencyApi {
-        return DaggerAnalyticsComponent.factory().create(appContext)
+        return DaggerAnalyticsComponent.factory().create(
+            appContext, isHuaweiAnalytics
+        )
     }
 }

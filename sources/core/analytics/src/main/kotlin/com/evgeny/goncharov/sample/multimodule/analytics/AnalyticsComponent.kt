@@ -21,7 +21,8 @@ internal interface AnalyticsComponent : AnalyticsDependencyApi {
     interface Factory {
 
         fun create(
-            @BindsInstance context: Context
+            @BindsInstance context: Context,
+            @BindsInstance isHuaweiAnalytics: Boolean
         ): AnalyticsComponent
     }
 }

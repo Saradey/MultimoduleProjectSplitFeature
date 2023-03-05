@@ -1,6 +1,7 @@
 package com.evgeny.goncharov.sample.multimodule.di.modules
 
 import android.content.Context
+import com.evgeny.goncharov.sample.multimodule.BuildConfig
 import com.evgeny.goncharov.sample.multimodule.analytics.api.AnalyticsDependencyApi
 import com.evgeny.goncharov.sample.multimodule.analytics.holder.AnalyticsHolder
 import com.evgeny.goncharov.sample.multimodule.di.holder.LaunchersHolder
@@ -34,5 +35,5 @@ internal object GlobalHoldersModule {
         featureContainer: FeatureContainerManager,
         appContext: Context
     ): BaseHolder<*> =
-        AnalyticsHolder(featureContainer, appContext)
+        AnalyticsHolder(featureContainer, appContext, BuildConfig.HUAWEI)
 }
