@@ -4,7 +4,7 @@ import android.os.Bundle
 import com.evgeny.goncharov.sample.multimodule.analytics.firebase.FirebaseAnalytics
 import javax.inject.Inject
 
-internal class AnalyticsFirebaseManagerImpl @Inject constructor(
+internal class AnalyticsFirebaseManagerImpl(
     private val firebaseAnalytics: FirebaseAnalytics
 ) : AnalyticsManager {
 
