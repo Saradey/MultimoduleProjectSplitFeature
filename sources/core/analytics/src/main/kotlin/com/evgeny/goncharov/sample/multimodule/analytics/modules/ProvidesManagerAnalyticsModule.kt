@@ -7,7 +7,7 @@ import dagger.Binds
 import dagger.Module
 
 @Module
-internal interface AnalyticsBindsModule {
+internal interface ProvidesManagerAnalyticsModule {
 
     @CoreScope
     @Binds
