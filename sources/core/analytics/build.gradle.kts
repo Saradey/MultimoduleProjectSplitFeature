@@ -18,15 +18,6 @@ android {
         jvmTarget = "1.8"
         freeCompilerArgs = listOf("-Xexplicit-api=strict")
     }
-    flavorDimensions += "analytics"
-    productFlavors {
-        create("firebase") {
-            dimension = "analytics"
-        }
-        create("huawei") {
-            dimension = "analytics"
-        }
-    }
 }
 
 dependencies {

@@ -35,6 +35,15 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    flavorDimensions += "analytics"
+    productFlavors {
+        create("firebase") {
+            dimension = "analytics"
+        }
+        create("huawei") {
+            dimension = "analytics"
+        }
+    }
 }
 
 dependencies {
