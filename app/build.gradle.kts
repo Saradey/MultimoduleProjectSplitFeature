@@ -39,9 +39,11 @@ android {
     productFlavors {
         create("firebase") {
             dimension = "analytics"
+            buildConfigField("Boolean", "HUAWEI", "false")
         }
         create("huawei") {
             dimension = "analytics"
+            buildConfigField("Boolean", "HUAWEI", "true")
         }
     }
 }
