@@ -6,7 +6,7 @@ import timber.log.Timber
 
 internal class FirebaseAnalytics private constructor() {
 
-    private val logBuilder = java.lang.StringBuilder()
+    private val logBuilder = StringBuilder()
 
     fun logEvent(key: String, eventBundle: Bundle) {
         logBuilder.clear()
