@@ -10,11 +10,13 @@ internal class HiAnalytics private constructor() {
 
     fun logEvent(key: String, eventBundle: Bundle) {
         logBuilder.clear()
-        Timber.tag(TAG).d(buildEvent(key, eventBundle))
+        Timber.tag(TAG_ANALYTICS_LOG).d(buildEvent(key, eventBundle))
     }
 
     private fun buildEvent(key: String, eventBundle: Bundle): String {
-        return logBuilder.append(key)
+        return logBuilder
+            .append("HiAnalytics: ")
+            .append(key)
             .append(" ")
             .append(eventBundle.toString())
             .toString()
@@ -25,7 +27,5 @@ internal class HiAnalytics private constructor() {
         private val hiAnalytics = HiAnalytics()
 
         fun getInstance(context: Context) = hiAnalytics
-
-        private const val TAG = "HiAnalytics"
     }
 }

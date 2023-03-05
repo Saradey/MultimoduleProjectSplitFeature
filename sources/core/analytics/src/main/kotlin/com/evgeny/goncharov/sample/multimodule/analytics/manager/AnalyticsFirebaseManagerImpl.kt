@@ -2,7 +2,6 @@ package com.evgeny.goncharov.sample.multimodule.analytics.manager
 
 import android.os.Bundle
 import com.evgeny.goncharov.sample.multimodule.analytics.firebase.FirebaseAnalytics
-import javax.inject.Inject
 
 internal class AnalyticsFirebaseManagerImpl(
     private val firebaseAnalytics: FirebaseAnalytics

@@ -2,7 +2,6 @@ package com.evgeny.goncharov.sample.multimodule.analytics.manager
 
 import android.os.Bundle
 import com.evgeny.goncharov.sample.multimodule.analytics.huawei.HiAnalytics
-import javax.inject.Inject
 
 internal class HuaweiAnalyticsManagerImpl(
     private val hiAnalytics: HiAnalytics
