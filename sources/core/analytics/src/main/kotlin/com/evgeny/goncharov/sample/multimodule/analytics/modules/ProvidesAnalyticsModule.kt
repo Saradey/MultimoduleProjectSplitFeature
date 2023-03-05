@@ -8,7 +8,7 @@ import dagger.Module
 import dagger.Provides
 
 @Module
-internal object AnalyticsProvidesModule {
+internal object ProvidesAnalyticsModule {
 
     @CoreScope
     @Provides
