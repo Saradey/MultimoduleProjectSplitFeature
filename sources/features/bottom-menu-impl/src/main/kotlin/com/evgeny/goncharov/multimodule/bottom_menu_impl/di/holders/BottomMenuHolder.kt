@@ -1,6 +1,7 @@
 package com.evgeny.goncharov.multimodule.bottom_menu_impl.di.holders
 
 import com.evgeny.goncharov.multimodule.bottom_menu_impl.di.DaggerBottomMenuComponent
+import com.evgeny.goncharov.sample.multimodule.analytics.api.AnalyticsDependencyApi
 import com.evgeny.goncharov.sample.multimodule.bottom_menu_api.BottomMenuApi
 import com.evgeny.goncharov.sample.multimodule.catalog_api.CatalogLauncher
 import com.evgeny.goncharov.sample.multimodule.di_core.container.FeatureContainer
@@ -17,6 +18,7 @@ public class BottomMenuHolder(container: FeatureContainer) :
         return DaggerBottomMenuComponent.factory()
             .create(
                 getGlobalComponent(CoreNavigationApi::class.java),
+                getGlobalComponent(AnalyticsDependencyApi::class.java),
                 getFeatureLauncher(HomeLauncher::class.java),
                 getFeatureLauncher(CatalogLauncher::class.java),
                 getFeatureLauncher(RegistrationLauncher::class.java),
