@@ -46,5 +46,8 @@ internal class BottomMenuAnalytics @Inject constructor(
         const val UI_EVENT_START_HOME = "bottom_menu_to_start_home"
         const val UI_EVENT_GO_TO_HOME = "bottom_menu_go_to_home"
         const val UI_EVENT_GO_TO_CATALOG = "bottom_menu_go_to_catalog"
+        const val UI_EVENT_GO_TO_REGISTRATION = "bottom_menu_go_to_registration"
+        const val UI_EVENT_GO_TO_LIKE = "bottom_menu_go_to_like"
+        const val UI_EVENT_GO_TO_PROFILE = "bottom_menu_go_to_profile"
     }
 }
