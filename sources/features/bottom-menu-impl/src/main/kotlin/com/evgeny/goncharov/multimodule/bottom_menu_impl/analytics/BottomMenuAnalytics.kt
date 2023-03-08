@@ -30,15 +30,18 @@ internal class BottomMenuAnalytics @Inject constructor(
     }
 
     fun goToRegistration() {
-
+        params.add(UI_EVENT_GO_TO_HOME to null)
+        analyticsDependencyApi.logEvent(UI_EVENT_GO_TO_REGISTRATION, params)
     }
 
     fun goToTheLike() {
-
+        params.add(UI_EVENT_GO_TO_HOME to null)
+        analyticsDependencyApi.logEvent(UI_EVENT_GO_TO_LIKE, params)
     }
 
     fun goToProfile() {
-
+        params.add(UI_EVENT_GO_TO_HOME to null)
+        analyticsDependencyApi.logEvent(UI_EVENT_GO_TO_PROFILE, params)
     }
 
     private companion object {
