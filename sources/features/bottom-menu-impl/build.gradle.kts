@@ -31,6 +31,7 @@ dependencies {
     implementation(project(":sources:resources:ui-kit"))
     implementation(project(":sources:resources:theme"))
     implementation(project(":sources:core:reusable-sources"))
+    implementation(project(":sources:core:analytics"))
 
     implementation(project(":sources:features:home-api"))
     implementation(project(":sources:features:catalog-api"))
