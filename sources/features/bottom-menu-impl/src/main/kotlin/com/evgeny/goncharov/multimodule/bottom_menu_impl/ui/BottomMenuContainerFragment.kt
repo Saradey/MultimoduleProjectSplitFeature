@@ -37,7 +37,7 @@ internal class BottomMenuContainerFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.initUi()
-        savedInstanceState ?: viewModel.goToHome()
+        savedInstanceState ?: viewModel.startHome()
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, onBackPressed)
     }
 

@@ -18,8 +18,14 @@ internal class BottomMenuContainerViewModel @Inject constructor(
     private val analytics: BottomMenuAnalytics
 ) : ViewModel() {
 
+    fun startHome() {
+        homeLauncher.launch()
+        analytics.startHome()
+    }
+
     fun goToHome() {
         homeLauncher.launch()
+        analytics.goToHome()
     }
 
     fun goToCatalog() {

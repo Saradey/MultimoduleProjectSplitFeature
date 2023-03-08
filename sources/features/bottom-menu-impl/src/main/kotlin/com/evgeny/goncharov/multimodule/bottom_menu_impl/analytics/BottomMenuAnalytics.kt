@@ -19,7 +19,7 @@ internal class BottomMenuAnalytics @Inject constructor(
         analyticsDependencyApi.logEvent(UI_EVENT_KEY_NAVIGATION, params)
     }
 
-    fun goToTheHome() {
+    fun goToHome() {
         params.add(UI_EVENT_GO_TO_HOME to null)
         analyticsDependencyApi.logEvent(UI_EVENT_KEY_NAVIGATION, params)
     }
