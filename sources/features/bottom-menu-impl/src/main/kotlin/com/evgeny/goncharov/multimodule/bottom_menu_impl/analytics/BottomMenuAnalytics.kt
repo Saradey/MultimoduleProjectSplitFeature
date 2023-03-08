@@ -6,7 +6,7 @@ import com.evgeny.goncharov.sample.multimodule.analytics.utils.UI_EVENT_KEY_NAVI
 import javax.inject.Inject
 
 internal class BottomMenuAnalytics @Inject constructor(
-    private val analyticsDependencyApi: AnalyticsManager
+    private val analyticsManager: AnalyticsManager
 ) {
 
     private val params: MutableList<Pair<String, String?>> = mutableListOf<Pair<String, String?>>(
@@ -21,43 +21,43 @@ internal class BottomMenuAnalytics @Inject constructor(
     fun startHome() {
         prepare()
         params.add(UI_EVENT_START_HOME to null)
-        analyticsDependencyApi.logEvent(UI_EVENT_KEY_NAVIGATION, params)
+        analyticsManager.logEvent(UI_EVENT_KEY_NAVIGATION, params)
     }
 
     fun goToHome() {
         prepare()
         params.add(UI_EVENT_GO_TO_HOME to null)
-        analyticsDependencyApi.logEvent(UI_EVENT_KEY_NAVIGATION, params)
+        analyticsManager.logEvent(UI_EVENT_KEY_NAVIGATION, params)
     }
 
     fun goToCatalog() {
         prepare()
         params.add(UI_EVENT_GO_TO_CATALOG to null)
-        analyticsDependencyApi.logEvent(UI_EVENT_KEY_NAVIGATION, params)
+        analyticsManager.logEvent(UI_EVENT_KEY_NAVIGATION, params)
     }
 
     fun goToRegistration() {
         prepare()
         params.add(UI_EVENT_GO_TO_REGISTRATION to null)
-        analyticsDependencyApi.logEvent(UI_EVENT_KEY_NAVIGATION, params)
+        analyticsManager.logEvent(UI_EVENT_KEY_NAVIGATION, params)
     }
 
     fun goToLike() {
         prepare()
         params.add(UI_EVENT_GO_TO_LIKE to null)
-        analyticsDependencyApi.logEvent(UI_EVENT_KEY_NAVIGATION, params)
+        analyticsManager.logEvent(UI_EVENT_KEY_NAVIGATION, params)
     }
 
     fun goToProfile() {
         prepare()
         params.add(UI_EVENT_GO_TO_PROFILE to null)
-        analyticsDependencyApi.logEvent(UI_EVENT_KEY_NAVIGATION, params)
+        analyticsManager.logEvent(UI_EVENT_KEY_NAVIGATION, params)
     }
 
     fun back() {
         prepare()
         params.add(UI_EVENT_GO_BACK to null)
-        analyticsDependencyApi.logEvent(UI_EVENT_KEY_NAVIGATION, params)
+        analyticsManager.logEvent(UI_EVENT_KEY_NAVIGATION, params)
     }
 
     private companion object {

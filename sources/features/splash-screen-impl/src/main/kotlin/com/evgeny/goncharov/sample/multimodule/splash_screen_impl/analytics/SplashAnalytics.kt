@@ -6,7 +6,7 @@ import com.evgeny.goncharov.sample.multimodule.analytics.utils.UI_EVENT_KEY_NAVI
 import javax.inject.Inject
 
 internal class SplashAnalytics @Inject constructor(
-    private val analyticsDependencyApi: AnalyticsManager
+    private val analyticsManager: AnalyticsManager
 ) {
 
     private val params: MutableList<Pair<String, String?>> = mutableListOf<Pair<String, String?>>(
@@ -21,7 +21,7 @@ internal class SplashAnalytics @Inject constructor(
     fun goToTheBottomMainMenu() {
         prepare()
         params.add(UI_EVENT_GO_BOTTOM_MENU to null)
-        analyticsDependencyApi.logEvent(UI_EVENT_KEY_NAVIGATION, params)
+        analyticsManager.logEvent(UI_EVENT_KEY_NAVIGATION, params)
     }
 
     private companion object {
