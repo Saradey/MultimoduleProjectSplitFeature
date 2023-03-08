@@ -25,7 +25,8 @@ internal class BottomMenuAnalytics @Inject constructor(
     }
 
     fun goToTheCatalog() {
-
+        params.add(UI_EVENT_GO_TO_HOME to null)
+        analyticsDependencyApi.logEvent(UI_EVENT_GO_TO_CATALOG, params)
     }
 
     fun goToRegistration() {
@@ -44,5 +45,6 @@ internal class BottomMenuAnalytics @Inject constructor(
         const val TAG_BOTTOM_MENU_PARAM = "bottom_menu"
         const val UI_EVENT_START_HOME = "bottom_menu_to_start_home"
         const val UI_EVENT_GO_TO_HOME = "bottom_menu_go_to_home"
+        const val UI_EVENT_GO_TO_CATALOG = "bottom_menu_go_to_catalog"
     }
 }

@@ -20,7 +20,7 @@ internal class SplashAnalytics @Inject constructor(
     }
 
     private companion object {
-        const val TAG_SPLASH_SCREEN_PARAM = "splash_screen"
+        const val TAG_SPLASH_SCREEN_PARAM = "splash"
         const val UI_EVENT_NAVIGATION_SPLASH_TO_BOTTOM_MENU = "splash_go_to_bottom_menu"
     }
 }
