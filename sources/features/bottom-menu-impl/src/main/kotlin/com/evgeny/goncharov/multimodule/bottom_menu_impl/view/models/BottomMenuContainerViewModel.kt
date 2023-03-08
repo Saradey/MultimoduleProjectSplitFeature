@@ -46,5 +46,6 @@ internal class BottomMenuContainerViewModel @Inject constructor(
 
     fun onBackPressed() {
         globalRouter.back()
+        analytics.back()
     }
 }

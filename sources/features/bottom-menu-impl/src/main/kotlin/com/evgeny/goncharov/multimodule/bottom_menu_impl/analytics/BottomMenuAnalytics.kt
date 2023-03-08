@@ -44,6 +44,11 @@ internal class BottomMenuAnalytics @Inject constructor(
         analyticsDependencyApi.logEvent(UI_EVENT_GO_TO_PROFILE, params)
     }
 
+    fun back() {
+        params.add(UI_EVENT_GO_BACK to null)
+        analyticsDependencyApi.logEvent(UI_EVENT_KEY_NAVIGATION, params)
+    }
+
     private companion object {
         const val TAG_BOTTOM_MENU_PARAM = "bottom_menu"
         const val UI_EVENT_START_HOME = "bottom_menu_to_start_home"
@@ -52,5 +57,6 @@ internal class BottomMenuAnalytics @Inject constructor(
         const val UI_EVENT_GO_TO_REGISTRATION = "bottom_menu_go_to_registration"
         const val UI_EVENT_GO_TO_LIKE = "bottom_menu_go_to_like"
         const val UI_EVENT_GO_TO_PROFILE = "bottom_menu_go_to_profile"
+        const val UI_EVENT_GO_BACK = "bottom_menu_back"
     }
 }
