@@ -9,42 +9,53 @@ internal class BottomMenuAnalytics @Inject constructor(
     private val analyticsDependencyApi: AnalyticsManager
 ) {
 
-    private val params: MutableList<Pair<String, String?>>
-        get() = mutableListOf<Pair<String, String?>>(
-            TAG_SCREEN_PARAM to TAG_BOTTOM_MENU_PARAM
-        )
+    private val params: MutableList<Pair<String, String?>> = mutableListOf<Pair<String, String?>>(
+        TAG_SCREEN_PARAM to TAG_BOTTOM_MENU_PARAM
+    )
+
+    private fun prepare() {
+        params.clear()
+        params.add(TAG_SCREEN_PARAM to TAG_BOTTOM_MENU_PARAM)
+    }
 
     fun startHome() {
+        prepare()
         params.add(UI_EVENT_START_HOME to null)
         analyticsDependencyApi.logEvent(UI_EVENT_KEY_NAVIGATION, params)
     }
 
     fun goToHome() {
+        prepare()
         params.add(UI_EVENT_GO_TO_HOME to null)
         analyticsDependencyApi.logEvent(UI_EVENT_KEY_NAVIGATION, params)
     }
 
     fun goToCatalog() {
+        prepare()
         params.add(UI_EVENT_GO_TO_CATALOG to null)
         analyticsDependencyApi.logEvent(UI_EVENT_KEY_NAVIGATION, params)
     }
 
     fun goToRegistration() {
+        prepare()
         params.add(UI_EVENT_GO_TO_REGISTRATION to null)
         analyticsDependencyApi.logEvent(UI_EVENT_KEY_NAVIGATION, params)
     }
 
     fun goToLike() {
+        prepare()
         params.add(UI_EVENT_GO_TO_LIKE to null)
         analyticsDependencyApi.logEvent(UI_EVENT_KEY_NAVIGATION, params)
     }
 
     fun goToProfile() {
+        prepare()
         params.add(UI_EVENT_GO_TO_PROFILE to null)
         analyticsDependencyApi.logEvent(UI_EVENT_KEY_NAVIGATION, params)
     }
 
     fun back() {
+        prepare()
         params.add(UI_EVENT_GO_BACK to null)
         analyticsDependencyApi.logEvent(UI_EVENT_KEY_NAVIGATION, params)
     }
