@@ -14,4 +14,8 @@ internal class MainActivityViewModel @Inject constructor(
         splashLauncher.launch()
         analytics.startSplash()
     }
+
+    fun sendEventAnalyticsFinisApplication() {
+        analytics.finisApplication()
+    }
 }

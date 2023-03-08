@@ -32,6 +32,9 @@ public class MainActivity : CoreActivity() {
 
     override fun onPause() {
         globalNavigatorHolder.removeNavigator()
+        if (isFinishing) {
+            viewModel.sendEventAnalyticsFinisApplication()
+        }
         super.onPause()
     }
 
