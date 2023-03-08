@@ -7,8 +7,10 @@ import com.evgeny.goncharov.sample.multimodule.di_core.scopes.FeatureScope
 import com.evgeny.goncharov.sample.multimodule.reusable_sources.MultiViewModelFactory
 import com.evgeny.goncharov.sample.multimodule.view.models.MainActivityViewModel
 import dagger.Binds
+import dagger.Module
 import dagger.multibindings.IntoMap
 
+@Module
 internal interface MainActivityViewModelModule {
 
     @[Binds FeatureScope]

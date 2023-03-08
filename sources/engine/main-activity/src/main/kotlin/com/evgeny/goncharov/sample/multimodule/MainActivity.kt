@@ -20,7 +20,6 @@ public class MainActivity : CoreActivity() {
         dependency.provideViewModelFactory()
     }
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
