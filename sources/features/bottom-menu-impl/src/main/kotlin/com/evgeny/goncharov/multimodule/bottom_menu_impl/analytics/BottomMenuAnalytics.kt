@@ -9,9 +9,10 @@ internal class BottomMenuAnalytics @Inject constructor(
     private val analyticsDependencyApi: AnalyticsManager
 ) {
 
-    private val params = mutableListOf<Pair<String, String?>>(
-        TAG_SCREEN_PARAM to TAG_BOTTOM_MENU_PARAM
-    )
+    private val params: MutableList<Pair<String, String?>>
+        get() = mutableListOf<Pair<String, String?>>(
+            TAG_SCREEN_PARAM to TAG_BOTTOM_MENU_PARAM
+        )
 
     fun startHome() {
         params.add(UI_EVENT_START_HOME to null)
