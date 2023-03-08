@@ -15,12 +15,12 @@ internal class SplashAnalytics @Inject constructor(
         )
 
     fun goToTheBottomMainMenu() {
-        params.add(UI_EVENT_NAVIGATION_SPLASH_TO_BOTTOM_MENU to null)
+        params.add(UI_EVENT_GO_BOTTOM_MENU to null)
         analyticsDependencyApi.logEvent(UI_EVENT_KEY_NAVIGATION, params)
     }
 
     private companion object {
         const val TAG_SPLASH_SCREEN_PARAM = "splash"
-        const val UI_EVENT_NAVIGATION_SPLASH_TO_BOTTOM_MENU = "splash_go_to_bottom_menu"
+        const val UI_EVENT_GO_BOTTOM_MENU = "splash_go_to_bottom_menu"
     }
 }
