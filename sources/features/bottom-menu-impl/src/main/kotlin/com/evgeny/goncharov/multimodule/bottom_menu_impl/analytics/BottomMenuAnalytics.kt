@@ -12,6 +12,30 @@ internal class BottomMenuAnalytics @Inject constructor(
         TAG_SCREEN_PARAM to TAG_BOTTOM_MENU_PARAM
     )
 
+    fun startHome() {
+
+    }
+
+    fun goToTheHome() {
+
+    }
+
+    fun goToTheCatalog() {
+
+    }
+
+    fun goToRegistration() {
+
+    }
+
+    fun goToTheLike() {
+
+    }
+
+    fun goToProfile() {
+
+    }
+
     private companion object {
         const val TAG_BOTTOM_MENU_PARAM = "bottom_menu"
     }
