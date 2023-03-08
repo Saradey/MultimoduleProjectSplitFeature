@@ -2,6 +2,7 @@ package com.evgeny.goncharov.multimodule.bottom_menu_impl.analytics
 
 import com.evgeny.goncharov.sample.multimodule.analytics.manager.AnalyticsManager
 import com.evgeny.goncharov.sample.multimodule.analytics.utils.TAG_SCREEN_PARAM
+import com.evgeny.goncharov.sample.multimodule.analytics.utils.UI_EVENT_KEY_NAVIGATION
 import javax.inject.Inject
 
 internal class BottomMenuAnalytics @Inject constructor(
@@ -13,7 +14,8 @@ internal class BottomMenuAnalytics @Inject constructor(
     )
 
     fun startHome() {
-
+        params.add(UI_EVENT_START_HOME to null)
+        analyticsDependencyApi.logEvent(UI_EVENT_KEY_NAVIGATION, params)
     }
 
     fun goToTheHome() {
@@ -38,5 +40,6 @@ internal class BottomMenuAnalytics @Inject constructor(
 
     private companion object {
         const val TAG_BOTTOM_MENU_PARAM = "bottom_menu"
+        const val UI_EVENT_START_HOME = "bottom_menu_to_start_home"
     }
 }
