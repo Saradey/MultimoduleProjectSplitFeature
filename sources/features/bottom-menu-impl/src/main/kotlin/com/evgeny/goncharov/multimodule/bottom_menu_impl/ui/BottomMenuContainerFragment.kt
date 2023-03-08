@@ -10,6 +10,10 @@ import com.evgeny.goncharov.multimodule.bottom_menu_impl.R
 import com.evgeny.goncharov.multimodule.bottom_menu_impl.databinding.FragmentBottomMenuBinding
 import com.evgeny.goncharov.multimodule.bottom_menu_impl.di.contracts.BottomMenuInternal
 import com.evgeny.goncharov.multimodule.bottom_menu_impl.navigation.BottomMenuNavigator
+import com.evgeny.goncharov.multimodule.bottom_menu_impl.navigation.BottomMenuNavigator.Companion.BACKSTACK_NAME_CATALOG
+import com.evgeny.goncharov.multimodule.bottom_menu_impl.navigation.BottomMenuNavigator.Companion.BACKSTACK_NAME_HOME
+import com.evgeny.goncharov.multimodule.bottom_menu_impl.navigation.BottomMenuNavigator.Companion.BACKSTACK_NAME_LIKE
+import com.evgeny.goncharov.multimodule.bottom_menu_impl.navigation.BottomMenuNavigator.Companion.BACKSTACK_NAME_REG
 import com.evgeny.goncharov.multimodule.bottom_menu_impl.view.models.BottomMenuContainerViewModel
 import com.evgeny.goncharov.sample.multimodule.bottom_menu_api.BottomMenuApi
 import com.evgeny.goncharov.sample.multimodule.di_core.ContainerFeatureFragment
@@ -63,21 +67,17 @@ internal class BottomMenuContainerFragment :
         with(binding) {
             btvMainMenu.setOnItemSelectedListener(null)
             when (selectedBackstackMenu) {
-                TAG_HOME -> binding.btvMainMenu.selectedItemId = R.id.home
-                TAG_CATALOG -> binding.btvMainMenu.selectedItemId = R.id.catalog
-                TAG_REG -> binding.btvMainMenu.selectedItemId = R.id.profile
-                TAG_LIKE -> binding.btvMainMenu.selectedItemId = R.id.like
+                BACKSTACK_NAME_HOME -> binding.btvMainMenu.selectedItemId = R.id.home
+                BACKSTACK_NAME_CATALOG -> binding.btvMainMenu.selectedItemId = R.id.catalog
+                BACKSTACK_NAME_REG -> binding.btvMainMenu.selectedItemId = R.id.profile
+                BACKSTACK_NAME_LIKE -> binding.btvMainMenu.selectedItemId = R.id.like
             }
             btvMainMenu.setOnItemSelectedListener(::itemBottomMenuClickListener)
         }
     }
 
     companion object {
-        fun newInstance() = BottomMenuContainerFragment()
 
-        private const val TAG_HOME = "HomeContainer"
-        private const val TAG_CATALOG = "CatalogContainer"
-        private const val TAG_REG = "RegistrationContainer"
-        private const val TAG_LIKE = "LikeContainer"
+        fun newInstance() = BottomMenuContainerFragment()
     }
 }

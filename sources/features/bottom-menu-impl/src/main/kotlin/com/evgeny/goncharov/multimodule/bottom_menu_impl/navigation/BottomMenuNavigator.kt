@@ -75,4 +75,11 @@ internal class BottomMenuNavigator(
             fragmentBottomContainer.requireActivity().finish()
         }
     }
+
+    companion object {
+        const val BACKSTACK_NAME_HOME = "HomeContainer"
+        const val BACKSTACK_NAME_CATALOG = "CatalogContainer"
+        const val BACKSTACK_NAME_REG = "RegistrationContainer"
+        const val BACKSTACK_NAME_LIKE = "LikeContainer"
+    }
 }
