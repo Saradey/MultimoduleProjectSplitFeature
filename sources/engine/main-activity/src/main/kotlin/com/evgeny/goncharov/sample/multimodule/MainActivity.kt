@@ -1,7 +1,6 @@
 package com.evgeny.goncharov.sample.multimodule
 
 import android.os.Bundle
-import androidx.activity.OnBackPressedCallback
 import androidx.activity.viewModels
 import com.evgeny.goncharov.sample.multimodule.di.contracts.MainActivityApi
 import com.evgeny.goncharov.sample.multimodule.di.contracts.MainActivityInternal
@@ -23,7 +22,7 @@ public class MainActivity : CoreActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        savedInstanceState ?: viewModel.startSplashLauncher()
+        savedInstanceState ?: viewModel.startSplash()
     }
 
     override fun onResume() {

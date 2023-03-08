@@ -10,7 +10,8 @@ internal class MainActivityViewModel @Inject constructor(
     private val analytics: MainActivityAnalytics
 ) : ViewModel() {
 
-    fun startSplashLauncher() {
+    fun startSplash() {
         splashLauncher.launch()
+        analytics.startSplash()
     }
 }
