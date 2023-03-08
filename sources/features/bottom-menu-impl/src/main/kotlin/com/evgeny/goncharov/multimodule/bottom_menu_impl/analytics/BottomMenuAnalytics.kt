@@ -25,23 +25,23 @@ internal class BottomMenuAnalytics @Inject constructor(
     }
 
     fun goToCatalog() {
-        params.add(UI_EVENT_GO_TO_HOME to null)
-        analyticsDependencyApi.logEvent(UI_EVENT_GO_TO_CATALOG, params)
+        params.add(UI_EVENT_GO_TO_CATALOG to null)
+        analyticsDependencyApi.logEvent(UI_EVENT_KEY_NAVIGATION, params)
     }
 
     fun goToRegistration() {
-        params.add(UI_EVENT_GO_TO_HOME to null)
-        analyticsDependencyApi.logEvent(UI_EVENT_GO_TO_REGISTRATION, params)
+        params.add(UI_EVENT_GO_TO_REGISTRATION to null)
+        analyticsDependencyApi.logEvent(UI_EVENT_KEY_NAVIGATION, params)
     }
 
     fun goToLike() {
-        params.add(UI_EVENT_GO_TO_HOME to null)
-        analyticsDependencyApi.logEvent(UI_EVENT_GO_TO_LIKE, params)
+        params.add(UI_EVENT_GO_TO_LIKE to null)
+        analyticsDependencyApi.logEvent(UI_EVENT_KEY_NAVIGATION, params)
     }
 
     fun goToProfile() {
-        params.add(UI_EVENT_GO_TO_HOME to null)
-        analyticsDependencyApi.logEvent(UI_EVENT_GO_TO_PROFILE, params)
+        params.add(UI_EVENT_GO_TO_PROFILE to null)
+        analyticsDependencyApi.logEvent(UI_EVENT_KEY_NAVIGATION, params)
     }
 
     fun back() {
