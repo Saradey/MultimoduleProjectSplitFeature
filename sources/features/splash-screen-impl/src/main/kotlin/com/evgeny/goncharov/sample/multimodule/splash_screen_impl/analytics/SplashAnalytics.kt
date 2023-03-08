@@ -9,9 +9,10 @@ internal class SplashAnalytics @Inject constructor(
     private val analyticsDependencyApi: AnalyticsManager
 ) {
 
-    private val params = mutableListOf<Pair<String, String?>>(
-        TAG_SCREEN_PARAM to TAG_SPLASH_SCREEN_PARAM
-    )
+    private val params: MutableList<Pair<String, String?>>
+        get() = mutableListOf<Pair<String, String?>>(
+            TAG_SCREEN_PARAM to TAG_SPLASH_SCREEN_PARAM
+        )
 
     fun goToTheBottomMainMenu() {
         params.add(UI_EVENT_NAVIGATION_SPLASH_TO_BOTTOM_MENU to null)
