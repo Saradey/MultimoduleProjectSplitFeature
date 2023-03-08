@@ -1,6 +1,7 @@
 package com.evgeny.goncharov.multimodule.bottom_menu_impl.view.models
 
 import androidx.lifecycle.ViewModel
+import com.evgeny.goncharov.multimodule.bottom_menu_impl.analytics.BottomMenuAnalytics
 import com.evgeny.goncharov.sample.multimodule.catalog_api.CatalogLauncher
 import com.evgeny.goncharov.sample.multimodule.home_api.HomeLauncher
 import com.evgeny.goncharov.sample.multimodule.like_api.LikeLauncher
@@ -13,7 +14,8 @@ internal class BottomMenuContainerViewModel @Inject constructor(
     private val catalogLauncher: CatalogLauncher,
     private val registrationLauncher: RegistrationLauncher,
     private val likeLauncher: LikeLauncher,
-    private val globalRouter: GlobalRouter
+    private val globalRouter: GlobalRouter,
+    private val analytics: BottomMenuAnalytics
 ) : ViewModel() {
 
     fun goToHome() {
