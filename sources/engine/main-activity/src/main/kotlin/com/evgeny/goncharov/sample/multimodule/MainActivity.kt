@@ -14,7 +14,6 @@ public class MainActivity : CoreActivity() {
     }
     private val navigator = MainActivityNavigator(this)
     private val globalNavigatorHolder = dependency.provideGlobalNavigatorHolder()
-    private val splashLauncher = dependency.provideSplashLauncher()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
