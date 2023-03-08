@@ -30,15 +30,18 @@ internal class BottomMenuContainerViewModel @Inject constructor(
 
     fun goToCatalog() {
         catalogLauncher.launch()
+        analytics.goToCatalog()
     }
 
     fun goToProfile() {
         //TODO логика с авторизацией
         registrationLauncher.launch()
+        analytics.goToRegistration()
     }
 
     fun goToLike() {
         likeLauncher.launch()
+        analytics.goToLike()
     }
 
     fun onBackPressed() {

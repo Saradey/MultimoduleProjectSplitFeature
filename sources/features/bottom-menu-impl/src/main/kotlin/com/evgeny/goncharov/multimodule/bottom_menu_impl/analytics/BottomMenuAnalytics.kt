@@ -24,7 +24,7 @@ internal class BottomMenuAnalytics @Inject constructor(
         analyticsDependencyApi.logEvent(UI_EVENT_KEY_NAVIGATION, params)
     }
 
-    fun goToTheCatalog() {
+    fun goToCatalog() {
         params.add(UI_EVENT_GO_TO_HOME to null)
         analyticsDependencyApi.logEvent(UI_EVENT_GO_TO_CATALOG, params)
     }
@@ -34,7 +34,7 @@ internal class BottomMenuAnalytics @Inject constructor(
         analyticsDependencyApi.logEvent(UI_EVENT_GO_TO_REGISTRATION, params)
     }
 
-    fun goToTheLike() {
+    fun goToLike() {
         params.add(UI_EVENT_GO_TO_HOME to null)
         analyticsDependencyApi.logEvent(UI_EVENT_GO_TO_LIKE, params)
     }
