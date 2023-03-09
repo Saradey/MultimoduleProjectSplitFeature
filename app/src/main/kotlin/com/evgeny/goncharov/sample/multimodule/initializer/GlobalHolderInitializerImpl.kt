@@ -13,7 +13,9 @@ internal class GlobalHolderInitializerImpl(
 
     override fun init(featureContainerManager: FeatureContainerManager): Map<Class<*>, BaseHolder<*>> {
         return DaggerGlobalHoldersComponent.factory().create(
-                app, appContext, featureContainerManager
-            ).getGlobalHolders()
+            app,
+            appContext,
+            featureContainerManager
+        ).getGlobalHolders()
     }
 }
