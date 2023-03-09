@@ -3,7 +3,6 @@ package com.evgeny.goncharov.sample.multimodule.di_core
 import androidx.appcompat.app.AppCompatActivity
 import com.evgeny.goncharov.sample.multimodule.di_core.contracts.ReleasableApi
 import com.evgeny.goncharov.sample.multimodule.di_core.engine.DI
-import com.evgeny.goncharov.sample.multimodule.di_core.navigation.BaseLauncher
 
 public abstract class CoreActivity : AppCompatActivity() {
 
