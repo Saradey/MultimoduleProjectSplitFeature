@@ -15,7 +15,7 @@ internal object AnalyticsModule {
 
     @CoreScope
     @Provides
-    fun provideAnalyticsManager(context: Context): FirebaseAnalytics {
+    fun provideFirebaseAnalytics(context: Context): FirebaseAnalytics {
         return FirebaseAnalytics.getInstance(context)
     }
 
