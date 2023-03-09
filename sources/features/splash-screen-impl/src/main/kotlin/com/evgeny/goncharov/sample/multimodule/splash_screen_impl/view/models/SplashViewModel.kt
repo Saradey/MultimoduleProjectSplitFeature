@@ -14,9 +14,4 @@ internal class SplashViewModel @Inject constructor(
         mainLauncher.launch()
         analytics.goToTheBottomMainMenu()
     }
-
-    companion object {
-
-        private const val DELAY = 1500L
-    }
 }
