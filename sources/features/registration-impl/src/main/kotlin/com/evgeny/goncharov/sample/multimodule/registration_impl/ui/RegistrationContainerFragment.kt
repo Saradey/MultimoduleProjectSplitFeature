@@ -22,7 +22,7 @@ internal class RegistrationContainerFragment : ContainerFeatureFragment() {
     private val router: FeatureRouter = dependency.provideFeatureRouter()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        startFeature()
+        savedInstanceState ?: startFeature()
     }
 
     private fun startFeature() {
