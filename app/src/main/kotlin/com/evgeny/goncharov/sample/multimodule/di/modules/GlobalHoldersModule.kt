@@ -36,14 +36,12 @@ internal object GlobalHoldersModule {
     fun provideAnalyticsHolder(
         featureContainer: FeatureContainerManager,
         appContext: Context
-    ): BaseHolder<*> =
-        AnalyticsHolder(featureContainer, appContext, BuildConfig.HUAWEI)
+    ): BaseHolder<*> = AnalyticsHolder(featureContainer, appContext, BuildConfig.HUAWEI)
 
     @[Provides Singleton]
     @[IntoMap ClassKey(UserApi::class)]
     fun provideUserApiHolder(
         featureContainer: FeatureContainerManager,
         appContext: Context
-    ): BaseHolder<*> =
-        UserHolder(featureContainer, appContext)
+    ): BaseHolder<*> = UserHolder(featureContainer, appContext)
 }
