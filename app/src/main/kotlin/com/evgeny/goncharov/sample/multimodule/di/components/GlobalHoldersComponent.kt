@@ -23,7 +23,8 @@ internal interface GlobalHoldersComponent {
         fun create(
             @BindsInstance app: Application,
             @BindsInstance appContext: Context,
-            @BindsInstance featureContainerManager: FeatureContainerManager
+            @BindsInstance featureContainerManager: FeatureContainerManager,
+            @BindsInstance isHuawei: Boolean
         ): GlobalHoldersComponent
     }
 }

@@ -1,7 +1,6 @@
 package com.evgeny.goncharov.sample.multimodule.di.modules
 
 import android.content.Context
-import com.evgeny.goncharov.sample.multimodule.BuildConfig
 import com.evgeny.goncharov.sample.multimodule.analytics.api.AnalyticsDependencyApi
 import com.evgeny.goncharov.sample.multimodule.analytics.holder.AnalyticsHolder
 import com.evgeny.goncharov.sample.multimodule.di.holder.LaunchersHolder
@@ -35,8 +34,9 @@ internal object GlobalHoldersModule {
     @[IntoMap ClassKey(AnalyticsDependencyApi::class)]
     fun provideAnalyticsHolder(
         featureContainer: FeatureContainerManager,
-        appContext: Context
-    ): BaseHolder<*> = AnalyticsHolder(featureContainer, appContext, BuildConfig.HUAWEI)
+        appContext: Context,
+        isHuawei: Boolean
+    ): BaseHolder<*> = AnalyticsHolder(featureContainer, appContext, isHuawei)
 
     @[Provides Singleton]
     @[IntoMap ClassKey(UserApi::class)]

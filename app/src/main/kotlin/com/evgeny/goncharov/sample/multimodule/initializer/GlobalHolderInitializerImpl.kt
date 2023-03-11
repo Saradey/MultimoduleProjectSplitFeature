@@ -8,14 +8,17 @@ import com.evgeny.goncharov.sample.multimodule.di_core.holder.BaseHolder
 import com.evgeny.goncharov.sample.multimodule.di_core.initializer.GlobalHolderInitializer
 
 internal class GlobalHolderInitializerImpl(
-    private val app: Application, private val appContext: Context = app
+    private val app: Application,
+    private val appContext: Context,
+    private val isHuawei: Boolean
 ) : GlobalHolderInitializer {
 
     override fun init(featureContainerManager: FeatureContainerManager): Map<Class<*>, BaseHolder<*>> {
         return DaggerGlobalHoldersComponent.factory().create(
             app,
             appContext,
-            featureContainerManager
+            featureContainerManager,
+            isHuawei
         ).getGlobalHolders()
     }
 }
