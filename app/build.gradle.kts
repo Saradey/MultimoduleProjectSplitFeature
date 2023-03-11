@@ -52,9 +52,12 @@ dependencies {
     implementation(project(":sources:engine:main-activity"))
     implementation(project(":sources:engine:di-core"))
     implementation(project(":sources:engine:navigation"))
+
     implementation(project(":sources:resources:theme"))
     implementation(project(":sources:resources:ui-kit"))
+
     implementation(project(":sources:core:analytics"))
+    implementation(project(":sources:core:user"))
 
     implementation(project(":sources:features:splash-screen-impl"))
     implementation(project(":sources:features:bottom-menu-impl"))

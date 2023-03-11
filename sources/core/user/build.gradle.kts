@@ -23,5 +23,7 @@ android {
 dependencies {
     implementation(coreLibs.dagger)
 
+    implementation(project(":sources:engine:di-core"))
+
     kapt(coreLibs.daggerCompiler)
 }
