@@ -1,4 +1,6 @@
 package com.evgeny.goncharov.sample.multimodule.user.repository
 
-internal class UserRepositoryImpl : UserRepository {
+import javax.inject.Inject
+
+internal class UserRepositoryImpl @Inject constructor() : UserRepository {
 }
