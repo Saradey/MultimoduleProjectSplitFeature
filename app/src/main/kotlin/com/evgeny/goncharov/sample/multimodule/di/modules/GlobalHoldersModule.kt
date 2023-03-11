@@ -10,6 +10,8 @@ import com.evgeny.goncharov.sample.multimodule.di_core.holder.BaseHolder
 import com.evgeny.goncharov.sample.multimodule.navigation.api.CoreNavigationApi
 import com.evgeny.goncharov.sample.multimodule.di_core.navigation.LaunchersApi
 import com.evgeny.goncharov.sample.multimodule.navigation.holder.NavigationHolder
+import com.evgeny.goncharov.sample.multimodule.user.di.api.UserApi
+import com.evgeny.goncharov.sample.multimodule.user.holder.UserHolder
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.ClassKey
@@ -31,9 +33,17 @@ internal object GlobalHoldersModule {
 
     @[Provides Singleton]
     @[IntoMap ClassKey(AnalyticsDependencyApi::class)]
-    fun provideAnalytics(
+    fun provideAnalyticsHolder(
         featureContainer: FeatureContainerManager,
         appContext: Context
     ): BaseHolder<*> =
         AnalyticsHolder(featureContainer, appContext, BuildConfig.HUAWEI)
+
+    @[Provides Singleton]
+    @[IntoMap ClassKey(UserApi::class)]
+    fun provideUserApiHolder(
+        featureContainer: FeatureContainerManager,
+        appContext: Context
+    ): BaseHolder<*> =
+        UserHolder(featureContainer, appContext)
 }
