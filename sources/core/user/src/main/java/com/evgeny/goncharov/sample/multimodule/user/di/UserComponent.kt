@@ -14,7 +14,7 @@ internal interface UserComponent : UserApi {
     interface Factory {
 
         fun create(
-            @BindsInstance context: Context
-        )
+            @BindsInstance applicationContext: Context
+        ): UserComponent
     }
 }
