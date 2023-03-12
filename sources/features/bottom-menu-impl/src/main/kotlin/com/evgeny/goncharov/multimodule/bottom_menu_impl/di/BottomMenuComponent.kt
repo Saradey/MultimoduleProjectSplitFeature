@@ -9,6 +9,7 @@ import com.evgeny.goncharov.sample.multimodule.home_api.HomeLauncher
 import com.evgeny.goncharov.sample.multimodule.like_api.LikeLauncher
 import com.evgeny.goncharov.sample.multimodule.navigation.api.CoreNavigationApi
 import com.evgeny.goncharov.sample.multimodule.registration_api.RegistrationLauncher
+import com.evgeny.goncharov.sample.multimodule.user.di.api.UserApi
 import dagger.BindsInstance
 import dagger.Component
 
@@ -17,6 +18,7 @@ import dagger.Component
     dependencies = [
         CoreNavigationApi::class,
         AnalyticsDependencyApi::class,
+        UserApi::class
     ],
     modules = [
         ViewModelsBottomMenuModule::class
@@ -30,6 +32,7 @@ internal interface BottomMenuComponent : BottomMenuInternal {
         fun create(
             coreNavigationApi: CoreNavigationApi,
             analyticsDependencyApi: AnalyticsDependencyApi,
+            userApi: UserApi,
             @BindsInstance homeLauncher: HomeLauncher,
             @BindsInstance catalogLauncher: CatalogLauncher,
             @BindsInstance registrationLauncher: RegistrationLauncher,
