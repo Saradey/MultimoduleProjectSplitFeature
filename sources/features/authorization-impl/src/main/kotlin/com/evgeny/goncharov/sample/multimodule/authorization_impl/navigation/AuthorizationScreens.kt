@@ -6,10 +6,10 @@ import com.evgeny.goncharov.sample.multimodule.authorization_impl.ui.Authorizati
 import com.evgeny.goncharov.sample.multimodule.authorization_impl.ui.AuthorizationFragment
 import com.github.terrakok.cicerone.androidx.FragmentScreen
 
-internal object RegistrationScreens {
+internal object AuthorizationScreens {
 
     fun startFeature() = object : FragmentScreen {
-        override val screenKey: String = "RegistrationContainer"
+        override val screenKey: String = "AuthorizationContainer"
 
         override fun createFragment(factory: FragmentFactory): Fragment {
             return AuthorizationContainerFragment.newInstance()
