@@ -2,8 +2,8 @@ package com.evgeny.goncharov.sample.multimodule.authorization_impl.navigation
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentFactory
-import com.evgeny.goncharov.sample.multimodule.authorization_impl.ui.RegistrationContainerFragment
-import com.evgeny.goncharov.sample.multimodule.authorization_impl.ui.RegistrationFragment
+import com.evgeny.goncharov.sample.multimodule.authorization_impl.ui.AuthorizationContainerFragment
+import com.evgeny.goncharov.sample.multimodule.authorization_impl.ui.AuthorizationFragment
 import com.github.terrakok.cicerone.androidx.FragmentScreen
 
 internal object RegistrationScreens {
@@ -12,11 +12,11 @@ internal object RegistrationScreens {
         override val screenKey: String = "RegistrationContainer"
 
         override fun createFragment(factory: FragmentFactory): Fragment {
-            return RegistrationContainerFragment.newInstance()
+            return AuthorizationContainerFragment.newInstance()
         }
     }
 
     fun goToTheRegistration() = FragmentScreen {
-        RegistrationFragment.newInstance()
+        AuthorizationFragment.newInstance()
     }
 }

@@ -10,7 +10,7 @@ import com.evgeny.goncharov.sample.multimodule.navigation.routers.FeatureRouter
 import com.evgeny.goncharov.sample.multimodule.authorization_api.AuthorizationApi
 import com.github.terrakok.cicerone.NavigatorHolder
 
-internal class RegistrationContainerFragment : ContainerFeatureFragment() {
+internal class AuthorizationContainerFragment : ContainerFeatureFragment() {
 
     private val dependency: AuthorizationInternal by lazy {
         getFeatureApi(AuthorizationApi::class.java) as AuthorizationInternal
@@ -34,6 +34,6 @@ internal class RegistrationContainerFragment : ContainerFeatureFragment() {
     }
 
     companion object {
-        fun newInstance() = RegistrationContainerFragment()
+        fun newInstance() = AuthorizationContainerFragment()
     }
 }
