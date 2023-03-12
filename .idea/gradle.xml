@@ -22,6 +22,8 @@
             <option value="$PROJECT_DIR$/sources/engine/main-activity" />
             <option value="$PROJECT_DIR$/sources/engine/navigation" />
             <option value="$PROJECT_DIR$/sources/features" />
+            <option value="$PROJECT_DIR$/sources/features/authorization-api" />
+            <option value="$PROJECT_DIR$/sources/features/authorization-impl" />
             <option value="$PROJECT_DIR$/sources/features/bottom-menu-api" />
             <option value="$PROJECT_DIR$/sources/features/bottom-menu-impl" />
             <option value="$PROJECT_DIR$/sources/features/catalog-api" />
@@ -30,8 +32,6 @@
             <option value="$PROJECT_DIR$/sources/features/home-impl" />
             <option value="$PROJECT_DIR$/sources/features/like-api" />
             <option value="$PROJECT_DIR$/sources/features/like-impl" />
-            <option value="$PROJECT_DIR$/sources/features/registration-api" />
-            <option value="$PROJECT_DIR$/sources/features/registration-impl" />
             <option value="$PROJECT_DIR$/sources/features/splash-screen-api" />
             <option value="$PROJECT_DIR$/sources/features/splash-screen-impl" />
             <option value="$PROJECT_DIR$/sources/resources" />

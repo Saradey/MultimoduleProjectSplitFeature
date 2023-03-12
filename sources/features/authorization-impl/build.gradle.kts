@@ -21,8 +21,8 @@ android {
 }
 
 dependencies {
-    api(project(":sources:features:registration-api"))
 
+    api(project(":sources:features:authorization-api"))
     implementation(project(":sources:engine:navigation"))
     implementation(project(":sources:engine:di-core"))
 
