@@ -1,10 +1,10 @@
-package com.evgeny.goncharov.sample.multimodule.registration_impl.ui
+package com.evgeny.goncharov.sample.multimodule.authorization_impl.ui
 
 import android.os.Bundle
 import android.view.View
 import com.evgeny.goncharov.sample.multimodule.di_core.ContainerFeatureFragment
-import com.evgeny.goncharov.sample.multimodule.registration_impl.di.contracts.AuthorizationInternal
-import com.evgeny.goncharov.sample.multimodule.registration_impl.navigation.RegistrationScreens
+import com.evgeny.goncharov.sample.multimodule.authorization_impl.di.contracts.AuthorizationInternal
+import com.evgeny.goncharov.sample.multimodule.authorization_impl.navigation.RegistrationScreens
 import com.evgeny.goncharov.sample.multimodule.navigation.base.FeatureNavigator
 import com.evgeny.goncharov.sample.multimodule.navigation.routers.FeatureRouter
 import com.evgeny.goncharov.sample.multimodule.authorization_api.AuthorizationApi

@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.evgeny.goncharov.sample.multimodule.registration_impl"
+    namespace = "com.evgeny.goncharov.sample.multimodule.authorization_impl"
     compileSdk = rootProject.ext["compileSdkVersionApp"] as Int
     defaultConfig {
         minSdk = rootProject.ext["minSdkVersionApp"] as Int

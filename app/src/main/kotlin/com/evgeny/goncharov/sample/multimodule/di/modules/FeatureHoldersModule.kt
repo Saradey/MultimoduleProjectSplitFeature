@@ -13,7 +13,7 @@ import com.evgeny.goncharov.sample.multimodule.home_impl.di.holder.HomeHolder
 import com.evgeny.goncharov.sample.multimodule.like_api.LikeApi
 import com.evgeny.goncharov.sample.multimodule.like_impl.di.holder.LikeHolder
 import com.evgeny.goncharov.sample.multimodule.authorization_api.AuthorizationApi
-import com.evgeny.goncharov.sample.multimodule.registration_impl.di.holder.AuthorizationHolder
+import com.evgeny.goncharov.sample.multimodule.authorization_impl.di.holder.AuthorizationHolder
 import com.evgeny.goncharov.sample.multimodule.splash_screen_api.SplashApi
 import com.evgeny.goncharov.sample.multimodule.splash_screen_impl.di.holder.SplashHolder
 import dagger.Module

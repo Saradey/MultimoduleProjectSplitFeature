@@ -1,9 +1,9 @@
-package com.evgeny.goncharov.sample.multimodule.registration_impl.navigation
+package com.evgeny.goncharov.sample.multimodule.authorization_impl.navigation
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentFactory
-import com.evgeny.goncharov.sample.multimodule.registration_impl.ui.RegistrationContainerFragment
-import com.evgeny.goncharov.sample.multimodule.registration_impl.ui.RegistrationFragment
+import com.evgeny.goncharov.sample.multimodule.authorization_impl.ui.RegistrationContainerFragment
+import com.evgeny.goncharov.sample.multimodule.authorization_impl.ui.RegistrationFragment
 import com.github.terrakok.cicerone.androidx.FragmentScreen
 
 internal object RegistrationScreens {
