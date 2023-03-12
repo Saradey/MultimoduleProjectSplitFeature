@@ -30,8 +30,10 @@ dependencies {
     implementation(project(":sources:engine:di-core"))
     implementation(project(":sources:resources:ui-kit"))
     implementation(project(":sources:resources:theme"))
+
     implementation(project(":sources:core:reusable-sources"))
     implementation(project(":sources:core:analytics"))
+    implementation(project(":sources:core:user"))
 
     implementation(project(":sources:features:home-api"))
     implementation(project(":sources:features:catalog-api"))
