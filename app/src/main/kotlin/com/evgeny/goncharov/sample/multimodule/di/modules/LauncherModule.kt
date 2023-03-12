@@ -10,7 +10,7 @@ import com.evgeny.goncharov.sample.multimodule.home_api.HomeLauncher
 import com.evgeny.goncharov.sample.multimodule.home_impl.navigation.HomeLauncherImpl
 import com.evgeny.goncharov.sample.multimodule.like_api.LikeLauncher
 import com.evgeny.goncharov.sample.multimodule.like_impl.navigation.LikeLauncherImpl
-import com.evgeny.goncharov.sample.multimodule.registration_api.AuthorizationLauncher
+import com.evgeny.goncharov.sample.multimodule.authorization_api.AuthorizationLauncher
 import com.evgeny.goncharov.sample.multimodule.registration_impl.navigation.RegistrationLauncherImpl
 import com.evgeny.goncharov.sample.multimodule.splash_screen_api.SplashLauncher
 import com.evgeny.goncharov.sample.multimodule.splash_screen_impl.navigation.SplashLauncherImpl

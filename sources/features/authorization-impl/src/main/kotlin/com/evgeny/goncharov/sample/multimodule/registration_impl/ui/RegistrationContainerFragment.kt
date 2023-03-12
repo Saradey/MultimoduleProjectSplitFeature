@@ -7,7 +7,7 @@ import com.evgeny.goncharov.sample.multimodule.registration_impl.di.contracts.Au
 import com.evgeny.goncharov.sample.multimodule.registration_impl.navigation.RegistrationScreens
 import com.evgeny.goncharov.sample.multimodule.navigation.base.FeatureNavigator
 import com.evgeny.goncharov.sample.multimodule.navigation.routers.FeatureRouter
-import com.evgeny.goncharov.sample.multimodule.registration_api.AuthorizationApi
+import com.evgeny.goncharov.sample.multimodule.authorization_api.AuthorizationApi
 import com.github.terrakok.cicerone.NavigatorHolder
 
 internal class RegistrationContainerFragment : ContainerFeatureFragment() {

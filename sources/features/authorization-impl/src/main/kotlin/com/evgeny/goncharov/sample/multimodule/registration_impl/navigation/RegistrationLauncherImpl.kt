@@ -1,7 +1,7 @@
 package com.evgeny.goncharov.sample.multimodule.registration_impl.navigation
 
 import com.evgeny.goncharov.sample.multimodule.navigation.routers.GlobalRouter
-import com.evgeny.goncharov.sample.multimodule.registration_api.AuthorizationLauncher
+import com.evgeny.goncharov.sample.multimodule.authorization_api.AuthorizationLauncher
 
 public class RegistrationLauncherImpl(
     private val globalRouter: GlobalRouter

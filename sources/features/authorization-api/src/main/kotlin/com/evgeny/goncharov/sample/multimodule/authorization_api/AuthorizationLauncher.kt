@@ -1,4 +1,4 @@
-package com.evgeny.goncharov.sample.multimodule.registration_api
+package com.evgeny.goncharov.sample.multimodule.authorization_api
 
 import com.evgeny.goncharov.sample.multimodule.di_core.navigation.BaseLauncher
 
