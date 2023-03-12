@@ -7,6 +7,7 @@ import com.evgeny.goncharov.sample.multimodule.home_api.HomeLauncher
 import com.evgeny.goncharov.sample.multimodule.like_api.LikeLauncher
 import com.evgeny.goncharov.sample.multimodule.navigation.routers.GlobalRouter
 import com.evgeny.goncharov.sample.multimodule.registration_api.RegistrationLauncher
+import com.evgeny.goncharov.sample.multimodule.user.usecase.UserUseCase
 import javax.inject.Inject
 
 internal class BottomMenuContainerViewModel @Inject constructor(
@@ -15,7 +16,8 @@ internal class BottomMenuContainerViewModel @Inject constructor(
     private val registrationLauncher: RegistrationLauncher,
     private val likeLauncher: LikeLauncher,
     private val globalRouter: GlobalRouter,
-    private val analytics: BottomMenuAnalytics
+    private val analytics: BottomMenuAnalytics,
+    private val userUseCase: UserUseCase
 ) : ViewModel() {
 
     fun startHome() {
@@ -34,9 +36,12 @@ internal class BottomMenuContainerViewModel @Inject constructor(
     }
 
     fun goToProfile() {
-        //TODO логика с авторизацией
-        registrationLauncher.launch()
-        analytics.goToRegistration()
+        if(userUseCase.isAuthorized()) {
+
+        } else {
+            registrationLauncher.launch()
+            analytics.goToRegistration()
+        }
     }
 
     fun goToLike() {

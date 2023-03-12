@@ -6,4 +6,8 @@ import javax.inject.Inject
 internal class UserUseCaseImpl @Inject constructor(
     private val userRepository: UserRepository
 ) : UserUseCase {
+
+    override fun isAuthorized(): Boolean {
+        return userRepository.isAuthorized()
+    }
 }
