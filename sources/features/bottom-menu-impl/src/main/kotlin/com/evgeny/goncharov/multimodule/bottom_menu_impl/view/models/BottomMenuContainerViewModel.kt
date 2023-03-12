@@ -6,14 +6,14 @@ import com.evgeny.goncharov.sample.multimodule.catalog_api.CatalogLauncher
 import com.evgeny.goncharov.sample.multimodule.home_api.HomeLauncher
 import com.evgeny.goncharov.sample.multimodule.like_api.LikeLauncher
 import com.evgeny.goncharov.sample.multimodule.navigation.routers.GlobalRouter
-import com.evgeny.goncharov.sample.multimodule.registration_api.RegistrationLauncher
+import com.evgeny.goncharov.sample.multimodule.registration_api.AuthorizationLauncher
 import com.evgeny.goncharov.sample.multimodule.user.usecase.UserUseCase
 import javax.inject.Inject
 
 internal class BottomMenuContainerViewModel @Inject constructor(
     private val homeLauncher: HomeLauncher,
     private val catalogLauncher: CatalogLauncher,
-    private val registrationLauncher: RegistrationLauncher,
+    private val authorizationLauncher: AuthorizationLauncher,
     private val likeLauncher: LikeLauncher,
     private val globalRouter: GlobalRouter,
     private val analytics: BottomMenuAnalytics,
@@ -39,7 +39,7 @@ internal class BottomMenuContainerViewModel @Inject constructor(
         if(userUseCase.isAuthorized()) {
 
         } else {
-            registrationLauncher.launch()
+            authorizationLauncher.launch()
             analytics.goToRegistration()
         }
     }

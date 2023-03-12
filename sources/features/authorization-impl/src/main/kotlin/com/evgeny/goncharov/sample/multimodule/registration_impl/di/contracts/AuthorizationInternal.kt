@@ -1,6 +1,6 @@
 package com.evgeny.goncharov.sample.multimodule.registration_impl.di.contracts
 
 import com.evgeny.goncharov.sample.multimodule.navigation.di.FeatureNavigationContract
-import com.evgeny.goncharov.sample.multimodule.registration_api.RegistrationApi
+import com.evgeny.goncharov.sample.multimodule.registration_api.AuthorizationApi
 
-internal interface RegistrationInternal : RegistrationApi, FeatureNavigationContract
+internal interface AuthorizationInternal : AuthorizationApi, FeatureNavigationContract

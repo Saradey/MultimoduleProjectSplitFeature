@@ -8,7 +8,7 @@ import com.evgeny.goncharov.sample.multimodule.di_core.scopes.FeatureScope
 import com.evgeny.goncharov.sample.multimodule.home_api.HomeLauncher
 import com.evgeny.goncharov.sample.multimodule.like_api.LikeLauncher
 import com.evgeny.goncharov.sample.multimodule.navigation.api.CoreNavigationApi
-import com.evgeny.goncharov.sample.multimodule.registration_api.RegistrationLauncher
+import com.evgeny.goncharov.sample.multimodule.registration_api.AuthorizationLauncher
 import com.evgeny.goncharov.sample.multimodule.user.di.api.UserApi
 import dagger.BindsInstance
 import dagger.Component
@@ -35,7 +35,7 @@ internal interface BottomMenuComponent : BottomMenuInternal {
             userApi: UserApi,
             @BindsInstance homeLauncher: HomeLauncher,
             @BindsInstance catalogLauncher: CatalogLauncher,
-            @BindsInstance registrationLauncher: RegistrationLauncher,
+            @BindsInstance authorizationLauncher: AuthorizationLauncher,
             @BindsInstance likeLauncher: LikeLauncher
         ): BottomMenuComponent
     }
