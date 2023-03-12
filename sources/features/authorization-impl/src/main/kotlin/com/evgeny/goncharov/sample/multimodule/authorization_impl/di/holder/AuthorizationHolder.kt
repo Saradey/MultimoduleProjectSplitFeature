@@ -11,8 +11,6 @@ public class AuthorizationHolder(container: FeatureContainer) :
 
     override fun buildComponent(): AuthorizationApi {
         return DaggerAuthorizationComponent.factory()
-            .create(
-                getGlobalComponent(CoreNavigationApi::class.java)
-            )
+            .create(getGlobalComponent(CoreNavigationApi::class.java))
     }
 }
