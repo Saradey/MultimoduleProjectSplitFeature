@@ -64,6 +64,6 @@ internal object LauncherModule {
     @Provides
     @[Singleton IntoMap ClassKey(ProfileLauncher::class)]
     fun provideProfileLauncher(globalRouter: GlobalRouter): BaseLauncher {
-        return ProfileLauncherImpl()
+        return ProfileLauncherImpl(globalRouter)
     }
 }
