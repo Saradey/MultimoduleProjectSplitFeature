@@ -5,4 +5,11 @@ import dagger.Component
 
 @Component
 internal interface ProfileComponent : ProfileInternal {
+
+
+    @Component.Factory
+    interface Factory {
+
+        fun create(): ProfileComponent
+    }
 }
