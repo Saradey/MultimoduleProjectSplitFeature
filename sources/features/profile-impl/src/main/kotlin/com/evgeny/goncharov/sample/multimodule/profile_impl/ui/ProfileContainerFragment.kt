@@ -18,6 +18,6 @@ internal class ProfileContainerFragment : ContainerFeatureFragment() {
         get() = TODO("Not yet implemented")
 
     override fun releaseDependencies() {
-        TODO("Not yet implemented")
+        releaseFeatureApi(ProfileApi::class.java)
     }
 }
