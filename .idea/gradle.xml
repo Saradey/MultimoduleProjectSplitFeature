@@ -33,6 +33,7 @@
             <option value="$PROJECT_DIR$/sources/features/like-api" />
             <option value="$PROJECT_DIR$/sources/features/like-impl" />
             <option value="$PROJECT_DIR$/sources/features/profile-api" />
+            <option value="$PROJECT_DIR$/sources/features/profile-impl" />
             <option value="$PROJECT_DIR$/sources/features/splash-screen-api" />
             <option value="$PROJECT_DIR$/sources/features/splash-screen-impl" />
             <option value="$PROJECT_DIR$/sources/resources" />
