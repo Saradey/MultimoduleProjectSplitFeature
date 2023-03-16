@@ -26,7 +26,11 @@ dependencies {
     implementation(project(":sources:engine:navigation"))
     implementation(project(":sources:engine:di-core"))
 
+    implementation(uiLibs.constraint.layout)
+    implementation(coreLibs.cicerone)
     implementation(coreLibs.dagger)
+    implementation(androidLibs.fragment)
+    implementation(androidLibs.fragment.ktx)
 
     kapt(coreLibs.daggerCompiler)
 }
