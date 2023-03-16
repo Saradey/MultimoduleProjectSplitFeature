@@ -65,6 +65,7 @@ dependencies {
     implementation(project(":sources:features:home-impl"))
     implementation(project(":sources:features:like-impl"))
     implementation(project(":sources:features:authorization-impl"))
+    implementation(project(":sources:features:profile-impl"))
 
     implementation(coreLibs.cicerone)
     implementation(coreLibs.dagger)
