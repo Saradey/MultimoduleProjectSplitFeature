@@ -23,6 +23,9 @@ android {
 dependencies {
     api(project(":sources:features:profile-api"))
 
+    implementation(project(":sources:engine:navigation"))
+    implementation(project(":sources:engine:di-core"))
+
     implementation(coreLibs.dagger)
 
     kapt(coreLibs.daggerCompiler)
