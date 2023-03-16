@@ -18,7 +18,8 @@ internal class App : Application() {
     private fun initDi() {
         try {
             DI.initialize(
-                GlobalHolderInitializerImpl(app = this, appContext = this, BuildConfig.HUAWEI),
+//                GlobalHolderInitializerImpl(app = this, appContext = this, BuildConfig.HUAWEI),
+                GlobalHolderInitializerImpl(app = this, appContext = this, false),
                 FeatureHolderInitializerImpl()
             )
         } catch (exp: Exception) {
