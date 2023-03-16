@@ -1,6 +1,7 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
 }
 
 android {
@@ -21,4 +22,8 @@ android {
 
 dependencies {
     api(project(":sources:features:profile-api"))
+
+    implementation(coreLibs.dagger)
+
+    kapt(coreLibs.daggerCompiler)
 }
