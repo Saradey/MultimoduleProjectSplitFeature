@@ -12,6 +12,8 @@ import com.evgeny.goncharov.sample.multimodule.like_api.LikeLauncher
 import com.evgeny.goncharov.sample.multimodule.like_impl.navigation.LikeLauncherImpl
 import com.evgeny.goncharov.sample.multimodule.authorization_api.AuthorizationLauncher
 import com.evgeny.goncharov.sample.multimodule.authorization_impl.navigation.AuthorizationLauncherImpl
+import com.evgeny.goncharov.sample.multimodule.profile_api.ProfileLauncher
+import com.evgeny.goncharov.sample.multimodule.profile_impl.navigation.ProfileLauncherImpl
 import com.evgeny.goncharov.sample.multimodule.splash_screen_api.SplashLauncher
 import com.evgeny.goncharov.sample.multimodule.splash_screen_impl.navigation.SplashLauncherImpl
 import dagger.Module
@@ -57,5 +59,11 @@ internal object LauncherModule {
     @[Singleton IntoMap ClassKey(LikeLauncher::class)]
     fun provideLikeLauncher(globalRouter: GlobalRouter): BaseLauncher {
         return LikeLauncherImpl(globalRouter)
+    }
+
+    @Provides
+    @[Singleton IntoMap ClassKey(ProfileLauncher::class)]
+    fun provideProfileLauncher(globalRouter: GlobalRouter): BaseLauncher {
+        return ProfileLauncherImpl()
     }
 }
