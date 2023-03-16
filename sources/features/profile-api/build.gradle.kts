@@ -20,5 +20,6 @@ android {
 }
 
 dependencies {
-
+    implementation(project(":sources:engine:navigation"))
+    implementation(project(":sources:engine:di-core"))
 }
