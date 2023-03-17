@@ -7,7 +7,6 @@ import com.evgeny.goncharov.sample.multimodule.navigation.base.FeatureNavigator
 import com.evgeny.goncharov.sample.multimodule.navigation.routers.FeatureRouter
 import com.evgeny.goncharov.sample.multimodule.profile_api.ProfileApi
 import com.evgeny.goncharov.sample.multimodule.profile_impl.di.contracts.ProfileInternal
-import com.github.terrakok.cicerone.Navigator
 import com.github.terrakok.cicerone.NavigatorHolder
 
 internal class ProfileContainerFragment : ContainerFeatureFragment() {
@@ -31,5 +30,10 @@ internal class ProfileContainerFragment : ContainerFeatureFragment() {
 
     override fun releaseDependencies() {
         releaseFeatureApi(ProfileApi::class.java)
+    }
+
+    companion object {
+
+        fun newInstance() = ProfileContainerFragment()
     }
 }
