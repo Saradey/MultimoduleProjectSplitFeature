@@ -14,6 +14,10 @@ internal class UserRepositoryImpl @Inject constructor(
         return pref.getBoolean(USER_AUTHORIZED, false)
     }
 
+    override fun updateAuthorized(authorizedStatus: Boolean) {
+
+    }
+
     private companion object {
         const val USER_AUTHORIZED_PREF = "USER_AUTHORIZED_SHARED_PREF"
         const val USER_AUTHORIZED = "USER_AUTHORIZED"

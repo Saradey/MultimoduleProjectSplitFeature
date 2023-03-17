@@ -9,6 +9,6 @@ internal class AuthorizationViewModel @Inject constructor(
 ) : ViewModel() {
 
     fun signIn() {
-
+        useCase.signIn()
     }
 }
