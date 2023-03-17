@@ -36,6 +36,7 @@ dependencies {
     implementation(coreLibs.dagger)
     implementation(androidLibs.fragment)
     implementation(androidLibs.fragment.ktx)
+    implementation(uiLibs.viewBindingPropertyDelegate)
 
     kapt(coreLibs.daggerCompiler)
 }
