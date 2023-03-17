@@ -4,5 +4,7 @@ import com.evgeny.goncharov.sample.multimodule.di_core.navigation.BaseLauncher
 
 public interface ProfileLauncher : BaseLauncher {
 
+    public fun launchNewRoot()
+
     public fun launch()
 }
