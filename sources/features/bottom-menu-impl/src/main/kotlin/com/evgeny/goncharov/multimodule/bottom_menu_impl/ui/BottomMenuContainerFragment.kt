@@ -13,6 +13,7 @@ import com.evgeny.goncharov.multimodule.bottom_menu_impl.navigation.BottomMenuNa
 import com.evgeny.goncharov.multimodule.bottom_menu_impl.navigation.BottomMenuNavigator.Companion.BACKSTACK_NAME_CATALOG
 import com.evgeny.goncharov.multimodule.bottom_menu_impl.navigation.BottomMenuNavigator.Companion.BACKSTACK_NAME_HOME
 import com.evgeny.goncharov.multimodule.bottom_menu_impl.navigation.BottomMenuNavigator.Companion.BACKSTACK_NAME_LIKE
+import com.evgeny.goncharov.multimodule.bottom_menu_impl.navigation.BottomMenuNavigator.Companion.BACKSTACK_NAME_PROFILE
 import com.evgeny.goncharov.multimodule.bottom_menu_impl.navigation.BottomMenuNavigator.Companion.BACKSTACK_NAME_REG
 import com.evgeny.goncharov.multimodule.bottom_menu_impl.view.models.BottomMenuContainerViewModel
 import com.evgeny.goncharov.sample.multimodule.bottom_menu_api.BottomMenuApi
@@ -69,7 +70,8 @@ internal class BottomMenuContainerFragment :
             when (selectedBackstackMenu) {
                 BACKSTACK_NAME_HOME -> binding.btvMainMenu.selectedItemId = R.id.home
                 BACKSTACK_NAME_CATALOG -> binding.btvMainMenu.selectedItemId = R.id.catalog
-                BACKSTACK_NAME_REG -> binding.btvMainMenu.selectedItemId = R.id.profile
+                BACKSTACK_NAME_REG,
+                BACKSTACK_NAME_PROFILE -> binding.btvMainMenu.selectedItemId = R.id.profile
                 BACKSTACK_NAME_LIKE -> binding.btvMainMenu.selectedItemId = R.id.like
             }
             btvMainMenu.setOnItemSelectedListener(::itemBottomMenuClickListener)

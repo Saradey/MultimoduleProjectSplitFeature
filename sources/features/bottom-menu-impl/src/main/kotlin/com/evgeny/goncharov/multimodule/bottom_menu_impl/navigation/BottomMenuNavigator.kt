@@ -80,6 +80,7 @@ internal class BottomMenuNavigator(
         const val BACKSTACK_NAME_HOME = "HomeContainer"
         const val BACKSTACK_NAME_CATALOG = "CatalogContainer"
         const val BACKSTACK_NAME_REG = "AuthorizationContainer"
+        const val BACKSTACK_NAME_PROFILE = "ProfileContainer"
         const val BACKSTACK_NAME_LIKE = "LikeContainer"
     }
 }
