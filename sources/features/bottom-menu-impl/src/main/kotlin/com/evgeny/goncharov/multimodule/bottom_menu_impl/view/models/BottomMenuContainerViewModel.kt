@@ -7,6 +7,7 @@ import com.evgeny.goncharov.sample.multimodule.home_api.HomeLauncher
 import com.evgeny.goncharov.sample.multimodule.like_api.LikeLauncher
 import com.evgeny.goncharov.sample.multimodule.navigation.routers.GlobalRouter
 import com.evgeny.goncharov.sample.multimodule.authorization_api.AuthorizationLauncher
+import com.evgeny.goncharov.sample.multimodule.profile_api.ProfileLauncher
 import com.evgeny.goncharov.sample.multimodule.user.usecase.UserUseCase
 import javax.inject.Inject
 
@@ -17,7 +18,8 @@ internal class BottomMenuContainerViewModel @Inject constructor(
     private val likeLauncher: LikeLauncher,
     private val globalRouter: GlobalRouter,
     private val analytics: BottomMenuAnalytics,
-    private val userUseCase: UserUseCase
+    private val userUseCase: UserUseCase,
+    private val profileLauncher: ProfileLauncher
 ) : ViewModel() {
 
     fun startHome() {
