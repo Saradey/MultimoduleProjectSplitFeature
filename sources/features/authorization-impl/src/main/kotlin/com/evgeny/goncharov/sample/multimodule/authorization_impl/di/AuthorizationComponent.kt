@@ -5,6 +5,7 @@ import com.evgeny.goncharov.sample.multimodule.authorization_impl.di.contracts.A
 import com.evgeny.goncharov.sample.multimodule.authorization_impl.di.modules.ViewModelsAuthorizationModule
 import com.evgeny.goncharov.sample.multimodule.navigation.api.CoreNavigationApi
 import com.evgeny.goncharov.sample.multimodule.navigation.di.FeatureNavigationModule
+import com.evgeny.goncharov.sample.multimodule.user.di.api.UserApi
 import dagger.Component
 
 @FeatureScope
@@ -14,7 +15,8 @@ import dagger.Component
         ViewModelsAuthorizationModule::class
     ],
     dependencies = [
-        CoreNavigationApi::class
+        CoreNavigationApi::class,
+        UserApi::class
     ]
 )
 internal interface AuthorizationComponent : AuthorizationInternal {
@@ -22,7 +24,8 @@ internal interface AuthorizationComponent : AuthorizationInternal {
     @Component.Factory
     interface Factory {
         fun create(
-            coreNavigationApi: CoreNavigationApi
+            coreNavigationApi: CoreNavigationApi,
+            userApi: UserApi
         ): AuthorizationComponent
     }
 }
