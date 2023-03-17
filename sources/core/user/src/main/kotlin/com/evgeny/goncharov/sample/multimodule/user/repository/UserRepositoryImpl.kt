@@ -19,7 +19,7 @@ internal class UserRepositoryImpl @Inject constructor(
             USER_AUTHORIZED_PREF, Context.MODE_PRIVATE
         )
         val editor = pref.edit()
-        editor.putBoolean(USER_AUTHORIZED_PREF, authorizedStatus)
+        editor.putBoolean(USER_AUTHORIZED, authorizedStatus)
         editor.apply()
     }
 
