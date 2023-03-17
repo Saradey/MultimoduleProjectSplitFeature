@@ -8,5 +8,7 @@ internal class AuthorizationViewModel @Inject constructor(
     private val useCase: UserUseCase
 ) : ViewModel() {
 
+    fun signIn() {
 
+    }
 }

@@ -18,6 +18,9 @@ android {
         jvmTarget = "1.8"
         freeCompilerArgs = listOf("-Xexplicit-api=strict")
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
