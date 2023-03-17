@@ -14,6 +14,7 @@ import com.evgeny.goncharov.sample.multimodule.like_api.LikeApi
 import com.evgeny.goncharov.sample.multimodule.like_impl.di.holder.LikeHolder
 import com.evgeny.goncharov.sample.multimodule.authorization_api.AuthorizationApi
 import com.evgeny.goncharov.sample.multimodule.authorization_impl.di.holder.AuthorizationHolder
+import com.evgeny.goncharov.sample.multimodule.profile_api.ProfileApi
 import com.evgeny.goncharov.sample.multimodule.profile_impl.di.holder.ProfileHolder
 import com.evgeny.goncharov.sample.multimodule.splash_screen_api.SplashApi
 import com.evgeny.goncharov.sample.multimodule.splash_screen_impl.di.holder.SplashHolder
@@ -62,7 +63,7 @@ internal object FeatureHoldersModule {
         LikeHolder(featureContainer)
 
     @[Singleton Provides]
-    @[IntoMap ClassKey(ProfileHolder::class)]
+    @[IntoMap ClassKey(ProfileApi::class)]
     fun provideProfileHolder(featureContainer: FeatureContainer): FeatureHolder<*> =
         ProfileHolder(featureContainer)
 }
