@@ -24,7 +24,6 @@ android {
 }
 
 dependencies {
-
     api(project(":sources:features:authorization-api"))
     implementation(project(":sources:engine:navigation"))
     implementation(project(":sources:engine:di-core"))
@@ -33,6 +32,8 @@ dependencies {
     
     implementation(project(":sources:core:reusable-sources"))
     implementation(project(":sources:core:user"))
+
+    implementation(project(":sources:features:profile-api"))
 
     implementation(uiLibs.constraint.layout)
     implementation(coreLibs.cicerone)
