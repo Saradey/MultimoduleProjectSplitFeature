@@ -39,7 +39,8 @@ internal class BottomMenuContainerViewModel @Inject constructor(
 
     fun goToProfile() {
         if(userUseCase.isAuthorized()) {
-
+            profileLauncher.launch()
+            analytics.goToProfile()
         } else {
             authorizationLauncher.launch()
             analytics.goToRegistration()
