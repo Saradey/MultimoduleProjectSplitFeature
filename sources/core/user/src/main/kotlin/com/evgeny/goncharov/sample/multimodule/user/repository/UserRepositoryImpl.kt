@@ -15,7 +15,12 @@ internal class UserRepositoryImpl @Inject constructor(
     }
 
     override fun updateAuthorized(authorizedStatus: Boolean) {
-
+        val pref = applicationContext.getSharedPreferences(
+            USER_AUTHORIZED_PREF, Context.MODE_PRIVATE
+        )
+        val editor = pref.edit()
+        editor.putBoolean(USER_AUTHORIZED_PREF, authorizedStatus)
+        editor.apply()
     }
 
     private companion object {
