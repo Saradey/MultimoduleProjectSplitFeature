@@ -2,6 +2,7 @@ package com.evgeny.goncharov.sample.multimodule.authorization_impl.di
 
 import com.evgeny.goncharov.sample.multimodule.di_core.scopes.FeatureScope
 import com.evgeny.goncharov.sample.multimodule.authorization_impl.di.contracts.AuthorizationInternal
+import com.evgeny.goncharov.sample.multimodule.authorization_impl.di.modules.ViewModelsAuthorizationModule
 import com.evgeny.goncharov.sample.multimodule.navigation.api.CoreNavigationApi
 import com.evgeny.goncharov.sample.multimodule.navigation.di.FeatureNavigationModule
 import dagger.Component
@@ -10,6 +11,7 @@ import dagger.Component
 @Component(
     modules = [
         FeatureNavigationModule::class,
+        ViewModelsAuthorizationModule::class
     ],
     dependencies = [
         CoreNavigationApi::class
