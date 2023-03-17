@@ -29,6 +29,7 @@ dependencies {
     implementation(project(":sources:resources:theme"))
     
     implementation(project(":sources:core:reusable-sources"))
+    implementation(project(":sources:core:user"))
 
     implementation(uiLibs.constraint.layout)
     implementation(coreLibs.cicerone)
