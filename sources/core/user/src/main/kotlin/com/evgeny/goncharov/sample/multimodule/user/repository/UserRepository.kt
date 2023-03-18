@@ -1,8 +1,8 @@
 package com.evgeny.goncharov.sample.multimodule.user.repository
 
-public interface UserRepository {
+internal interface UserRepository {
 
-    public fun isAuthorized(): Boolean
+    fun isAuthorized(): Boolean
 
-    public fun updateAuthorized(authorizedStatus: Boolean)
+    fun updateAuthorized(authorizedStatus: Boolean)
 }
