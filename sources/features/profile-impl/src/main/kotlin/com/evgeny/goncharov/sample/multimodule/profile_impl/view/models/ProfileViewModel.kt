@@ -11,6 +11,6 @@ internal class ProfileViewModel @Inject constructor(
 ) : ViewModel() {
 
     fun signOut() {
-
+        userUseCase.signOut()
     }
 }

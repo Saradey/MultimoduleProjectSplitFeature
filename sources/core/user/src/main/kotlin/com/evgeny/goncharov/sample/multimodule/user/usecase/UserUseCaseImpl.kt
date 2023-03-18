@@ -14,4 +14,8 @@ internal class UserUseCaseImpl @Inject constructor(
     override fun signIn() {
         userRepository.updateAuthorized(true)
     }
+
+    override fun signOut() {
+        userRepository.updateAuthorized(false)
+    }
 }
