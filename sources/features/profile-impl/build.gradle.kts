@@ -18,6 +18,9 @@ android {
         jvmTarget = "1.8"
         freeCompilerArgs = listOf("-Xexplicit-api=strict")
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -35,6 +38,7 @@ dependencies {
     implementation(coreLibs.dagger)
     implementation(androidLibs.fragment)
     implementation(androidLibs.fragment.ktx)
+    implementation(uiLibs.viewBindingPropertyDelegate)
 
     kapt(coreLibs.daggerCompiler)
 }
