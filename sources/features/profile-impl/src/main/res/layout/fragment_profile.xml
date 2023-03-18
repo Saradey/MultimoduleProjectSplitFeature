@@ -13,4 +13,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/btn_sing_out"
+        style="@style/AppButton.MainButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Sign out"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btn_sing_out" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
