@@ -44,6 +44,7 @@ public class MainActivityNavigator(
         }
     }
 
+    //TODO дописать логику
     private fun replace(command: GlobalReplace) {
         val fragmentScreen = command.screen
         val featureContainerFragment = fragmentScreen.createFragment(ff) as ContainerFeatureFragment
