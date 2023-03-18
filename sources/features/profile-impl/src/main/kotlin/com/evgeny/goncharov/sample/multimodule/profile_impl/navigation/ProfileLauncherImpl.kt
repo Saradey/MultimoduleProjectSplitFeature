@@ -8,7 +8,7 @@ public class ProfileLauncherImpl(
 ) : ProfileLauncher {
 
     override fun launchNewRoot() {
-        globalRouter.newRootScreenFeatureContainer(ProfileScreens.startFeature())
+        globalRouter.replaceFeatureContainerScreen(ProfileScreens.startFeature())
     }
 
     override fun launch() {
