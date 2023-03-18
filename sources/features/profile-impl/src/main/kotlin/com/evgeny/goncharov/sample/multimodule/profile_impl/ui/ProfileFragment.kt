@@ -26,7 +26,9 @@ internal class ProfileFragment : CoreFragment(R.layout.fragment_profile) {
     }
 
     private fun FragmentProfileBinding.initUi() {
-
+        btnSingOut.setOnClickListener {
+            viewModel.signOut()
+        }
     }
 
     companion object {
