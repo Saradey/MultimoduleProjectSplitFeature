@@ -8,6 +8,7 @@ import com.evgeny.goncharov.multimodule.bottom_menu_impl.ui.BottomMenuContainerF
 import com.evgeny.goncharov.sample.multimodule.navigation.base.BaseNavigator
 import com.evgeny.goncharov.sample.multimodule.navigation.commands.GlobalBack
 import com.evgeny.goncharov.sample.multimodule.navigation.commands.GlobalForward
+import com.evgeny.goncharov.sample.multimodule.navigation.commands.GlobalReplace
 import com.github.terrakok.cicerone.Command
 import com.github.terrakok.cicerone.androidx.FragmentScreen
 import java.util.Stack
@@ -25,6 +26,7 @@ internal class BottomMenuNavigator(
     override fun applyCommand(command: Command) {
         when (command) {
             is GlobalForward -> forward(command)
+            is GlobalReplace -> replace(command)
             is GlobalBack -> back()
         }
     }
@@ -65,7 +67,7 @@ internal class BottomMenuNavigator(
     }
 
     private fun back() {
-        if (localBackStack.size > 1) {
+        if (localBackStack.size > FIRST_INDEX_FRAGMENT_TO_BACKSTACK) {
             val popBackStackName = localBackStack.pop()
             fm.popBackStack(popBackStackName, 0)
             selectedBackstackMenu = localBackStack.peek()
@@ -76,11 +78,31 @@ internal class BottomMenuNavigator(
         }
     }
 
+    private fun replace(command: GlobalReplace) {
+        val fragmentScreen = command.screen
+        val backStackName = fragmentScreen.screenKey
+        selectedBackstackMenu = backStackName
+        fragmentBottomContainer.selectTabBottomMenu(selectedBackstackMenu)
+        if (localBackStack.size > FIRST_INDEX_FRAGMENT_TO_BACKSTACK) {
+            val popBackStackName = localBackStack.pop()
+            fm.popBackStack(popBackStackName, 0)
+        }
+        localBackStack.push(selectedBackstackMenu)
+        val featureContainerFragment = fragmentScreen.createFragment(ff)
+        fm.commit {
+            setReorderingAllowed(true)
+            replace(containerId, featureContainerFragment, fragmentScreen.screenKey)
+            addToBackStack(backStackName)
+        }
+    }
+
     companion object {
         const val BACKSTACK_NAME_HOME = "HomeContainer"
         const val BACKSTACK_NAME_CATALOG = "CatalogContainer"
         const val BACKSTACK_NAME_REG = "AuthorizationContainer"
         const val BACKSTACK_NAME_PROFILE = "ProfileContainer"
         const val BACKSTACK_NAME_LIKE = "LikeContainer"
+
+        private const val FIRST_INDEX_FRAGMENT_TO_BACKSTACK = 1
     }
 }
