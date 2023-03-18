@@ -30,8 +30,11 @@ dependencies {
     implementation(project(":sources:engine:di-core"))
 
     implementation(project(":sources:core:reusable-sources"))
+    implementation(project(":sources:core:user"))
 
     implementation(project(":sources:resources:theme"))
+
+    implementation(project(":sources:features:authorization-api"))
 
     implementation(uiLibs.constraint.layout)
     implementation(coreLibs.cicerone)
