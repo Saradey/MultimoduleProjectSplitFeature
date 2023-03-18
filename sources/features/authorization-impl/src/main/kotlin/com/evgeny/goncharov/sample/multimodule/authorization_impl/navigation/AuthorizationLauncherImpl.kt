@@ -10,4 +10,8 @@ public class AuthorizationLauncherImpl(
     override fun launch() {
         globalRouter.navigateToFeatureContainer(AuthorizationScreens.startFeature())
     }
+
+    override fun launchNewRoot() {
+        globalRouter.newRootScreenFeatureContainer(AuthorizationScreens.startFeature())
+    }
 }

@@ -12,5 +12,6 @@ internal class ProfileViewModel @Inject constructor(
 
     fun signOut() {
         userUseCase.signOut()
+        authorizationLauncher.launchNewRoot()
     }
 }
