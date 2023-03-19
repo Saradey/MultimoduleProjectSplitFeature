@@ -15,7 +15,7 @@ internal class UserAnalytics @Inject constructor(
 
     fun signOut() {
         //TODO will add id user
-        analyticsManager.logEvent(NETWORK_EVENT_SIGN_OUT, listOf(NETWORK_EVENT_SIGN_IN to null))
+        analyticsManager.logEvent(NETWORK_EVENT_KEY, listOf(NETWORK_EVENT_SIGN_OUT to null))
     }
 
     private companion object {
