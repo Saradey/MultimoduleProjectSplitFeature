@@ -21,10 +21,10 @@ android {
 }
 
 dependencies {
-    implementation(coreLibs.dagger)
-
     implementation(project(":sources:engine:di-core"))
     implementation(project(":sources:engine:analytics"))
+
+    implementation(coreLibs.dagger)
 
     kapt(coreLibs.daggerCompiler)
 }
