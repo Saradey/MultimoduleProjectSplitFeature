@@ -6,5 +6,5 @@ public interface AuthorizationLauncher : BaseLauncher {
 
     public fun launch()
 
-    public fun launchNewRoot()
+    public fun launchReplace()
 }
