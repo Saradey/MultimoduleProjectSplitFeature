@@ -7,8 +7,6 @@ private interface GlobalCommands : Command
 
 public data class GlobalForward(val screen: FragmentScreen) : GlobalCommands
 
-public data class GlobalBackTo(val screen: FragmentScreen?) : GlobalCommands
-
 public data class GlobalReplace(val screen: FragmentScreen) : GlobalCommands
 
 public object GlobalBack : GlobalCommands

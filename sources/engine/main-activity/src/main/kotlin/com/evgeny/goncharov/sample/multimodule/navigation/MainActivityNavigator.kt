@@ -22,7 +22,6 @@ public class MainActivityNavigator(
     override fun applyCommand(command: Command) {
         when (command) {
             is GlobalForward -> forward(command)
-            is GlobalBackTo -> backTo(command)
             is GlobalReplace -> replace(command)
         }
     }
@@ -36,12 +35,6 @@ public class MainActivityNavigator(
             addToBackStack = true,
             backStackName = fragmentScreen.screenKey
         )
-    }
-
-    private fun backTo(command: GlobalBackTo) {
-        if (command.screen == null) {
-            fm.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
-        }
     }
 
     //TODO дописать логику
