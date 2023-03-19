@@ -1,5 +1,6 @@
 package com.evgeny.goncharov.sample.multimodule.authorization_impl.di.holder
 
+import com.evgeny.goncharov.sample.multimodule.analytics.api.AnalyticsDependencyApi
 import com.evgeny.goncharov.sample.multimodule.di_core.container.FeatureContainer
 import com.evgeny.goncharov.sample.multimodule.di_core.holder.FeatureHolder
 import com.evgeny.goncharov.sample.multimodule.navigation.api.CoreNavigationApi
@@ -16,6 +17,7 @@ public class AuthorizationHolder(container: FeatureContainer) :
             .create(
                 getGlobalComponent(CoreNavigationApi::class.java),
                 getGlobalComponent(UserApi::class.java),
+                getGlobalComponent(AnalyticsDependencyApi::class.java),
                 getFeatureLauncher(ProfileLauncher::class.java)
             )
     }

@@ -1,5 +1,6 @@
 package com.evgeny.goncharov.sample.multimodule.authorization_impl.di
 
+import com.evgeny.goncharov.sample.multimodule.analytics.api.AnalyticsDependencyApi
 import com.evgeny.goncharov.sample.multimodule.di_core.scopes.FeatureScope
 import com.evgeny.goncharov.sample.multimodule.authorization_impl.di.contracts.AuthorizationInternal
 import com.evgeny.goncharov.sample.multimodule.authorization_impl.di.modules.ViewModelsAuthorizationModule
@@ -18,7 +19,8 @@ import dagger.Component
     ],
     dependencies = [
         CoreNavigationApi::class,
-        UserApi::class
+        UserApi::class,
+        AnalyticsDependencyApi::class
     ]
 )
 internal interface AuthorizationComponent : AuthorizationInternal {
@@ -28,6 +30,7 @@ internal interface AuthorizationComponent : AuthorizationInternal {
         fun create(
             coreNavigationApi: CoreNavigationApi,
             userApi: UserApi,
+            analyticsDependencyApi: AnalyticsDependencyApi,
             @BindsInstance profileLauncher: ProfileLauncher
         ): AuthorizationComponent
     }
