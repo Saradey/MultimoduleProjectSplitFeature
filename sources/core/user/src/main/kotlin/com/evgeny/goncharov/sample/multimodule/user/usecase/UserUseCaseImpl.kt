@@ -14,6 +14,7 @@ internal class UserUseCaseImpl @Inject constructor(
     }
 
     override fun signIn() {
+        analytics.signIn()
         userRepository.updateAuthorized(true)
     }
 
