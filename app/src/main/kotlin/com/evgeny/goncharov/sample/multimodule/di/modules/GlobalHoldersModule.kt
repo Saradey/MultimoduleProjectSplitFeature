@@ -10,7 +10,7 @@ import com.evgeny.goncharov.sample.multimodule.navigation.api.CoreNavigationApi
 import com.evgeny.goncharov.sample.multimodule.di_core.navigation.LaunchersApi
 import com.evgeny.goncharov.sample.multimodule.navigation.holder.NavigationHolder
 import com.evgeny.goncharov.sample.multimodule.user.di.api.UserApi
-import com.evgeny.goncharov.sample.multimodule.user.holder.UserHolder
+import com.evgeny.goncharov.sample.multimodule.user.di.holder.UserHolder
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.ClassKey

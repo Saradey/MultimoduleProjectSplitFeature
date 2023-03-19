@@ -1,4 +1,4 @@
-package com.evgeny.goncharov.sample.multimodule.user.holder
+package com.evgeny.goncharov.sample.multimodule.user.di.holder
 
 import android.content.Context
 import com.evgeny.goncharov.sample.multimodule.analytics.api.AnalyticsDependencyApi
