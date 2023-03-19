@@ -28,11 +28,12 @@ dependencies {
 
     implementation(project(":sources:engine:navigation"))
     implementation(project(":sources:engine:di-core"))
+    implementation(project(":sources:engine:analytics"))
+
     implementation(project(":sources:resources:ui-kit"))
     implementation(project(":sources:resources:theme"))
 
     implementation(project(":sources:core:reusable-sources"))
-    implementation(project(":sources:engine:analytics"))
     implementation(project(":sources:core:user"))
 
     implementation(project(":sources:features:home-api"))
