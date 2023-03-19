@@ -28,6 +28,7 @@ dependencies {
 
     implementation(project(":sources:engine:navigation"))
     implementation(project(":sources:engine:di-core"))
+    implementation(project(":sources:engine:analytics"))
 
     implementation(project(":sources:core:reusable-sources"))
     implementation(project(":sources:core:user"))
