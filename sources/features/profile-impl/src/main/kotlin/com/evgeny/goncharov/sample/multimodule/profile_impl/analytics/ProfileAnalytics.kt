@@ -10,12 +10,12 @@ internal class ProfileAnalytics @Inject constructor(
 ) {
 
     private val params: MutableList<Pair<String, String?>> = mutableListOf<Pair<String, String?>>(
-        TAG_SCREEN_PARAM to TAG_PROFILE_PARAM
+        TAG_SCREEN_PARAM to TAG_SCREEN_PROFILE
     )
 
     private fun prepare() {
         params.clear()
-        params.add(TAG_SCREEN_PARAM to TAG_PROFILE_PARAM)
+        params.add(TAG_SCREEN_PARAM to TAG_SCREEN_PROFILE)
     }
 
     fun goToAuth() {
@@ -26,7 +26,7 @@ internal class ProfileAnalytics @Inject constructor(
 
     private companion object {
 
-        const val TAG_PROFILE_PARAM = "profile"
+        const val TAG_SCREEN_PROFILE = "profile"
         const val NAVIGATION_EVENT_GO_AUTH = "profile_go_to_authorization"
     }
 }
