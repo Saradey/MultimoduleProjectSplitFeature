@@ -1,6 +1,7 @@
 package com.evgeny.goncharov.multimodule.bottom_menu_impl.analytics
 
 import com.evgeny.goncharov.sample.multimodule.analytics.manager.AnalyticsManager
+import com.evgeny.goncharov.sample.multimodule.analytics.utils.NAVIGATION_EVENT_BACK
 import com.evgeny.goncharov.sample.multimodule.analytics.utils.TAG_SCREEN_PARAM
 import com.evgeny.goncharov.sample.multimodule.analytics.utils.NAVIGATION_EVENT_KEY
 import javax.inject.Inject
@@ -56,7 +57,7 @@ internal class BottomMenuAnalytics @Inject constructor(
 
     fun back() {
         prepare()
-        params.add(UI_EVENT_GO_BACK to null)
+        params.add(NAVIGATION_EVENT_BACK to null)
         analyticsManager.logEvent(NAVIGATION_EVENT_KEY, params)
     }
 
@@ -68,6 +69,5 @@ internal class BottomMenuAnalytics @Inject constructor(
         const val UI_EVENT_GO_TO_REGISTRATION = "bottom_menu_go_to_registration"
         const val UI_EVENT_GO_TO_LIKE = "bottom_menu_go_to_like"
         const val UI_EVENT_GO_TO_PROFILE = "bottom_menu_go_to_profile"
-        const val UI_EVENT_GO_BACK = "bottom_menu_back"
     }
 }
