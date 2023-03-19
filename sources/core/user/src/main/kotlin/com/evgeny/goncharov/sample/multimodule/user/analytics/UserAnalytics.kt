@@ -13,7 +13,13 @@ internal class UserAnalytics @Inject constructor(
         analyticsManager.logEvent(NETWORK_EVENT_KEY, listOf(NETWORK_EVENT_SIGN_IN to null))
     }
 
+    fun signOut() {
+        //TODO will add id user
+        analyticsManager.logEvent(NETWORK_EVENT_SIGN_OUT, listOf(NETWORK_EVENT_SIGN_IN to null))
+    }
+
     private companion object {
         const val NETWORK_EVENT_SIGN_IN = "sign_in"
+        const val NETWORK_EVENT_SIGN_OUT = "sign_out"
     }
 }

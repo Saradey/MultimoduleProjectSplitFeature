@@ -19,6 +19,7 @@ internal class UserUseCaseImpl @Inject constructor(
     }
 
     override fun signOut() {
+        analytics.signOut()
         userRepository.updateAuthorized(false)
     }
 }
