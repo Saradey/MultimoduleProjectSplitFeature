@@ -23,6 +23,6 @@ public class FeatureNavigator(
     private fun forward(command: InternalForward) {
         val screen = command.screen
         val fragment = screen.createFragment(ff)
-        commitFragmentTransaction(fragment, screen, true, screen.screenKey)
+        commitFragmentTransaction(fragment, screen, screen.screenKey)
     }
 }
