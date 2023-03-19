@@ -24,6 +24,7 @@ dependencies {
     implementation(coreLibs.dagger)
 
     implementation(project(":sources:engine:di-core"))
+    implementation(project(":sources:engine:analytics"))
 
     kapt(coreLibs.daggerCompiler)
 }
