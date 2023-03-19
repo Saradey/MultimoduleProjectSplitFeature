@@ -22,7 +22,7 @@ public class MainActivity : CoreActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        savedInstanceState ?: {
+        savedInstanceState ?: run {
             viewModel.startApplication()
             viewModel.startSplash()
         }
