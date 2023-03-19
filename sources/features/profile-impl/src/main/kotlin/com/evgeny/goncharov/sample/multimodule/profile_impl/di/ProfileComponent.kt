@@ -1,5 +1,6 @@
 package com.evgeny.goncharov.sample.multimodule.profile_impl.di
 
+import com.evgeny.goncharov.sample.multimodule.analytics.api.AnalyticsDependencyApi
 import com.evgeny.goncharov.sample.multimodule.authorization_api.AuthorizationLauncher
 import com.evgeny.goncharov.sample.multimodule.di_core.scopes.FeatureScope
 import com.evgeny.goncharov.sample.multimodule.navigation.di.FeatureNavigationModule
@@ -16,7 +17,8 @@ import dagger.Component
         ViewModelsProfileModule::class
     ],
     dependencies = [
-        UserApi::class
+        UserApi::class,
+        AnalyticsDependencyApi::class
     ]
 )
 internal interface ProfileComponent : ProfileInternal {
@@ -25,6 +27,7 @@ internal interface ProfileComponent : ProfileInternal {
     interface Factory {
 
         fun create(
+            analyticsDependencyApi: AnalyticsDependencyApi,
             userApi: UserApi,
             @BindsInstance authorizationLauncher: AuthorizationLauncher
         ): ProfileComponent
