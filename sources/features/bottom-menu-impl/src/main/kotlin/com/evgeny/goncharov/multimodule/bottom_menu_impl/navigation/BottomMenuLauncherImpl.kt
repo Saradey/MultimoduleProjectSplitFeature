@@ -8,6 +8,6 @@ public class BottomMenuLauncherImpl(
 ) : BottomMenuLauncher {
 
     override fun launch() {
-        globalRouter.navigateToFeatureContainer(BottomMenuScreens.startFeature())
+        globalRouter.replaceFeatureContainerScreen(BottomMenuScreens.startFeature())
     }
 }
