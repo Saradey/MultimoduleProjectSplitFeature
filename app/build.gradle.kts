@@ -52,11 +52,11 @@ dependencies {
     implementation(project(":sources:engine:main-activity"))
     implementation(project(":sources:engine:di-core"))
     implementation(project(":sources:engine:navigation"))
+    implementation(project(":sources:engine:analytics"))
 
     implementation(project(":sources:resources:theme"))
     implementation(project(":sources:resources:ui-kit"))
 
-    implementation(project(":sources:engine:analytics"))
     implementation(project(":sources:core:user"))
 
     implementation(project(":sources:features:splash-screen-impl"))
@@ -71,7 +71,7 @@ dependencies {
     implementation(coreLibs.dagger)
     implementation(devLibs.timber)
 
-    kapt(coreLibs.daggerCompiler)
-
     debugImplementation(devLibs.leak.canary)
+
+    kapt(coreLibs.daggerCompiler)
 }
