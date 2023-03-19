@@ -21,22 +21,10 @@ public class MainActivityNavigator(
     override fun applyCommand(command: Command) {
         when (command) {
             is GlobalForward -> forward(command)
-            is GlobalReplace -> replace(command)
         }
     }
 
     private fun forward(command: GlobalForward) {
-        val fragmentScreen = command.screen
-        val featureContainerFragment = fragmentScreen.createFragment(ff) as ContainerFeatureFragment
-        commitFragmentTransaction(
-            fragment = featureContainerFragment,
-            fragmentScreen = fragmentScreen,
-            backStackName = fragmentScreen.screenKey
-        )
-    }
-
-    private fun replace(command: GlobalReplace) {
-        fm.popBackStack()
         val fragmentScreen = command.screen
         val featureContainerFragment = fragmentScreen.createFragment(ff) as ContainerFeatureFragment
         commitFragmentTransaction(
