@@ -1,9 +1,9 @@
 package com.evgeny.goncharov.sample.multimodule.analytics
 
 import com.evgeny.goncharov.sample.multimodule.analytics.manager.AnalyticsManager
-import com.evgeny.goncharov.sample.multimodule.analytics.utils.SYSTEM_EVENTS_KEY
+import com.evgeny.goncharov.sample.multimodule.analytics.utils.SYSTEM_EVENT_KEY
 import com.evgeny.goncharov.sample.multimodule.analytics.utils.TAG_SCREEN_PARAM
-import com.evgeny.goncharov.sample.multimodule.analytics.utils.UI_EVENT_KEY_NAVIGATION
+import com.evgeny.goncharov.sample.multimodule.analytics.utils.NAVIGATION_EVENT_KEY
 import javax.inject.Inject
 
 internal class MainActivityAnalytics @Inject constructor(
@@ -22,13 +22,13 @@ internal class MainActivityAnalytics @Inject constructor(
     fun startSplash() {
         prepare()
         params.add(UI_EVENT_START_SPLASH to null)
-        analyticsManager.logEvent(UI_EVENT_KEY_NAVIGATION, params)
+        analyticsManager.logEvent(NAVIGATION_EVENT_KEY, params)
     }
 
     fun finisApplication() {
         prepare()
         params.add(UI_EVENT_FINISH_APP to null)
-        analyticsManager.logEvent(SYSTEM_EVENTS_KEY, params)
+        analyticsManager.logEvent(SYSTEM_EVENT_KEY, params)
     }
 
     private companion object {

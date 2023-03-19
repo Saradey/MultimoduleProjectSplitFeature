@@ -2,7 +2,7 @@ package com.evgeny.goncharov.multimodule.bottom_menu_impl.analytics
 
 import com.evgeny.goncharov.sample.multimodule.analytics.manager.AnalyticsManager
 import com.evgeny.goncharov.sample.multimodule.analytics.utils.TAG_SCREEN_PARAM
-import com.evgeny.goncharov.sample.multimodule.analytics.utils.UI_EVENT_KEY_NAVIGATION
+import com.evgeny.goncharov.sample.multimodule.analytics.utils.NAVIGATION_EVENT_KEY
 import javax.inject.Inject
 
 internal class BottomMenuAnalytics @Inject constructor(
@@ -21,43 +21,43 @@ internal class BottomMenuAnalytics @Inject constructor(
     fun startHome() {
         prepare()
         params.add(UI_EVENT_START_HOME to null)
-        analyticsManager.logEvent(UI_EVENT_KEY_NAVIGATION, params)
+        analyticsManager.logEvent(NAVIGATION_EVENT_KEY, params)
     }
 
     fun goToHome() {
         prepare()
         params.add(UI_EVENT_GO_TO_HOME to null)
-        analyticsManager.logEvent(UI_EVENT_KEY_NAVIGATION, params)
+        analyticsManager.logEvent(NAVIGATION_EVENT_KEY, params)
     }
 
     fun goToCatalog() {
         prepare()
         params.add(UI_EVENT_GO_TO_CATALOG to null)
-        analyticsManager.logEvent(UI_EVENT_KEY_NAVIGATION, params)
+        analyticsManager.logEvent(NAVIGATION_EVENT_KEY, params)
     }
 
     fun goToRegistration() {
         prepare()
         params.add(UI_EVENT_GO_TO_REGISTRATION to null)
-        analyticsManager.logEvent(UI_EVENT_KEY_NAVIGATION, params)
+        analyticsManager.logEvent(NAVIGATION_EVENT_KEY, params)
     }
 
     fun goToLike() {
         prepare()
         params.add(UI_EVENT_GO_TO_LIKE to null)
-        analyticsManager.logEvent(UI_EVENT_KEY_NAVIGATION, params)
+        analyticsManager.logEvent(NAVIGATION_EVENT_KEY, params)
     }
 
     fun goToProfile() {
         prepare()
         params.add(UI_EVENT_GO_TO_PROFILE to null)
-        analyticsManager.logEvent(UI_EVENT_KEY_NAVIGATION, params)
+        analyticsManager.logEvent(NAVIGATION_EVENT_KEY, params)
     }
 
     fun back() {
         prepare()
         params.add(UI_EVENT_GO_BACK to null)
-        analyticsManager.logEvent(UI_EVENT_KEY_NAVIGATION, params)
+        analyticsManager.logEvent(NAVIGATION_EVENT_KEY, params)
     }
 
     private companion object {

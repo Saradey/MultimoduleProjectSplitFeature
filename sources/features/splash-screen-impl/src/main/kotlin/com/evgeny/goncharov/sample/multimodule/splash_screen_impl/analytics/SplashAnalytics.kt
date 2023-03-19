@@ -2,7 +2,7 @@ package com.evgeny.goncharov.sample.multimodule.splash_screen_impl.analytics
 
 import com.evgeny.goncharov.sample.multimodule.analytics.manager.AnalyticsManager
 import com.evgeny.goncharov.sample.multimodule.analytics.utils.TAG_SCREEN_PARAM
-import com.evgeny.goncharov.sample.multimodule.analytics.utils.UI_EVENT_KEY_NAVIGATION
+import com.evgeny.goncharov.sample.multimodule.analytics.utils.NAVIGATION_EVENT_KEY
 import javax.inject.Inject
 
 internal class SplashAnalytics @Inject constructor(
@@ -21,7 +21,7 @@ internal class SplashAnalytics @Inject constructor(
     fun goToTheBottomMainMenu() {
         prepare()
         params.add(UI_EVENT_GO_BOTTOM_MENU to null)
-        analyticsManager.logEvent(UI_EVENT_KEY_NAVIGATION, params)
+        analyticsManager.logEvent(NAVIGATION_EVENT_KEY, params)
     }
 
     private companion object {
