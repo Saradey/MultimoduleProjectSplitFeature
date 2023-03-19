@@ -36,6 +36,7 @@ public class MainActivityNavigator(
     }
 
     private fun replace(command: GlobalReplace) {
+        fm.popBackStack()
         val fragmentScreen = command.screen
         val featureContainerFragment = fragmentScreen.createFragment(ff) as ContainerFeatureFragment
         commitFragmentTransaction(
