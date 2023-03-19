@@ -30,7 +30,7 @@ dependencies {
     implementation(project(":sources:engine:di-core"))
     implementation(project(":sources:core:reusable-sources"))
     implementation(project(":sources:resources:theme"))
-    implementation(project(":sources:core:analytics"))
+    implementation(project(":sources:engine:analytics"))
 
     implementation(project(":sources:features:bottom-menu-api"))
 

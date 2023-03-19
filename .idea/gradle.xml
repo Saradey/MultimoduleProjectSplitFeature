@@ -14,10 +14,10 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/sources" />
             <option value="$PROJECT_DIR$/sources/core" />
-            <option value="$PROJECT_DIR$/sources/core/analytics" />
             <option value="$PROJECT_DIR$/sources/core/reusable-sources" />
             <option value="$PROJECT_DIR$/sources/core/user" />
             <option value="$PROJECT_DIR$/sources/engine" />
+            <option value="$PROJECT_DIR$/sources/engine/analytics" />
             <option value="$PROJECT_DIR$/sources/engine/di-core" />
             <option value="$PROJECT_DIR$/sources/engine/main-activity" />
             <option value="$PROJECT_DIR$/sources/engine/navigation" />

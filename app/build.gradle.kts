@@ -56,7 +56,7 @@ dependencies {
     implementation(project(":sources:resources:theme"))
     implementation(project(":sources:resources:ui-kit"))
 
-    implementation(project(":sources:core:analytics"))
+    implementation(project(":sources:engine:analytics"))
     implementation(project(":sources:core:user"))
 
     implementation(project(":sources:features:splash-screen-impl"))
