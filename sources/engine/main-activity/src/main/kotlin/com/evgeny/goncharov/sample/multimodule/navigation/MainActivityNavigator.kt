@@ -7,7 +7,6 @@ import com.github.terrakok.cicerone.Command
 import com.evgeny.goncharov.sample.multimodule.R
 import com.evgeny.goncharov.sample.multimodule.di_core.ContainerFeatureFragment
 import com.evgeny.goncharov.sample.multimodule.navigation.base.BaseNavigator
-import com.evgeny.goncharov.sample.multimodule.navigation.commands.GlobalBackTo
 import com.evgeny.goncharov.sample.multimodule.navigation.commands.GlobalForward
 import com.evgeny.goncharov.sample.multimodule.navigation.commands.GlobalReplace
 
@@ -32,19 +31,16 @@ public class MainActivityNavigator(
         commitFragmentTransaction(
             fragment = featureContainerFragment,
             fragmentScreen = fragmentScreen,
-            addToBackStack = true,
             backStackName = fragmentScreen.screenKey
         )
     }
 
-    //TODO дописать логику
     private fun replace(command: GlobalReplace) {
         val fragmentScreen = command.screen
         val featureContainerFragment = fragmentScreen.createFragment(ff) as ContainerFeatureFragment
         commitFragmentTransaction(
             fragment = featureContainerFragment,
             fragmentScreen = fragmentScreen,
-            addToBackStack = false,
             backStackName = fragmentScreen.screenKey
         )
     }
