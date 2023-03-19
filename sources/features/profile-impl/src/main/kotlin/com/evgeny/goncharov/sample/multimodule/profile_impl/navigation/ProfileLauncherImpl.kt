@@ -7,7 +7,7 @@ public class ProfileLauncherImpl(
     private val globalRouter: GlobalRouter
 ) : ProfileLauncher {
 
-    override fun launchNewRoot() {
+    override fun launchReplace() {
         globalRouter.replaceFeatureContainerScreen(ProfileScreens.startFeature())
     }
 
