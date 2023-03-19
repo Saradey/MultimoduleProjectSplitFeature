@@ -42,7 +42,7 @@ public class MainActivityNavigator(
         commitFragmentTransaction(
             fragment = featureContainerFragment,
             fragmentScreen = fragmentScreen,
-            addToBackStack = true,
+            addToBackStack = false,
             backStackName = fragmentScreen.screenKey
         )
     }
