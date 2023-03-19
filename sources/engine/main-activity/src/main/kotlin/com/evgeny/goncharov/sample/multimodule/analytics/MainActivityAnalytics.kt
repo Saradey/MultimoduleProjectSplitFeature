@@ -25,6 +25,12 @@ internal class MainActivityAnalytics @Inject constructor(
         analyticsManager.logEvent(NAVIGATION_EVENT_KEY, params)
     }
 
+    fun startApplication() {
+        prepare()
+        params.add(UI_EVENT_START_APP to null)
+        analyticsManager.logEvent(SYSTEM_EVENT_KEY, params)
+    }
+
     fun finisApplication() {
         prepare()
         params.add(UI_EVENT_FINISH_APP to null)
@@ -36,5 +42,6 @@ internal class MainActivityAnalytics @Inject constructor(
         const val TAG_MAIN_ACTIVITY = "main_activity"
         const val UI_EVENT_START_SPLASH = "main_activity_start_splash"
         const val UI_EVENT_FINISH_APP = "finish_application"
+        const val UI_EVENT_START_APP = "start_application"
     }
 }

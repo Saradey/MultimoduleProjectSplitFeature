@@ -18,4 +18,8 @@ internal class MainActivityViewModel @Inject constructor(
     fun sendEventAnalyticsFinisApplication() {
         analytics.finisApplication()
     }
+
+    fun startApplication() {
+        analytics.startApplication()
+    }
 }
