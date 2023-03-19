@@ -10,22 +10,22 @@ internal class SplashAnalytics @Inject constructor(
 ) {
 
     private val params: MutableList<Pair<String, String?>> = mutableListOf<Pair<String, String?>>(
-        TAG_SCREEN_PARAM to TAG_SPLASH_PARAM
+        TAG_SCREEN_PARAM to TAG_SCREEN_SPLASH
     )
 
     private fun prepare() {
         params.clear()
-        params.add(TAG_SCREEN_PARAM to TAG_SPLASH_PARAM)
+        params.add(TAG_SCREEN_PARAM to TAG_SCREEN_SPLASH)
     }
 
     fun goToTheBottomMainMenu() {
         prepare()
-        params.add(UI_EVENT_GO_BOTTOM_MENU to null)
+        params.add(NAVIGATION_EVENT_GO_BOTTOM_MENU to null)
         analyticsManager.logEvent(NAVIGATION_EVENT_KEY, params)
     }
 
     private companion object {
-        const val TAG_SPLASH_PARAM = "splash"
-        const val UI_EVENT_GO_BOTTOM_MENU = "splash_go_to_bottom_menu"
+        const val TAG_SCREEN_SPLASH = "splash"
+        const val NAVIGATION_EVENT_GO_BOTTOM_MENU = "splash_go_to_bottom_menu"
     }
 }
