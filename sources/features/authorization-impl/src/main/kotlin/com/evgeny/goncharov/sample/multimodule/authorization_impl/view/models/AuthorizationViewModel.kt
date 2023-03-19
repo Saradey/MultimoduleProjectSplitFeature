@@ -15,5 +15,6 @@ internal class AuthorizationViewModel @Inject constructor(
     fun signIn() {
         useCase.signIn()
         profileLauncher.launchReplace()
+        analytics.goToProfile()
     }
 }
