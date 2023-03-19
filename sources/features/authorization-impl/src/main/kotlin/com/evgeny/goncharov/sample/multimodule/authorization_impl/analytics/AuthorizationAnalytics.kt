@@ -9,12 +9,12 @@ internal class AuthorizationAnalytics @Inject constructor(
     private val analyticsManager: AnalyticsManager
 ) {
     private val params: MutableList<Pair<String, String?>> = mutableListOf<Pair<String, String?>>(
-        TAG_SCREEN_PARAM to TAG_AUTH_PARAM
+        TAG_SCREEN_PARAM to TAG_SCREEN_AUTH
     )
 
     private fun prepare() {
         params.clear()
-        params.add(TAG_SCREEN_PARAM to TAG_AUTH_PARAM)
+        params.add(TAG_SCREEN_PARAM to TAG_SCREEN_AUTH)
     }
 
     fun goToProfile() {
@@ -25,7 +25,7 @@ internal class AuthorizationAnalytics @Inject constructor(
 
     private companion object {
 
-        const val TAG_AUTH_PARAM = "authorization"
+        const val TAG_SCREEN_AUTH = "authorization"
         const val NAVIGATION_EVENT_GO_PROFILE = "authorization_go_to_profile"
     }
 }
