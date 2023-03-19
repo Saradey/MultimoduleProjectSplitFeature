@@ -32,18 +32,18 @@ internal class BottomMenuContainerFragment :
     override val navigator: BottomMenuNavigator by lazy {
         BottomMenuNavigator(this)
     }
-//    private val onBackPressed = object : OnBackPressedCallback(true) {
-//        override fun handleOnBackPressed() {
-//            viewModel.onBackPressed()
-//        }
-//    }
+    private val onBackPressed = object : OnBackPressedCallback(true) {
+        override fun handleOnBackPressed() {
+            viewModel.onBackPressed()
+        }
+    }
     private val binding: FragmentBottomMenuBinding by viewBinding(FragmentBottomMenuBinding::bind)
     override val navigatorHolder: NavigatorHolder = dependency.provideGlobalNavigatorHolder()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.initUi()
         savedInstanceState ?: viewModel.startHome()
-//        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, onBackPressed)
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, onBackPressed)
     }
 
     private fun FragmentBottomMenuBinding.initUi() {
